@@ -14,6 +14,13 @@ return [
 		'span_correo' => 'Correo electronico',
 		'span_contraseña' => 'Contraseña',
 		'enter' => 'Acceder'	
+	],
+	'registro' => [
+		'span_nombre' => 'Nombre',
+		'span_apellido' => 'Apellido',
+		'span_correo' => 'Correo',
+		'span_contraseña' => 'Contraseña',
+		'span_confirmar' => 'Confirmar contraseña'
 	]
 
 ]

@@ -9,17 +9,17 @@
 			</p>	
 		</div>
 		<ul class="buttons-right">
-		<li class="">
-			<a href="/institucional/quienes-somos">Quienes Somos</a>
+		<li>
+			<a class="" href="/institucional/quienes-somos">Quienes Somos</a>
 		</li>
-		<li class="active">
-			<a href="/institucional/estatuto">Estatuto</a>
+		<li>
+			<a  class="active" href="/institucional/estatuto">Estatuto</a>
 		</li>
-		<li class="">
-			<a href="/institucional/miembros">Miembros</a>
+		<li>
+			<a class="" href="/institucional/miembros">Miembros</a>
 		</li>
-		<li class="">
-			<a href="/institucional/comites">Comites</a>
+		<li>
+			<a class="" href="/institucional/comites">Comites</a>
 		</li>
 		</div>
 		

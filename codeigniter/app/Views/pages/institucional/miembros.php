@@ -8,75 +8,73 @@
 				<button class="slick-prev">
 				</button>
 					<div class="miembros-content">
-						<div class="user-img">
-						</div>
-						<h3 class="miembros-titulo">Nombre1</h3>
-						<h4 class="miembros-cargo">Cargo</h4>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus esse qui voluptatem eos reiciendis nesciunt assumenda minima ducimus, doloribus aliquid soluta commodi, quam accusantium officia expedita doloremque. Laborum, eius similique!</p>
-						<div class="redes">
-							<img src="/img/fb-icon.png" alt="">
-							<img src="/img/tw-icon.png" alt="">
-							<img src="/img/in-icon.png" alt="">
-						</div>
-					</div>
-					<div class="miembros-content">
-						<div class="user-img">
-						</div>
-						<h3 class="miembros-titulo">Nombre2</h3>
-						<h4 class="miembros-cargo">Cargo</h4>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus esse qui voluptatem eos reiciendis nesciunt assumenda minima ducimus, doloribus aliquid soluta commodi, quam accusantium officia expedita doloremque. Laborum, eius similique!</p>
-						<div class="redes">
-							<img src="/img/fb-icon.png" alt="">
-							<img src="/img/tw-icon.png" alt="">
-							<img src="/img/in-icon.png" alt="">
+						<div class="div-miembros">
+							<div class="user-img">
+							</div>
+							<h3 class="miembros-titulo">Nombre1</h3>
+							<h4 class="miembros-cargo">Cargo</h4>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus esse qui voluptatem eos reiciendis nesciunt assumenda minima ducimus, doloribus aliquid soluta commodi, quam accusantium officia expedita doloremque. Laborum, eius similique!</p>
+							<div class="redes">
+								<img src="/img/fb-icon.png" alt="">
+								<img src="/img/tw-icon.png" alt="">
+								<img src="/img/in-icon.png" alt="">
+							</div>
 						</div>
 					</div>
 					<div class="miembros-content">
-						<div class="user-img">
-						</div>
-						<h3 class="miembros-titulo">Nombre3</h3>
-						<h4 class="miembros-cargo">Cargo</h4>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus esse qui voluptatem eos reiciendis nesciunt assumenda minima ducimus, doloribus aliquid soluta commodi, quam accusantium officia expedita doloremque. Laborum, eius similique!</p>
-						<div class="redes">
-							<img src="/img/fb-icon.png" alt="">
-							<img src="/img/tw-icon.png" alt="">
-							<img src="/img/in-icon.png" alt="">
-						</div>
-					</div>
-					<div class="miembros-content">
-						<div class="user-img">
-						</div>
-						<h3 class="miembros-titulo">Nombre4</h3>
-						<h4 class="miembros-cargo">Cargo</h4>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus esse qui voluptatem eos reiciendis nesciunt assumenda minima ducimus, doloribus aliquid soluta commodi, quam accusantium officia expedita doloremque. Laborum, eius similique!</p>
-						<div class="redes">
-							<img src="/img/fb-icon.png" alt="">
-							<img src="/img/tw-icon.png" alt="">
-							<img src="/img/in-icon.png" alt="">
+						<div class="div-miembros">
+							<div class="user-img">
+							</div>
+							<h3 class="miembros-titulo">Nombre2</h3>
+							<h4 class="miembros-cargo">Cargo</h4>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus esse qui voluptatem eos reiciendis nesciunt assumenda minima ducimus, doloribus aliquid soluta commodi, quam accusantium officia expedita doloremque. Laborum, eius similique!</p>
+							<div class="redes">
+								<img src="/img/fb-icon.png" alt="">
+								<img src="/img/tw-icon.png" alt="">
+								<img src="/img/in-icon.png" alt="">
+							</div>
 						</div>
 					</div>
 					<div class="miembros-content">
-						<div class="user-img">
-						</div>
-						<h3 class="miembros-titulo">Nombre5</h3>
-						<h4 class="miembros-cargo">Cargo</h4>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus esse qui voluptatem eos reiciendis nesciunt assumenda minima ducimus, doloribus aliquid soluta commodi, quam accusantium officia expedita doloremque. Laborum, eius similique!</p>
-						<div class="redes">
-							<img src="/img/fb-icon.png" alt="">
-							<img src="/img/tw-icon.png" alt="">
-							<img src="/img/in-icon.png" alt="">
+						<div class="div-miembros">
+							<div class="user-img">
+							</div>
+							<h3 class="miembros-titulo">Nombre3</h3>
+							<h4 class="miembros-cargo">Cargo</h4>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus esse qui voluptatem eos reiciendis nesciunt assumenda minima ducimus, doloribus aliquid soluta commodi, quam accusantium officia expedita doloremque. Laborum, eius similique!</p>
+							<div class="redes">
+								<img src="/img/fb-icon.png" alt="">
+								<img src="/img/tw-icon.png" alt="">
+								<img src="/img/in-icon.png" alt="">
+							</div>
 						</div>
 					</div>
 					<div class="miembros-content">
-						<div class="user-img">
+						<div class="div-miembros">
+							<div class="user-img">
+							</div>
+							<h3 class="miembros-titulo">Nombre4</h3>
+							<h4 class="miembros-cargo">Cargo</h4>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus esse qui voluptatem eos reiciendis nesciunt assumenda minima ducimus, doloribus aliquid soluta commodi, quam accusantium officia expedita doloremque. Laborum, eius similique!</p>
+							<div class="redes">
+								<img src="/img/fb-icon.png" alt="">
+								<img src="/img/tw-icon.png" alt="">
+								<img src="/img/in-icon.png" alt="">
+							</div>
 						</div>
-						<h3 class="miembros-titulo">Nombre6</h3>
-						<h4 class="miembros-cargo">Cargo</h4>
-						<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus esse qui voluptatem eos reiciendis nesciunt assumenda minima ducimus, doloribus aliquid soluta commodi, quam accusantium officia expedita doloremque. Laborum, eius similique!</p>
-						<div class="redes">
-							<img src="/img/fb-icon.png" alt="">
-							<img src="/img/tw-icon.png" alt="">
-							<img src="/img/in-icon.png" alt="">
+					</div>
+					<div class="miembros-content">
+						<div class="div-miembros">
+							<div class="user-img">
+							</div>
+							<h3 class="miembros-titulo">Nombre5</h3>
+							<h4 class="miembros-cargo">Cargo</h4>
+							<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Minus esse qui voluptatem eos reiciendis nesciunt assumenda minima ducimus, doloribus aliquid soluta commodi, quam accusantium officia expedita doloremque. Laborum, eius similique!</p>
+							<div class="redes">
+								<img src="/img/fb-icon.png" alt="">
+								<img src="/img/tw-icon.png" alt="">
+								<img src="/img/in-icon.png" alt="">
+							</div>
 						</div>
 					</div>
 				<button class="slick-next">
@@ -85,17 +83,17 @@
 			
 		</div>
 		<ul class="buttons-right">
-		<li class="">
-			<a href="/institucional/quienes-somos">Quienes Somos</a>
+		<li>
+			<a class="" href="/institucional/quienes-somos">Quienes Somos</a>
 		</li>
-		<li class="">
-			<a href="/institucional/estatuto">Estatuto</a>
+		<li>
+			<a class="" href="/institucional/estatuto">Estatuto</a>
 		</li>
-		<li class="active">
-			<a href="/institucional/miembros">Miembros</a>
+		<li>
+			<a  class="active" href="/institucional/miembros">Miembros</a>
 		</li>
-		<li class="">
-			<a href="/institucional/comites">Comites</a>
+		<li>
+			<a class="" href="/institucional/comites">Comites</a>
 		</li>
 		</div>
 		

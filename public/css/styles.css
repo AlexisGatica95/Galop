@@ -220,20 +220,14 @@ a:hover {
     width: 250px;
 }
 
-.buttons-right li{
-    background: #c5dfe0;
-    padding: .5rem;
-    margin: .2rem;
-    border-radius: .4rem;   
-}
 
-.buttons-right li:hover{
+.buttons-right a:hover{
     background: #a0cbcd;
     cursor: pointer;
     transition: .3s;
 }
 
-.buttons-right li.active {
+.buttons-right a.active {
     background-color: #a0cbcd;
 }
 
@@ -247,8 +241,15 @@ a:hover {
 }
 
 .buttons-right a{
- color: #000;
- font-family: 'Josefin Sans', sans-serif;
+    padding: .5rem;
+    color: #000;
+    font-family: 'Josefin Sans', sans-serif;
+    background: #c5dfe0;
+    margin: .2rem;
+    border-radius: .4rem;
+    flex-shrink: 0;
+    width: 250px;
+    display: block;
 }
 
 /* INSTITUCIONAL */
@@ -267,13 +268,10 @@ a:hover {
 }
 
 .miembros-container {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-evenly;
+    width: 100%;
 }
 
-
-.miembros-content {
+.div-miembros{
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -291,19 +289,19 @@ a:hover {
 
 .miembros-content p{
     font-size: .9rem;
+    text-align: center;
 }
 
 .redes img {
     width: 20px;
     height: 20px;
-    margin: 2px;
+    margin-right: .5rem;
 }
 
 .redes {
-    display: flex;
-    justify-content: flex-end;
     width: 100%;
     filter: grayscale(100%);
+    display: flex;
 }
 /*SLICK*/
 .slick-prev:before {
@@ -324,6 +322,7 @@ a:hover {
 /*SLICK*/
 
 /* MIEMBROS */
+
 /* SUBSECCIONES */
 
 /* LOGIN */
@@ -445,11 +444,12 @@ span{
     resize: none;
 }
 
-.left {
+.contacto-left {
     width: 50%;
+    padding-right: 2rem;
 }
 
-.right {
+.contacto-right {
     flex-grow: 1;
 }
 /* CONTACTO */
@@ -460,9 +460,10 @@ span{
         flex-wrap: wrap;
     }
 
-    .left {
+    .contacto-left {
         width: 100%;
         max-width: 500px;
+        padding-bottom: 1rem;
     }
         
 }

@@ -11,7 +11,7 @@
 			<input  type="text" name="mail" class="form-input">
 		</label>
 		<label for="">
-			<span><?= lang('App.login.span_contraseña') ?></span>
+			<span><?= lang('App.login.span_contrasena') ?></span>
 			<input type="password" name="password" class="form-input">
 		</label>
 		<?php if (isset($validation)): ?>
