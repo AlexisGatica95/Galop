@@ -3,7 +3,7 @@
 	Institucional</h1>
 	<div class="content">
 		<div class="about-left">
-			<h3>Miembros</h3>
+			<h3 class="subtitulo-principal">Miembros</h3>
 			<div class="miembros-container">
 				<button class="slick-prev">
 				</button>

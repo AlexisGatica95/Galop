@@ -3,7 +3,7 @@
 	Institucional</h1>
 	<div class="content">
 		<div class="about-left">
-			<h3>Comites</h3>
+			<h3 class="subtitulo-principal">Comites</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus excepturi adipisci in itaque commodi nesciunt ipsum harum mollitia corporis, nam illum dolor nulla atque rerum sit aut quod, minima deserunt!
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus excepturi adipisci in itaque commodi nesciunt ipsum harum mollitia corporis, nam illum dolor nulla atque rerum sit aut quod, minima deserunt!
 			</p>	
@@ -16,7 +16,7 @@
 			<a class="" href="/institucional/estatuto">Estatuto</a>
 		</li>
 		<li>
-			<a class="" href="/institucional/mienbros">Miembros</a>
+			<a class="" href="/institucional/miembros">Miembros</a>
 		</li>
 		<li>
 			<a  class="active" href="/institucional/comites">Comites</a>

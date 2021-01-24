@@ -3,7 +3,7 @@
 	Institucional</h1>
 	<div class="content">
 		<div class="about-left">
-			<h3>Quienes Somos</h3>
+			<h3 class="subtitulo-principal">Quienes Somos</h3>
 			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus excepturi adipisci in itaque commodi nesciunt ipsum harum mollitia corporis, nam illum dolor nulla atque rerum sit aut quod, minima deserunt!
 			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus excepturi adipisci in itaque commodi nesciunt ipsum harum mollitia corporis, nam illum dolor nulla atque rerum sit aut quod, minima deserunt!
 			</p>	

@@ -5,7 +5,11 @@
 
 body{
     height: 100vh;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
+
 
 h1,h2,h3,h4,h5,h6,button,input[type=submit],.btn {
 	font-family: 'Josefin Sans', sans-serif;
@@ -23,6 +27,8 @@ li{
     background-color: #f5a014;
     color: #312004;
 }
+/* HEADER */
+
 .navbar-nav .dropdown-menu {
     left: unset;
     right: 0;
@@ -31,6 +37,13 @@ li{
 .navbar-brand img {
     max-width: 300px;
 }
+
+.navbar-toggler {
+    margin: 0 auto;
+}
+
+
+
 .bg-light {
     background-color: #fff!important;
 }
@@ -122,7 +135,6 @@ li{
     width: 0;
 }
 .hover_underline:hover:after { 
-	/*width: calc(100% - 1.6rem);*/
 	width: calc(100% - 1.6rem - 2%);
     left: .5rem;
 }
@@ -211,6 +223,60 @@ a:hover {
 .lang_switcher {
     margin-right: 10px;
 }
+
+.full-center{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;  
+    height: 100%;  
+}
+
+
+.titulo-principal{
+    background-color: #F5A014;
+    border-radius: 2rem;
+    color: #ffff;
+    padding: 0.5rem 1rem;
+    margin: 2rem 0;
+    display: inline-flex;
+    justify-content: center;
+    font-size: 2rem;
+    position: relative;
+}
+
+.titulo-principal:before{
+    bottom: -5px;
+    content: "";
+    display: block;
+    height: 10px;
+    position: absolute;
+    background: #a2ccce;
+    width: 50%;
+    border-radius: 5px;
+    right: 5px;
+}
+
+.titulo-principal:after{
+    bottom: -5px;
+    right: -11px;
+    position: absolute;
+    content: "";
+    width: 10px;
+    height: 10px;
+    background-color: #F5A014;
+    border-radius: 5px;
+    z-index: -1;
+}
+
+.full-center{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+
+/*------------SECCIONES------------- */
 /* INSTITUCUIONAL  */
 .buttons-right {
     display: flex;
@@ -238,6 +304,7 @@ a:hover {
 .about-left {
     width: 100%;
     padding-right: 1rem;
+    min-width: 1px;
 }
 
 .buttons-right a{
@@ -252,8 +319,37 @@ a:hover {
     display: block;
 }
 
+.subtitulo-principal{
+    padding: 1rem 0 2rem;
+}
+
+.form-input{
+    border:none;
+    width: 100%;
+    padding: 8px;
+    height: 40px;
+    display: flex;
+    margin-bottom: .8rem;
+}
+
+.form-button{
+    background-color: #f5a014;
+    font-size: 1.3rem;
+    border-radius: 5px;
+    cursor: pointer;
+    color: white;
+    padding: .2rem 1rem;
+    border: none;
+}
+
+.form-button:hover{
+    background-color: #db992e;
+    transition: all .3s;
+}
+
 /* INSTITUCIONAL */
-/* SUBSECCIONES */
+
+/* --- SUBSECCIONES --- */
 /* MIEMBROS */
 .user-img{
     background-image: url(https://animapedia.org/wp-content/uploads/2018/07/nutria-e1530713724900.jpg);
@@ -303,6 +399,7 @@ a:hover {
     filter: grayscale(100%);
     display: flex;
 }
+
 /*SLICK*/
 .slick-prev:before {
     content: '←';
@@ -323,8 +420,44 @@ a:hover {
 
 /* MIEMBROS */
 
-/* SUBSECCIONES */
+/* --- SUBSECCIONES --- */
 
+/* CONTACTO */
+.form-container {
+    display: flex;
+    margin-top: 1rem;
+}
+
+.form-contacto {
+    background-color: #d9eaeb;
+    padding: 2rem 1.5rem;
+    display: flex;
+    flex-direction: column;
+    border-radius: 2rem;
+    align-items: center;
+}
+
+
+.form-contacto>label,.form-contacto .form-input{
+    width: 100%;
+}
+
+.form-contacto textarea{
+    height: 130px;
+    resize: none;
+}
+
+.contacto-left {
+    width: 50%;
+    padding-right: 2rem;
+}
+
+.contacto-right {
+    flex-grow: 1;
+}
+/* CONTACTO */
+
+/*------------ USERS------------- */
 /* LOGIN */
 
 .form-login{
@@ -356,124 +489,106 @@ span{
 }
 
 /* LOGIN */
-
-.bloque-form{
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-}
-
-.titulo-principal{
-    background-color: #F5A014;
-    border-radius: 2rem;
-    color: #ffff;
-    padding: 0.5rem 1rem;
-    margin: 2rem 0;
-    display: inline-flex;
-    justify-content: center;
-    font-size: 2rem;
-    position: relative;
-}
-
-.titulo-principal:before{
-    bottom: -5px;
-    content: "";
-    display: block;
-    height: 10px;
-    position: absolute;
-    background: #a2ccce;
-    width: 50%;
-    border-radius: 5px;
-    right: 5px;
-}
-
-.titulo-principal:after{
-    bottom: -5px;
-    right: -11px;
-    position: absolute;
-    content: "";
-    width: 10px;
-    height: 10px;
-    background-color: #F5A014;
-    border-radius: 5px;
-    z-index: -1;
-}
-
-/* CONTACTO */
-.form-container {
-    display: flex;
-    margin-top: 1rem;
-}
-
-.form-contacto {
-    background-color: #d9eaeb;
-    padding: 2rem 1.5rem;
-    display: flex;
-    flex-direction: column;
-    border-radius: 2rem;
-    align-items: center;
-}
-
-.form-input{
-    border:none;
-    width: 100%;
-    padding: 8px;
-    height: 40px;
-    display: flex;
-    margin-bottom: .8rem;
-}
-
-.form-button{
-    background-color: #f5a014;
-    font-size: 1.3rem;
-    border-radius: 5px;
-    cursor: pointer;
-    color: white;
-    padding: .2rem 1rem;
-    border: none;
-}
-
-.form-contacto>label,.form-contacto .form-input{
-    width: 100%;
-}
-
-.form-contacto textarea{
-    height: 130px;
-    resize: none;
-}
-
-.contacto-left {
-    width: 50%;
-    padding-right: 2rem;
-}
-
-.contacto-right {
-    flex-grow: 1;
-}
-/* CONTACTO */
-
-@media(max-width : 770px){
-    /* CONTACTO */
-    .form-container {
-        flex-wrap: wrap;
+/*------------ USERS------------- */
+    @media(max-width : 990px){ 
+        li.nav-item.dropdown {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+            align-items: flex-start;
+        }
     }
 
-    .contacto-left {
-        width: 100%;
-        max-width: 500px;
-        padding-bottom: 1rem;
+    @media(max-width : 770px){
+
+        /* CONTACTO */
+        .form-container {
+            flex-wrap: wrap;
+        }
+
+        .contacto-left {
+            width: 100%;
+            max-width: 500px;
+            padding-bottom: 1rem;
+        }
+
+        /* MIEMBROS */
+        .content {
+            flex-direction: column-reverse;
+        }
+
+        .buttons-right {
+            flex-direction: row;
+            width: 100%;
+            flex-wrap: wrap;
+        }
+
+        .buttons-right li{
+            margin-right: .5rem;
+        }
+
+        .buttons-right a {
+            width: 100%;
+        }
     }
+
+    @media (max-width: 460px){
+        /* LOGIN */
+        .form-login {
+            margin: .8rem .5rem;
+            padding: 1rem;
+        }
+
+        .nav-item {
+            display: block;
+        }
+
+        .mr-auto, .mx-auto {
+            text-align: center;
+        }
+
+       .dropdown-menu {
+            position: static;
+            width: 100%;
+            float: none;
+        }
+
+        .lang_switcher {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 0px;
+        }
         
-}
+        
+        .nav-item.dropdown {
+            display: flex;
+            justify-content: center;
+        }
 
-@media (max-width: 500px){
-    /* LOGIN */
-    .form-login {
-        margin: .8rem .5rem;
-        padding: 1rem;
+        .navbar-nav .dropdown-menu {
+
+            margin-left: auto;
+            margin-right: auto;
+            text-align: center;
+
+        }
+
+        a#dd-user {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            width: 100%;
+        }
+
+        .dropdown-toggle::after {
+            margin-left: 1rem;
+        }
     }
 
+    @media (max-width: 400px){
+        .navbar-toggler {
+            width: 100%;
+        }
+    }
 }
-

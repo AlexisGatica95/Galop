@@ -1,4 +1,4 @@
-<div class="bloque-form">
+<div class="container full-center">
 	<form action="" class="form-login max-w" method="POST">
 		<label for="">
 			<span><?= lang('App.registro.span_nombre') ?></span>
