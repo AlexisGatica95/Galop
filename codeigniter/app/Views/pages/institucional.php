@@ -3,23 +3,24 @@
 	Institucional</h1>
 	<div class="content">
 		<div class="about-left">
-			<h3 class="subtitulo-principal">El grupo</h3>
-			<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus excepturi adipisci in itaque commodi nesciunt ipsum harum mollitia corporis, nam illum dolor nulla atque rerum sit aut quod, minima deserunt!
-			Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus excepturi adipisci in itaque commodi nesciunt ipsum harum mollitia corporis, nam illum dolor nulla atque rerum sit aut quod, minima deserunt!
+			<p>En el año 2008, a partir de una iniciativa del Children’s Oncology Group (COG), se crea el GALOP (Grupo de América Latina de Oncología Pediátrica) con la participación de centros terciarios de derivación de Argentina, Brasil, Uruguay y Chile. Esta iniciativa fue inicialmente concebida con fuerte apoyo de los Dres Yaddanapoudi Ravindranath y Gregory Reaman, para crear un marco para la participación en protocolos internacionales del COG como el retinoblastoma, pero rápidamente se constituyó en una plataforma para realizar ensayos clínicos independientes en tumores sólidos en la región, llevando adelante protocolos en otros tumores como el osteosarcoma, tumores raros y sarcoma de Ewing . En octubre de 2018, GALOP se constituye como una Asociación Científica en Montevideo, Uruguay nombrando a su comisión directiva a cargo de los Dres Luis Castillo y Guillermo Chantada completando el “board” Marcelo Scopinaro, Milena Villarroel, Agustin Dabezies y Algemir Brunetto. En el año 2020, se renuevan las autoridades siendo la Dra  Milena Villarroel y el Dr Guillermo Chantada elegidos como chair y co-chair respectivamente y los Dres Luis Castillo, Luiz Fernando Lopes, Pedro Zubizarreta y Lauro Gregianin completando el board.
 			</p>	
 		</div>
 		<ul class="buttons-right">
-			<li class="active">
-				<a href="">Quienes Somos</a>
+			<li >
+				<a class="active" href="">Institucional</a>
 			</li>
-			<li class="">
-				<a href="/institucional/estatuto">Estatuto</a>
+			<li>
+				<a class="" href="/institucional/autoridades">Autoridades</a>
 			</li>
-			<li class="">
-				<a href="/institucional/miembros">Miembros</a>
+			<li>
+				<a class="" href="/institucional/mision">Misión</a>
 			</li>
-			<li class="">
-				<a href="/institucional/comites">Comites</a>
+			<li>
+				<a class="" href="/institucional/vision">Visión</a>
+			</li>
+			<li>
+				<a class="" href="/institucional/objetivos">Objetivos</a>
 			</li>
 		</div>
 		

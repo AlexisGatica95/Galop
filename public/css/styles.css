@@ -352,15 +352,17 @@ a:hover {
 /* --- SUBSECCIONES --- */
 /* MIEMBROS */
 .user-img{
-    background-image: url(https://animapedia.org/wp-content/uploads/2018/07/nutria-e1530713724900.jpg);
-    width: 120px;
+    background-image: url(https://image.flaticon.com/icons/png/512/64/64572.png);
     height: 130px;
+    width: 130px;
     border-radius: 50%;
     background-position: center;
     background-repeat: no-repeat;
     background-size: cover;
     margin: 1rem 0;
     border: 1px solid #80808047;
+    opacity: 10%;
+
 }
 
 .miembros-container {
@@ -401,13 +403,6 @@ a:hover {
 }
 
 /*SLICK*/
-.slick-prev:before {
-    content: '←';
-}
-
-.slick-next:before {
-    content: '→';
-}
 
 .miembros-container .slick-prev:before,.miembros-container .slick-next:before{
     font-family: 'slick';
