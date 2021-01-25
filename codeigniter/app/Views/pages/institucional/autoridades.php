@@ -5,7 +5,7 @@
 		<div class="about-left">
 			<h3 class="subtitulo-principal">Autoridades</h3>
 			<div class="miembros-container">
-					<div class="miembros-content">
+					
 						<div class="div-miembros">
 							<div class="user-img">
 							</div>
@@ -18,8 +18,8 @@
 								<img src="/img/in-icon.png" alt="">
 							</div>
 						</div>
-					</div>
-					<div class="miembros-content">
+					
+					
 						<div class="div-miembros">
 							<div class="user-img">
 							</div>
@@ -32,8 +32,8 @@
 								<img src="/img/in-icon.png" alt="">
 							</div>
 						</div>
-					</div>
-					<div class="miembros-content">
+					
+					
 						<div class="div-miembros">
 							<div class="user-img">
 							</div>
@@ -46,8 +46,8 @@
 								<img src="/img/in-icon.png" alt="">
 							</div>
 						</div>
-					</div>
-					<div class="miembros-content">
+					
+					
 						<div class="div-miembros">
 							<div class="user-img">
 							</div>
@@ -60,8 +60,8 @@
 								<img src="/img/in-icon.png" alt="">
 							</div>
 						</div>
-					</div>
-					<div class="miembros-content">
+					
+					
 						<div class="div-miembros">
 							<div class="user-img">
 							</div>
@@ -74,8 +74,8 @@
 								<img src="/img/in-icon.png" alt="">
 							</div>
 						</div>
-					</div>
-					<div class="miembros-content">
+					
+					
 						<div class="div-miembros">
 							<div class="user-img">
 							</div>
@@ -88,7 +88,7 @@
 								<img src="/img/in-icon.png" alt="">
 							</div>
 						</div>
-					</div>						
+											
 			</div>
 			
 		</div>

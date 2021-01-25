@@ -303,7 +303,7 @@ a:hover {
 
 .about-left {
     width: 100%;
-    padding-right: 1rem;
+    padding-right: 2rem;
     min-width: 1px;
 }
 
@@ -320,7 +320,7 @@ a:hover {
 }
 
 .subtitulo-principal{
-    padding: 1rem 0 2rem;
+    padding: .5rem 0;
 }
 
 .form-input{
@@ -353,8 +353,8 @@ a:hover {
 /* MIEMBROS */
 .user-img{
     background-image: url(https://image.flaticon.com/icons/png/512/64/64572.png);
-    height: 130px;
-    width: 130px;
+    height: 80px;
+    width: 80px;
     border-radius: 50%;
     background-position: center;
     background-repeat: no-repeat;
@@ -366,11 +366,18 @@ a:hover {
 }
 
 .miembros-container {
+    flex-wrap: wrap;
+    display: flex;
     width: 100%;
+    justify-content: center;
+
 }
 
 .div-miembros{
+    flex-basis: 200px;
+    flex-grow: 1;
     display: flex;
+    flex-shrink: 1;
     flex-direction: column;
     align-items: center;
     padding: 1rem;
@@ -400,6 +407,7 @@ a:hover {
     width: 100%;
     filter: grayscale(100%);
     display: flex;
+    justify-content: center;
 }
 
 /*SLICK*/
@@ -525,6 +533,15 @@ span{
         .buttons-right a {
             width: 100%;
         }
+
+        .about-left{
+            padding-right: 0;
+        }
+
+        .miembros-container {
+            justify-content: space-evenly;
+        }
+
     }
 
     @media (max-width: 460px){
