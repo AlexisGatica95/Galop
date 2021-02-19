@@ -1,9 +1,9 @@
 <div class="container">
 	<h1 class="titulo-principal">
-	Institucional</h1>
+	<?=lang("App.menu_institucional")?></h1>
 	<div class="content">
 		<div class="about-left">
-			<h3 class="subtitulo-principal">Autoridades</h3>
+			<h3 class="subtitulo-principal"><?=ucfirst(lang("App.institucional.autoridades"))?></h3>
 			<div class="miembros-container">
 					
 						<div class="div-miembros">
@@ -94,19 +94,19 @@
 		</div>
 		<ul class="buttons-right">
 		<li >
-			<a class="" href="">Institucional</a>
+			<a class="" href="/<?=$locale?>/institucional/"><?=lang("App.menu_institucional")?></a>
 		</li>
 		<li>
-			<a class="active" href="/institucional/autoridades">Autoridades</a>
+			<a class="active" href="/<?=$locale?>/institucional/autoridades"><?=ucfirst(lang("App.institucional.autoridades"))?></a>
 		</li>
 		<li>
-			<a class="" href="/institucional/mision">Misión</a>
+			<a class="" href="/<?=$locale?>/institucional/mision"><?=ucfirst(lang("App.institucional.mision"))?></a>
 		</li>
 		<li>
-			<a class="" href="/institucional/vision">Visión</a>
+			<a class="" href="/<?=$locale?>/institucional/vision"><?=ucfirst(lang("App.institucional.vision"))?></a>
 		</li>
 		<li>
-			<a class="" href="/institucional/objetivos">Objetivos</a>
+			<a class="" href="/<?=$locale?>/institucional/objetivos"><?=ucfirst(lang("App.institucional.objetivos"))?></a>
 		</li>
 		</div>
 		

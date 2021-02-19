@@ -19,35 +19,37 @@ $uri = service('uri');
 				<img src="/img/logo.png" alt="GALOP">
 			</a>
 			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
+				<!-- <span class="navbar-toggler-icon"></span> -->
+				<span class="toggle-menu"><?= ucfirst(lang("App.menu")) ?></span>
 			</button>
 
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item active">
-						<a class="nav-link hover_underline" href="/institucional/"><?= lang('App.menu_institucional') ?></span></a>
+						<a class="nav-link hover_underline" href="/<?=$locale?>/institucional/"><?= lang('App.menu_institucional') ?></span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link hover_underline" href="/noticias/"><?= lang('App.menu_noticias') ?></a>
+						<a class="nav-link hover_underline" href="/<?=$locale?>/noticias/"><?= lang('App.menu_noticias') ?></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link hover_underline" href="/eventos/"><?= lang('App.menu_eventos') ?></a>
+						<a class="nav-link hover_underline" href="#"><?= lang('App.menu_eventos') ?></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link hover_underline" href="/contacto/"><?= lang('App.menu_contacto') ?></a>
+						<a class="nav-link hover_underline" href="<?php if (isset($locale)){echo "/".$locale;} ?>/contacto/"><?= lang('App.menu_contacto') ?></a>
 					</li>
 				</ul>
 				<ul class="navbar-nav">
 					<li class="nav-item lang_switcher">
-						<a href="" class="nav-link">
+						<a href="<?php if (isset($ruta_es)){echo $ruta_es;} ?>" class="nav-link">
 							<img src="/img/es.png" alt="espanol">
 						</a>
-						<a href="" class="nav-link">
+						<a href="<?php if(isset($ruta_en)){echo($ruta_en);} ?>" class="nav-link">
 							<img src="/img/en.png" alt="english">
 						</a>
 					</li>
+					
 					<li class="nav-item">
-						<a href="/blog/create/" class="nav-link btn btn-1"><?= lang('App.menu_protocolos') ?></a>
+						<a href="#" class="nav-link btn btn-1"><?= lang('App.menu_protocolos') ?></a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" href="#" id="dd-user" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -59,9 +61,9 @@ $uri = service('uri');
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="/<?= $locale ?>/logout">Cerrar sesi&oacute;n</a>
 							<?php else: ?>
-								<a class="dropdown-item" href="/<?= $locale ?>/registro">Registro</a>
+								<a class="dropdown-item" href="/<?= $locale ?>/registro"><?= ucfirst(lang("App.menu_registro")) ?></a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="/<?= $locale ?>/login">Iniciar sesi&oacute;n</a>
+								<a class="dropdown-item" href="/<?= $locale ?>/login"><?= ucfirst(lang("App.menu_login")) ?></a>
 							<?php endif ?>
 							
 						</div>

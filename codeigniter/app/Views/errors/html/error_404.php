@@ -1,84 +1,124 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-	<meta charset="utf-8">
-	<title>404 Page Not Found</title>
-
+	<meta charset="UTF-8">
+	<title>Sitio web en construcci&oacute;n</title>
+	<link rel="icon" type="image/png" href="/favicon.png">
+	<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0">
+	<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,700&display=swap" rel="stylesheet">
 	<style>
-	div.logo {
-		height: 200px;
-		width: 155px;
-		display: inline-block;
-		opacity: 0.08;
-		position: absolute;
-		top: 2rem;
-		left: 50%;
-		margin-left: -73px;
-	}
-	body {
-		height: 100%;
-		background: #fafafa;
-		font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-		color: #777;
-		font-weight: 300;
-	}
-	h1 {
-		font-weight: lighter;
-		letter-spacing: 0.8;
-		font-size: 3rem;
-		margin-top: 0;
-		margin-bottom: 0;
-		color: #222;
-	}
-	.wrap {
-		max-width: 1024px;
-		margin: 5rem auto;
-		padding: 2rem;
-		background: #fff;
-		text-align: center;
-		border: 1px solid #efefef;
-		border-radius: 0.5rem;
-		position: relative;
-	}
-	pre {
-		white-space: normal;
-		margin-top: 1.5rem;
-	}
-	code {
-		background: #fafafa;
-		border: 1px solid #efefef;
-		padding: 0.5rem 1rem;
-		border-radius: 5px;
-		display: block;
-	}
-	p {
-		margin-top: 1.5rem;
-	}
-	.footer {
-		margin-top: 2rem;
-		border-top: 1px solid #efefef;
-		padding: 1em 2em 0 2em;
-		font-size: 85%;
-		color: #999;
-	}
-	a:active,
-	a:link,
-	a:visited {
-		color: #dd4814;
-	}
-</style>
+		* {
+		    font-family: Montserrat;
+		    margin: 0;
+		    padding: 0;
+		}
+		body {
+		    display: flex;
+		    justify-content: center;
+		    align-items: center;
+		    min-height: 100vh;
+		    overflow: hidden;
+		}
+		#contenido {
+		    padding: 1rem;
+		    display: flex;
+		    flex-direction: column;
+		    justify-content: center;
+		    align-items: center;
+		    text-align: center;
+		    line-height: 2.1rem;
+		}
+		#contenido img {
+		    max-width: 100%;
+		}
+		h1 {
+		    margin-top: 2rem;
+		    font-weight: 500;
+		}
+		div#nodo1 {
+		    position: absolute;
+		    top: 0;
+		    left: 0;
+		    border-right: 5px solid black;
+		    border-bottom: 5px solid black;
+		    width: 25%;
+		    height: 3rem;
+		}
+		div#c1 {
+		    position: absolute;
+		    bottom: -10.5px;
+		    right: -10.5px;
+		    width: 10px;
+		    height: 10px;
+		    border: 5px solid black;
+		    background-color: #bc0000;
+		    border-radius: 50%;
+		}
+		#nodo2 {
+		    position: absolute;
+		    top: 0;
+		    right: 0;
+		    border-left: 5px solid black;
+		    border-bottom: 5px solid black;
+		    width: 12%;
+		    height: 6rem;
+		}
+		div#c2 {
+		    position: absolute;
+		    bottom: -10.5px;
+		    left: -10.5px;
+		    width: 10px;
+		    height: 10px;
+		    border: 5px solid black;
+		    background-color: #bc0000;
+		    border-radius: 50%;
+		}
+		div#c3 {
+		    position: absolute;
+		    top: -10.5px;
+		    left: -10.5px;
+		    width: 10px;
+		    height: 10px;
+		    border: 5px solid black;
+		    background-color: #bc0000;
+		    border-radius: 50%;
+		}
+		div#c4 {
+		    position: absolute;
+		    top: -10.5px;
+		    right: -10.5px;
+		    width: 10px;
+		    height: 10px;
+		    border: 5px solid black;
+		    background-color: #bc0000;
+		    border-radius: 50%;
+		}
+		div#nodo3 {
+		    position: absolute;
+		    bottom: 0;
+		    /* right: 0; */
+		    border-left: 5px solid black;
+		    border-right: 5px solid black;
+		    border-top: 5px solid black;
+		    width: 50%;
+		    height: 3rem;
+		}
+	</style>
 </head>
 <body>
-	<div class="wrap">
-		<h1>404 - File Not Found</h1>
-
-		<p>
-			<?php if (! empty($message) && $message !== '(null)') : ?>
-				<?= esc($message) ?>
-			<?php else : ?>
-				Sorry! Cannot seem to find the page you were looking for.
-			<?php endif ?>
-		</p>
+	<div id="nodo1">
+		<div id="c1"></div>
+	</div>
+	<div id="nodo2">
+		<div id="c2"></div>
+	</div>
+	<div id="contenido">
+		<img src="https://www.nodorojo.com/w2020/img/NR_logo.png" alt="Nodo Rojo">
+		<h1>Sitio web en construcci&oacute;n</h1>
+	</div>
+	<div id="nodo3">
+		<div id="c3"></div>
+		<div id="c4"></div>
 	</div>
 </body>
 </html>

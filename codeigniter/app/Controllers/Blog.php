@@ -4,13 +4,13 @@ use App\Models\BlogModel;
 
 class Blog extends BaseController
 {
-	// public function index()
-	// {
-	// 	// return view('welcome_message');
-	// 	echo view('templates/header');
-	// 	echo view('pages/home');
-	// 	echo view('templates/footer');
-	// }
+	public function index()
+	{
+		// return view('welcome_message');
+		echo view('templates/header');
+		echo view('pages/home');
+		echo view('templates/footer');
+	}
 
 	public function post($slug)
 	{
@@ -18,6 +18,13 @@ class Blog extends BaseController
 		// 	// no existe la pag
 		// 	throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
 		// }
+
+		$locale = $this->request->getLocale();
+
+		$data['locale'] = $locale;
+		$data['ruta_es'] = '/es/admin/noticia';
+		$data['ruta_en'] = '/en/admin/noticia';
+
 		$model = new BlogModel();
 		$data['post'] = $model->getPosts($slug);
 

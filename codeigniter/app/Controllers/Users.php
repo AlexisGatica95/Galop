@@ -10,6 +10,8 @@ class Users extends BaseController
 		$locale = $this->request->getLocale();
 		helper(['form']);
 		$data['locale'] = $locale;
+		$data['ruta_es'] = '/es/login';
+		$data['ruta_en'] = '/en/login';
 
 		if ($this->request->getMethod() == 'post') {
 			$rules = [
@@ -60,6 +62,8 @@ class Users extends BaseController
 		$locale = $this->request->getLocale();
 
 		$data['locale'] = $locale;
+		$data['ruta_es'] = '/es/registro';
+		$data['ruta_en'] = '/en/registro';
 
 		if ($this->request->getMethod() == 'post') {
 			$rules = [
@@ -98,6 +102,8 @@ class Users extends BaseController
 		$locale = $this->request->getLocale();
 		helper(['form']);
 		$data['locale'] = $locale;
+		$data['ruta_es'] = '/es/perfil';
+		$data['ruta_en'] = '/en/perfil';
 		session();
 
 		echo view('templates/header',$data);

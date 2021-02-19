@@ -26,7 +26,7 @@
 		</div>
 		<?php endif ?>
 		<div class="button">
-			<input type="submit" class="form-button" value="registrarme">
+			<input type="submit" class="form-button" value="<?= lang('App.registro.enviar') ?>">
 		</div>
 	</form>
 </div>
