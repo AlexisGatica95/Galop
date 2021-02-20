@@ -2,9 +2,9 @@
     <table  class='w-100 noticias-tabla' >
         <tr>
             <th class='tbl-noti-checkbox'></th>
-            <th class='tbl-noti-date'>Fecha</th>
-            <th class='tbl-noti-titulo'>Titulo</th>
-            <th class='tbl-noti-status'>Estado</th>
+            <th class='tbl-noti-date'><?= ucfirst(lang("Admin.tabla.fecha"))?></th>
+            <th class='tbl-noti-titulo'><?= ucfirst(lang("Admin.tabla.titulo"))?></th>
+            <th class='tbl-noti-status'><?= ucfirst(lang("Admin.tabla.estado"))?></th>
         </tr>
         <?php foreach($noticias as $noticia): ?>
         <tr>

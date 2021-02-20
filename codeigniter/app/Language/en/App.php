@@ -48,6 +48,10 @@ return [
 		'titulo'=> 'title',
 		'contenido'=>'body',
 		'crear'=>'create'
+	],
+	'menu-admin' => [
+		'titulo_crear'=> 'create new entry',
+		'noticias'=> 'news'
 	]
 	
 ]

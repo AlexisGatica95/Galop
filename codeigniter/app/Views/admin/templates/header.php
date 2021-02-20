@@ -11,15 +11,22 @@ $uri = service('uri');
 	<link rel="stylesheet" href="/css/admin-styles.css?v=0">
 	<link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
+	<link rel="stylesheet" type="text/css" href="/css/summernote.min.css"/>
 </head>
 <body>
 <div class="barra">
-	<img src="/img/logo.png" alt="GALOP">
-	<li>
-		<ul><a href="/admin/noticia">Crear Noticia</a></ul>
-		<ul><a href="/admin/ver/noticias">Noticias</a></ul>
-		<ul><a href="#">Protocolos</a></ul>
-		<ul><a href="#">Jejox</a> </ul>
+	<img src="/img/logo.png" class='logo' alt="GALOP">
+	<li class="menu-barra">
+		<ul><a href="/admin/noticia"><?= ucfirst(lang("Admin.menu.titulo_crear"))?></a></ul>
+		<ul><a href="/admin/ver/noticias"><?= ucfirst(lang("Admin.menu.noticias"))?></a></ul>
+	</li>
+	<li class="nav-item lang_switcher">
+		<a href="" class="nav-link">
+			<img src="/img/es.png" alt="espanol">
+		</a>
+		<a href="" class="nav-link">
+			<img src="/img/en.png" alt="english">
+		</a>
 	</li>
 </div>
 
