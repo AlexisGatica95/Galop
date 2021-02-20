@@ -622,7 +622,8 @@ span{
     }
 
     .timestamp {
-        color:#d6d6d6;
+        color: #a0a0a0;
+        font-size: .9rem;
     }
 
     .item-button{

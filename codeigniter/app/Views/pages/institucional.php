@@ -8,7 +8,7 @@
 		</div>
 		<ul class="buttons-right">
 			<li >
-				<a class="active" href="/<?=$locale?>/institucional/"><?=lang("App.menu_institucional")?></a>
+				<a class="active" href="/<?=$locale?>/institucional/"><?=ucfirst(lang("App.menu_institucional"))?></a>
 			</li>
 			<li>
 				<a class="" href="/<?=$locale?>/institucional/autoridades"><?=ucfirst(lang("App.institucional.autoridades"))?></a>

@@ -10,7 +10,10 @@
         </div>
         
         
-    <?php endforeach ?>    
+    <?php endforeach ?>
+    <div class="paginacion">
+
+    </div>
     </div>
 
 </div>

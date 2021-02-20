@@ -8,9 +8,10 @@ class NoticiasModel extends Model {
 
 	public function getPosts($slug = null) {
 		if (!$slug) {
-			return $this->asArray()
+			$res = $this->asArray()
                         ->where(['type' => 'noticia'])
-                        ->findAll();
+						->findAll();
+			return array_chunk($res,3,true);
 		}
 
 		return $this->asArray()

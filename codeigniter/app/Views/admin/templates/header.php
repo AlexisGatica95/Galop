@@ -21,10 +21,10 @@ $uri = service('uri');
 		<ul><a href="/admin/ver/noticias"><?= ucfirst(lang("Admin.menu.noticias"))?></a></ul>
 	</li>
 	<li class="nav-item lang_switcher">
-		<a href="" class="nav-link">
+		<a href="<?php if (isset($ruta_es)){echo $ruta_es;} ?>" class="nav-link">
 			<img src="/img/es.png" alt="espanol">
 		</a>
-		<a href="" class="nav-link">
+		<a href="<?php if(isset($ruta_en)){echo($ruta_en);} ?>" class="nav-link">
 			<img src="/img/en.png" alt="english">
 		</a>
 	</li>

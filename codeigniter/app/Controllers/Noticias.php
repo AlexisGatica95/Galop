@@ -13,10 +13,18 @@ class Noticias extends BaseController
 		$data['ruta_en'] = '/en/noticias/';
 		$model = new NoticiasModel();
 		$noticias = $model->getPosts();
+		$page = 0;
+		if (isset($_GET['p'])) {
+			$page = $_GET['p'] - 1;
+		}
+		if (!array_key_exists($page,$noticias)) {
+			$page = 0;
+		}
+		$noticias = $noticias[$page];
 		$longitud_extracto = 250;
 
 		foreach ($noticias as $key => $noticia) {
-			$extracto = substr($noticia['body'],0,$longitud_extracto);
+			$extracto = substr(strip_tags($noticia['body'], '<br>'),0,$longitud_extracto);
 			if (strlen($extracto)>=$longitud_extracto) {
 				$extracto .= '…';
 			}
