@@ -3,7 +3,8 @@
 use App\Models\NoticiasModel;
 
 class Noticias extends BaseController
-{
+{	
+	//trae todos los post paginados con status 1
 	public function index()
 	{	
 		$locale = $this->request->getLocale();
@@ -12,7 +13,7 @@ class Noticias extends BaseController
 		$data['ruta_es'] = '/es/noticias/';
 		$data['ruta_en'] = '/en/noticias/';
 		$model = new NoticiasModel();
-		$noticias = $model->getPosts();
+		$noticias = $model->getPostsPaginados();
 		$page = 0;
 		if (isset($_GET['p'])) {
 			$page = $_GET['p'] - 1;
@@ -38,6 +39,7 @@ class Noticias extends BaseController
 		echo view('templates/footer');
 	}
 
+	//trae la noticia en si
 	public function noticia($slug)
 	{
 		// if (! is_file(APPPATH.'/Views/pages/'.$page.'.php')) {
@@ -52,13 +54,14 @@ class Noticias extends BaseController
 		$data['ruta_en'] = '/en/noticias/'.$slug;
 
 		$model = new NoticiasModel();
-		$data['noticia'] = $model->getPosts($slug);
+		$data['noticia'] = $model->getPost($slug);
 		
 		echo view('templates/header',$data);
 		echo view('noticia');
 		echo view('templates/footer');
 	}
 
+	//quiero que me traiga todas las noticias con parametro traduccion_de = NULL
 	public function create()
 	{
 		$locale = $this->request->getLocale();
@@ -69,10 +72,12 @@ class Noticias extends BaseController
 
 		helper('form');
 		$model = new NoticiasModel();
+		$data['notis'] = $model->getPostsParents();
 
 		if (!$this->validate([
-			'title' => 'required|min_length[3]|max_length[255]',
-			'body' => 'required'
+			'title' => 'required|max_length[255]',
+			'body' => 'required',
+			'idioma_select' => 'required'
 		])) {
 			echo view('admin/templates/header',$data);
 			echo view('admin/crear_noticia');
@@ -83,7 +88,9 @@ class Noticias extends BaseController
 					'title' => $this->request->getVar('title'),
 					'body' => $this->request->getVar('body'),
 					'slug' => url_title($this->request->getVar('title')),
-					'type'=>'noticia'
+					'type' =>'noticia',
+					'status' => $this->request->getVar('estado'),
+					'idioma' => $this->request->getVar('lang')
 				]
 			);
 			$session = \Config\Services::session();
@@ -92,14 +99,25 @@ class Noticias extends BaseController
 		}
 	}
 
-	public function noticias(){
+	//quiero que me traiga las noticias 
+	public function adminNoticias(){
 		$locale = $this->request->getLocale();
 
 		$data['locale'] = $locale;
 		$data['ruta_es'] = '/es/admin/noticias/';
 		$data['ruta_en'] = '/en/admin/noticias/';
 		$model = new NoticiasModel();
+		$model = new NoticiasModel();
+		//cambiar
 		$noticias = $model->getPosts();
+		$page = 0;
+		if (isset($_GET['p'])) {
+			$page = $_GET['p'] - 1;
+		}
+		if (!array_key_exists($page,$noticias)) {
+			$page = 0;
+		}
+		$noticias = $noticias[$page];
 		$data['noticias'] = $noticias;
 		// return view('welcome_message');
 		echo view('admin/templates/header',$data);

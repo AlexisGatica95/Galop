@@ -63,8 +63,8 @@ $routes->match(['get','post'],'{locale},admin','Noticas::crate');
 $routes->match(['get','post'],'admin/noticia', 'Noticias::create');
 $routes->match(['get','post'],'{locale}/admin/noticia', 'Noticias::create');
 //Noticias
-$routes->match(['get','post'],'admin/ver/noticias', 'Noticias::noticias');
-$routes->match(['get','post'],'{locale}/admin/ver/noticias', 'Noticias::noticias');
+$routes->match(['get','post'],'admin/ver/noticias', 'Noticias::adminNoticias');
+$routes->match(['get','post'],'{locale}/admin/ver/noticias', 'Noticias::adminNoticias');
 
 //Login/Logout y Registro
 $routes->match(['get','post'],'{locale}/registro','Users::registro');
