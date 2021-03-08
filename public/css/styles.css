@@ -35,6 +35,7 @@ li{
     left: unset;
     right: 0;
     min-width: unset;
+    position: absolute;
 }
 .navbar-brand img {
     max-width: 300px;
@@ -231,7 +232,7 @@ a:hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;  
-    height: 100%;  
+    /* height: 100%;   */
 }
 
 
@@ -530,6 +531,154 @@ span{
     white-space: nowrap;
 }
 /* LOGIN */
+
+/* ari */
+.galop_form {
+    max-width: 800px;
+    background-color: #d9eaeb;
+    margin: 20px;
+    padding: 25px;
+    border-radius: 20px;
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+}
+.galop_form label {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+    padding: 5px 10px;
+    min-width: 130px;
+}
+.galop_form label.full {
+    flex-basis: 100%;
+    flex-shrink: 0;
+}
+.galop_form label.sm {
+    flex-shrink: 3;
+}
+.galop_form .opciones {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 10px -5px;
+}
+.galop_form .opciones .col {
+    width: calc(100% / 3);
+    padding: 0 5px;
+}
+.galop_form .opciones .col label, label[for=consent_contacto] {
+    padding: 0;
+    flex-direction: row;
+    align-items: baseline;
+    font-size: .9rem;
+    justify-content: flex-start;
+}
+.galop_form .opciones .col label input, label[for=consent_contacto] input {
+    margin-right: 5px;
+    position: relative;
+    top: 2px;
+}
+[for=consent_contacto] {
+    flex-direction: row!important;
+    padding: 10px!important;
+    font-size: .9rem!important;
+}
+.galop_form .bottom {
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-direction: column;
+    align-items: center;
+}
+.galop_form h5 {
+    margin: 10px 0 0px;
+}
+input[type="text"], input[type="email"], input[type="password"], .ss-single-selected, .ss-multi-selected {
+    border: none!important;
+    height: 34px!important;
+    border-radius: 5px;
+    padding: 5px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+.ss-single-selected .placeholder, input, .ss-multi-selected span.ss-disabled {
+    font-family: 'Open Sans';
+    color: #222;
+    font-size: .95rem!important;
+}
+.ss-single-selected .placeholder, .ss-multi-selected span.ss-disabled {
+    color: #666;
+}
+.ss-single-selected .placeholder {
+    height: inherit!important;
+}
+.ss-content .ss-list .ss-option.ss-highlighted, .ss-content .ss-list .ss-option:hover {
+    background-color: #f5a014!important;
+}
+.ss-main .ss-multi-selected .ss-values .ss-value {
+    background-color: #f5a014!important;
+}
+.ss-main .ss-multi-selected .ss-values .ss-value span {
+    font-family: 'Open Sans'!important;
+    font-size: .9rem!important;
+}
+.ss-main .ss-multi-selected .ss-values .ss-value .ss-value-delete {
+    font-family: 'Josefin Sans', sans-serif!important;
+}
+.ss-main .ss-multi-selected .ss-add {
+    margin: 2px 13px 0 5px!important;
+}
+.ss-content .ss-search input:focus {
+    box-shadow: 0 0 5px #d9eaeb!important;
+}
+input:focus, input:active {
+    outline: none;
+}
+.ss-content {
+    border: none;
+    border-radius: 0 0 5px 5px;
+    box-shadow: 0px 2px 5px 0px #80808091;
+    overflow: hidden;
+}
+form .dir_laboral {
+    min-width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #c9e3e4;
+    border-radius: 10px;
+    padding: 5px 10px 10px 10px;
+    margin: 5px -10px 15px;
+}
+form label > span {
+    line-height: 95%;
+    margin-bottom: 4px;
+    min-width: 130px;
+}
+label[for=nombre], label[for=apellido], label[for=mail] {
+    min-width: 33.33333%;
+}
+label[for=genero], label[for=ano_nacimiento] {
+    min-width: 25%;
+}
+label[for=pais_residencia], label[for=ciudad_residencia], label[for=hospital], label[for=cargo], label[for=dir_trabajo_ciudad], label[for=dir_trabajo_pais], label[for=hospital], label[for=cargo], label[for=especialidad], label[for=organizaciones], label[for=contrasena], label[for=contrasena2], label[for=dir_trabajo_calle] {
+    min-width: 50%;
+}
+label[for=ciudad_residencia] {
+    width: 100%;
+}
+label[for=dir_trabajo_numero], label[for=dir_trabajo_CP] {
+    flex-basis: 100px;
+}
+label.error input[type=text], label.error input[type=number], label.error input[type=email], label.error input[type=password], label.error .ss-main .ss-single-selected {
+    border: 1px solid #f51414!important;
+}
+.errores_form {
+    margin-bottom: 20px;
+    color: red;
+    font-weight: 600;
+}
+/* /ari */
 /*------------ USERS------------- */
     @media(max-width : 991px){ 
         li.nav-item.dropdown {
@@ -701,4 +850,3 @@ span{
             width: 100%;
         }
     }
-}

@@ -8,9 +8,14 @@ $uri = service('uri');
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
-	<link rel="stylesheet" href="/css/styles.css?v=0">
 	<link rel="stylesheet" type="text/css" href="/slick/slick.css"/>
 	<link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
+	<?php if(isset($styles)): ?>
+		<?php foreach($styles as $style): ?>
+			<link rel="stylesheet" type="text/css" href="/css/<?=$style?>.css"/>
+		<?php endforeach; ?>
+	<?php endif; ?>
+	<link rel="stylesheet" href="/css/styles.css?v=0">
 </head>
 <body>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">

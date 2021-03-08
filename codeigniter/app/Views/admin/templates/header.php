@@ -13,6 +13,11 @@ $uri = service('uri');
 	<link rel="stylesheet" type="text/css" href="/slick/slick-theme.css"/>
 	<link rel="stylesheet" type="text/css" href="/css/summernote.min.css"/>
 	<link href="/css/slimselect.min.css" rel="stylesheet"></link>
+	<?php if(isset($styles)): ?>
+		<?php foreach($styles as $style): ?>
+			<link rel="stylesheet" type="text/css" href="/css/<?=$style?>.css"/>
+		<?php endforeach; ?>
+	<?php endif; ?>
 </head>
 <body>
 <div class="barra">
