@@ -13,7 +13,7 @@
             <td class='tbl-noti-date'><?= date("d/m/y G:i",strtotime($noticia['timestamp']))?></td>
             <td class='tbl-noti-titulo'><?= $noticia['title']?></td>            
             <td class="text-center tbl-noti-status lenguaje" >
-            <img class="lang" src="/img/<?=$noticia["lenguage"]?>.png" alt="<?=$noticia["lenguage"]?>">
+            <img class="lang" src="/img/<?=$noticia["lang"]?>.png" alt="<?=$noticia["lang"]?>">
             </td>
             <td class="text-center tbl-noti-status"><?= $noticia['status']?></td>
         </tr>

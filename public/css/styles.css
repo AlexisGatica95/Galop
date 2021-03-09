@@ -3,6 +3,20 @@
 	font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
+    --a: #A0CBCD;
+    --a-1: #B2D5D6;
+    --a-2: #C5DFE0;
+    --a-3: #D9EAEB;
+    --a-4: #ECF4F5;
+    --n: #F5A014;
+    --n-1: #C48010;
+    --n-2: #93600C;
+    --n-3: #624008;
+    --n-4: #312004;
+    --g-1: #CDCDCD;
+    --g-2: #9A9A9A;
+    --g-3: #666666;
+    --g-4: #333333;
 }
 
 body{
@@ -22,12 +36,12 @@ li{
 }
 
 ::selection {
-    background-color: #f5a014;
-    color: #312004;
+    background-color: var(--n);
+    color: var(--n-4);
 }
 ::-moz-selection {
-    background-color: #f5a014;
-    color: #312004;
+    background-color: var(--n);
+    color: var(--n-4);
 }
 /* HEADER */
 
@@ -59,7 +73,7 @@ li{
 }
 .navbar {
     padding: 1rem;
-    border-bottom: 3px solid #C5DFE0;
+    border-bottom: 3px solid var(--a-2);
 }
 .navbar-light .navbar-nav .active>.nav-link, .navbar-light .navbar-nav .nav-link.active, .navbar-light .navbar-nav .nav-link.show, .navbar-light .navbar-nav .show>.nav-link {
     color: #000;
@@ -149,7 +163,7 @@ li{
     height: 6px;
     right: -10px;
     position: absolute;
-    background: #f5a014;
+    background: var(--n);
     transition: width 0.3s ease 0s,right 0.3s ease 0s, opacity 0.3s ease 0s;
     width: 6px;
     border-radius: 6px;
@@ -169,10 +183,10 @@ a#dd-user img {
     display: flex;
 }
 section.slide_inicio {
-    background-color: #C5DFE0;
+    background-color: var(--a-2);
 }
 section.slide_inicio .jumbotron {
-    border: 10px solid #C5DFE0;
+    border: 10px solid var(--a-2);
     border-radius: 200px;
     position: relative;
 }
@@ -184,7 +198,7 @@ section.slide_inicio .jumbotron::after {
     position: absolute;
     bottom: 25px;
     right: 49px;
-    background-color: #f5a014;
+    background-color: var(--n);
 }
 section.slide_inicio .jumbotron::before {
     content: "";
@@ -194,11 +208,11 @@ section.slide_inicio .jumbotron::before {
     position: absolute;
     bottom: 9px;
     right: 65px;
-    background-color: #f5a014;
+    background-color: var(--n);
 }
 .btn.btn-1 {
     background-color: #a4cdcf;
-    transition: all .1s linear;
+    transition: all .2s linear;
 }
 .btn.btn-1:hover {
     background-color: #f5a117;
@@ -209,10 +223,10 @@ section.slide_inicio .jumbotron::before {
 }
 
 a {
-    color: #f5a014;
+    color: var(--n);
 }
 a:hover {
-    color: #C48010;
+    color: var(--n-1);
     text-decoration: none;
 }
 
@@ -237,7 +251,7 @@ a:hover {
 
 
 .titulo-principal{
-    background-color: #F5A014;
+    background-color: var(--n);
     border-radius: 2rem;
     color: #ffff;
     padding: 0.5rem 1rem;
@@ -267,7 +281,7 @@ a:hover {
     content: "";
     width: 10px;
     height: 10px;
-    background-color: #F5A014;
+    background-color: var(--n);
     border-radius: 5px;
     z-index: -1;
 }
@@ -291,13 +305,13 @@ a:hover {
 
 
 .buttons-right a:hover{
-    background: #a0cbcd;
+    background: var(--a);
     cursor: pointer;
     transition: .3s;
 }
 
 .buttons-right a.active {
-    background-color: #a0cbcd;
+    background-color: var(--a);
 }
 
 .content{
@@ -314,7 +328,7 @@ a:hover {
     padding: .5rem;
     color: #000;
     font-family: 'Josefin Sans', sans-serif;
-    background: #c5dfe0;
+    background: var(--a-2);
     margin: .2rem;
     border-radius: .4rem;
     flex-shrink: 0;
@@ -336,7 +350,7 @@ a:hover {
 }
 
 .form-button{
-    background-color: #f5a014;
+    background-color: var(--n);
     font-size: 1.3rem;
     border-radius: 5px;
     cursor: pointer;
@@ -399,7 +413,7 @@ span.toggle-menu {
 }
 
 span.toggle-menu::before {
-    background-color: #f5a014;
+    background-color: var(--n);
     height: 4px;
     width: 18px;
     position: relative;
@@ -411,7 +425,7 @@ span.toggle-menu::before {
 }
 
 span.toggle-menu::after {
-    background-color: #f5a014;
+    background-color: var(--n);
     height: 18px;
     width: 4px;
     position: absolute;
@@ -469,7 +483,7 @@ span.toggle-menu::after {
 }
 
 .form-contacto {
-    background-color: #d9eaeb;
+    background-color: var(--a-3);
     padding: 2rem 1.5rem;
     display: flex;
     flex-direction: column;
@@ -505,7 +519,7 @@ span.toggle-menu::after {
     padding: 2rem;
     display: flex;
     margin-bottom: 3rem;
-    background-color: #d9eaeb;
+    background-color: var(--a-3);
     flex-direction: column;
     border-radius: 8px;
 }
@@ -535,7 +549,7 @@ span{
 /* ari */
 .galop_form {
     max-width: 800px;
-    background-color: #d9eaeb;
+    background-color: var(--a-3);
     margin: 20px;
     padding: 25px;
     border-radius: 20px;
@@ -608,16 +622,16 @@ input[type="text"], input[type="email"], input[type="password"], .ss-single-sele
     font-size: .95rem!important;
 }
 .ss-single-selected .placeholder, .ss-multi-selected span.ss-disabled {
-    color: #666;
+    color: var(--g-3);
 }
 .ss-single-selected .placeholder {
     height: inherit!important;
 }
 .ss-content .ss-list .ss-option.ss-highlighted, .ss-content .ss-list .ss-option:hover {
-    background-color: #f5a014!important;
+    background-color: var(--n)!important;
 }
 .ss-main .ss-multi-selected .ss-values .ss-value {
-    background-color: #f5a014!important;
+    background-color: var(--n)!important;
 }
 .ss-main .ss-multi-selected .ss-values .ss-value span {
     font-family: 'Open Sans'!important;
@@ -630,7 +644,7 @@ input[type="text"], input[type="email"], input[type="password"], .ss-single-sele
     margin: 2px 13px 0 5px!important;
 }
 .ss-content .ss-search input:focus {
-    box-shadow: 0 0 5px #d9eaeb!important;
+    box-shadow: 0 0 5px var(--a-3)!important;
 }
 input:focus, input:active {
     outline: none;
@@ -677,6 +691,44 @@ label.error input[type=text], label.error input[type=number], label.error input[
     margin-bottom: 20px;
     color: red;
     font-weight: 600;
+}
+.btn-1.sm {
+    padding: 4px 8px 3px 9px;
+}
+.pagination {
+    display: flex;
+    padding-left: 0;
+    justify-content: center;
+    list-style: none;
+    border-radius: .25rem;
+    margin: .8rem;
+    
+}
+.pagination a {
+    color: black;
+    float: left;
+    display: flex;
+    align-items: center;
+    padding: 6px 13px;
+    text-decoration: none;
+    margin: 0 .2rem;
+    font-family: 'Josefin Sans';
+    height: 2rem;
+}
+.pagination .paginas a {
+    width: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.pagination a.active {
+    background: #f5a014;
+    color: white!important;
+    border-radius: 50%;
+}
+
+.pagination a:hover{
+    color:#f5a014
 }
 /* /ari */
 /*------------ USERS------------- */

@@ -49,7 +49,7 @@
 						<label class="traduccion_label">
 							<h4><?= ucfirst(lang("Admin.sidebar_noticias.traduccion_de"))?></h4>
 						</label>
-						<select name="lang" id="traduccion_de">
+						<select name="traduccion_de" id="traduccion_de">
 							<option value="" selected disabled><?= ucfirst(lang("Admin.sidebar_noticias.elegir"))?></option>
 							<?php foreach($notis as $noticia): ?>
 							<option value="<?=$noticia['id']?>"><?=$noticia['title']?></option>

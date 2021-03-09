@@ -219,7 +219,7 @@ ul.dropdown_content {
     margin: 0 .2rem;
 }
 
-a.active {
+.pagination a.active {
     background: #f5a014;
     color: white!important;
 }
@@ -253,6 +253,7 @@ a.active {
 .sidebar {
     margin-left: 1rem;
     max-width: 280px;
+    flex-shrink: 0;
 }
 
 .sidebar select{

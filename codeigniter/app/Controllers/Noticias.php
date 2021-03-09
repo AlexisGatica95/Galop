@@ -7,21 +7,22 @@ class Noticias extends BaseController
 	//trae todos los post paginados con status 1
 	public function index()
 	{	
-		$locale = $this->request->getLocale();
-
-		$data['locale'] = $locale;
+		$data['locale'] = $this->locale;
 		$data['ruta_es'] = '/es/noticias/';
 		$data['ruta_en'] = '/en/noticias/';
 		$model = new NoticiasModel();
-		$noticias = $model->getPostsPaginados();
-		$page = 0;
-		if (isset($_GET['p'])) {
-			$page = $_GET['p'] - 1;
+		$noticias = $model->getPostsPaginados($this->locale);		
+
+		$data['paginacion'] = $this->createPagination($noticias);
+
+		// $data['paginacion'] = $paginacion;
+		
+		// agarro y paso la pagina que corresponde como array de noticias
+		$page = $this->getPage($noticias);
+		if (count($noticias) > 0) {
+			$noticias = $noticias[$page];
 		}
-		if (!array_key_exists($page,$noticias)) {
-			$page = 0;
-		}
-		$noticias = $noticias[$page];
+		
 		$longitud_extracto = 250;
 
 		foreach ($noticias as $key => $noticia) {
@@ -29,9 +30,10 @@ class Noticias extends BaseController
 			if (strlen($extracto)>=$longitud_extracto) {
 				$extracto .= '…';
 			}
-			$noticias[$key]['extracto']=$extracto;
+			$noticias[$key]['extracto'] = $extracto;
 		}
 		$data['noticias'] = $noticias;
+		
 
 		// return view('welcome_message');
 		echo view('templates/header',$data);
@@ -83,16 +85,18 @@ class Noticias extends BaseController
 			echo view('admin/crear_noticia');
 			echo view('admin/templates/footer');
 		} else {
-			$model->save(
-				[
-					'title' => $this->request->getVar('title'),
-					'body' => $this->request->getVar('body'),
-					'slug' => url_title($this->request->getVar('title')),
-					'type' =>'noticia',
-					'status' => $this->request->getVar('estado'),
-					'idioma' => $this->request->getVar('lang')
-				]
-			);
+			$o = [
+				'title' => $this->request->getVar('title'),
+				'body' => $this->request->getVar('body'),
+				'slug' => url_title($this->request->getVar('title')),
+				'type' =>'noticia',
+				'status' => $this->request->getVar('estado'),
+				'lang' => $this->request->getVar('idioma_select')
+			];
+			if ($this->request->getVar('traduccion_de')) {
+				$o['traduccion_de'] = $this->request->getVar('traduccion_de');
+			}
+			$model->save($o);
 			$session = \Config\Services::session();
 			$session->setFlashdata('success','New post has been created!');
 			return redirect()->to('/noticias');
