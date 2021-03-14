@@ -121,7 +121,7 @@ class Noticias extends BaseController
 
 		helper('form');
 		$model = new NoticiasModel();
-		$data['notis'] = $model->getPostsParents();
+		$data['notis'] = $model->getPostsParents($id);
 
 		if (!$this->validate([
 			'title' => 'required|max_length[255]',

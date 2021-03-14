@@ -52,7 +52,7 @@ class NoticiasModel extends Model {
 		return array_chunk($res,4,true);
 	}
 
-	public function getPostsParents() {
+	public function getPostsParents($id = NULL) {
 		$res = $this->asArray()
 					->where([
 						'type' => 'noticia',
@@ -60,6 +60,13 @@ class NoticiasModel extends Model {
 					])
 					->orderBy('timestamp','DESC')
 					->findAll();
+		if ($id !== NULL) {
+			foreach ($res as $nk => $noticia) {
+				if ($noticia['id'] == $id) {
+					unset($res[$nk]);
+				}
+			}
+		}
 		return $res;
 	}
 
