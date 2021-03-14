@@ -13,6 +13,10 @@ class Users extends BaseController
 		$data['ruta_es'] = '/es/login';
 		$data['ruta_en'] = '/en/login';
 
+		if (array_key_exists('isLoggedIn',$_SESSION) && $_SESSION['isLoggedIn']) {
+			return redirect()->to('/'.$locale.'/mi-cuenta');
+		}
+
 		if ($this->request->getMethod() == 'post') {
 			$rules = [
 				'mail' => 'required',
@@ -33,7 +37,9 @@ class Users extends BaseController
 				$user = $model->where('mail',$this->request->getVar('mail'))
 							  ->first();
 				$this->setUser($user);
-
+				if ($user['permisos'] > 1) {
+					return redirect()->to('/admin');
+				}
 				return redirect()->to('/'.$locale.'/mi-cuenta');
 			}
 		}
@@ -49,6 +55,7 @@ class Users extends BaseController
 			'nombre' => $user['nombre'],
 			'apellido' => $user['apellido'],
 			'mail' => $user['mail'],
+			'permisos' => $user['permisos'],
 			'isLoggedIn' => true
 		];
 		session()->set($data);
@@ -68,6 +75,10 @@ class Users extends BaseController
 		$data['styles'][] = "slimselect.min";
 		$data['scripts'][] = "slimselect.min";
 		$data['scripts'][] = "registro";
+
+		if (array_key_exists('isLoggedIn',$_SESSION) && $_SESSION['isLoggedIn']) {
+			return redirect()->to('/'.$locale.'/mi-cuenta');
+		}
 
 		if ($this->request->getMethod() == 'post') {
 			// $rules = [

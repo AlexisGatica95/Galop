@@ -5,5 +5,10 @@
 <script type="text/javascript" src="/js/summernote.min.js"></script>
 <script type="text/javascript" src="/js/summernote-es-ES.min.js"></script>
 <script type="text/javascript" src="/js/scripts_admin.js"></script>
+<?php if(isset($scripts)): ?>
+	<?php foreach($scripts as $script): ?>
+		<script type="text/javascript" src="/js/<?=$script?>.js"></script>
+	<?php endforeach; ?>
+<?php endif; ?>
 </body>
 </html>

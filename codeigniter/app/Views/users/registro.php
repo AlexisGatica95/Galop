@@ -1,6 +1,6 @@
-<div class="container full-center">
+<div class="container">
 	<pre>
-		<?php var_dump($_POST) ?>
+		<?php var_dump($_SESSION) ?>
 	</pre>
 	<form id="form-reg" class="galop_form" enctype="multipart/form-data" action="" method="POST" autocomplete="off">
 		<label class="full">

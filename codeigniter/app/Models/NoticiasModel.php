@@ -20,7 +20,18 @@ class NoticiasModel extends Model {
 
 	}
 
-	public function getPost($slug = null){
+	public function getPost($id = null){
+		if ($id) {
+			return $this->asArray()
+						->where(['id' => $id])
+						->orderBy('timestamp','DESC')
+						->first();
+		}else{
+			return false;
+		}
+	}
+
+	public function getPostSlug($slug = null){
 		if ($slug) {
 			return $this->asArray()
 						->where(['slug' => $slug])

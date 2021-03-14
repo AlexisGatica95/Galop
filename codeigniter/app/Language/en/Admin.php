@@ -2,6 +2,7 @@
 return [
     'noticia' => [
 		'titulo_crear'=> 'create new entry',
+		'titulo_editar'=> 'Edit news entry',
 		'titulo'=> 'title',
 		'contenido'=>'body',
 		'crear'=>'publish'
@@ -24,13 +25,13 @@ return [
 		'publico' => 'public',
 		'privado' => 'private',
 		'papelera' => 'trash',
-		'idioma' => 'lenguage',
+		'idioma' => 'language',
 		'selecciona' =>'choose',
 		'es' => 'spanish',
 		'en' => 'english',
 		'pt' => 'portuguese',
-		'traduccion_check' => 'Is a translatate of an entry',
-		'traduccion_de' => 'is a translate of',
+		'traduccion_check' => 'Is a translation of an entry',
+		'traduccion_de' => 'is the translation of',
 		'elegir' => 'choose'
 	]
 ]

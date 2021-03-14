@@ -2,6 +2,7 @@
 return [
     'noticia' => [
         'titulo_crear'=> 'crear una nueva noticia',
+        'titulo_editar'=> 'Editar noticia',
         'titulo'=> 'titulo',
         'contenido'=>'contenido',
         'crear'=>'publicar'

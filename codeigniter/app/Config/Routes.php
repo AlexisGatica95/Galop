@@ -58,10 +58,15 @@ $routes->get('about', 'Pages::showme/about');
 //---------------------------------------------------
 //ADMIN
 $routes->match(['get','post'],'admin','Noticias::create');
-$routes->match(['get','post'],'{locale},admin','Noticas::crate');
+$routes->match(['get','post'],'{locale},admin','Noticas::create');
 //Posts
+$routes->match(['get','post'],'admin/noticia/editar/(:num)', 'Noticias::edit/$1');
+$routes->match(['get','post'],'{locale}/admin/noticia/editar/(:num)', 'Noticias::edit/$1');
+
 $routes->match(['get','post'],'admin/noticia', 'Noticias::create');
 $routes->match(['get','post'],'{locale}/admin/noticia', 'Noticias::create');
+
+
 //Noticias
 $routes->match(['get','post'],'admin/ver/noticias', 'Noticias::adminNoticias');
 $routes->match(['get','post'],'{locale}/admin/ver/noticias', 'Noticias::adminNoticias');

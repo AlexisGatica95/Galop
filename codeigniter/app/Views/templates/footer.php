@@ -7,9 +7,9 @@
 <script type="text/javascript" src="/slick/slick.min.js"></script>
 <script type="text/javascript" src="/js/scripts.js"></script>
 <?php if(isset($scripts)): ?>
-		<?php foreach($scripts as $script): ?>
-            <script type="text/javascript" src="/js/<?=$script?>.js"></script>
-		<?php endforeach; ?>
-	<?php endif; ?>
+	<?php foreach($scripts as $script): ?>
+		<script type="text/javascript" src="/js/<?=$script?>.js"></script>
+	<?php endforeach; ?>
+<?php endif; ?>
 </body>
 </html>

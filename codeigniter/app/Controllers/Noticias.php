@@ -56,14 +56,17 @@ class Noticias extends BaseController
 		$data['ruta_en'] = '/en/noticias/'.$slug;
 
 		$model = new NoticiasModel();
-		$data['noticia'] = $model->getPost($slug);
+		$data['noticia'] = $model->getPostSlug($slug);
+		if ($data['noticia']['status'] !== "1") {
+			return redirect()->to("/".$locale.'/noticias/');
+		}
 		
 		echo view('templates/header',$data);
 		echo view('noticia');
 		echo view('templates/footer');
 	}
 
-	//quiero que me traiga todas las noticias con parametro traduccion_de = NULL
+	// creacion
 	public function create()
 	{
 		$locale = $this->request->getLocale();
@@ -71,6 +74,8 @@ class Noticias extends BaseController
 		$data['locale'] = $locale;
 		$data['ruta_es'] = '/es/admin/noticia/';
 		$data['ruta_en'] = '/en/admin/noticia/';
+		$data['scripts'][] = 'edicion_noticia';
+		$data['titulo_vista'] = 'titulo_crear';
 
 		helper('form');
 		$model = new NoticiasModel();
@@ -99,11 +104,66 @@ class Noticias extends BaseController
 			$model->save($o);
 			$session = \Config\Services::session();
 			$session->setFlashdata('success','New post has been created!');
-			return redirect()->to('/noticias');
+			return redirect()->to("/".$this->request->getVar('idioma_select').'/noticias/'.url_title($this->request->getVar('title')));
 		}
 	}
 
-	//quiero que me traiga las noticias 
+	// edicion
+	public function edit($id)
+	{
+		$locale = $this->request->getLocale();
+
+		$data['locale'] = $locale;
+		$data['ruta_es'] = '/es/admin/noticia/';
+		$data['ruta_en'] = '/en/admin/noticia/';
+		$data['scripts'][] = 'edicion_noticia';
+		$data['titulo_vista'] = 'titulo_editar';
+
+		helper('form');
+		$model = new NoticiasModel();
+		$data['notis'] = $model->getPostsParents();
+
+		if (!$this->validate([
+			'title' => 'required|max_length[255]',
+			'body' => 'required',
+			'idioma_select' => 'required'
+		])) {
+			$post = $model->getPost($id);
+			$data['post'] = $post;
+			
+			echo view('admin/templates/header',$data);
+			echo view('admin/crear_noticia');
+			echo view('admin/templates/footer');
+		} else {
+			$o = [
+				'id' => $id,
+				'title' => $this->request->getVar('title'),
+				'body' => str_replace("<p><br></p>","",$this->request->getVar('body')),
+				'slug' => url_title($this->request->getVar('title')),
+				'type' =>'noticia',
+				'status' => $this->request->getVar('estado'),
+				'lang' => $this->request->getVar('idioma_select')
+			];
+			if ($this->request->getVar('es_traduccion') == "on") {
+				$o['translation_of'] = $this->request->getVar('traduccion_de');
+			} else {
+				$o['translation_of'] = null;
+			}
+			$model->save($o);
+			$session = \Config\Services::session();
+			$session->setFlashdata('success','Cambios guardados!');
+			// return redirect()->to('/noticias/');
+			$post = $model->getPost($id);
+			$data['post'] = $post;
+			
+			echo view('admin/templates/header',$data);
+			echo view('admin/crear_noticia');
+			echo view('admin/templates/footer');
+			// return redirect()->to("/".$this->request->getVar('idioma_select').'/noticias/'.url_title($this->request->getVar('title')));
+		}
+	}
+
+	// listado de noticias 
 	public function adminNoticias(){
 		$locale = $this->request->getLocale();
 
