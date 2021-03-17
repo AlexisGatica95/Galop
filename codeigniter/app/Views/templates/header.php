@@ -72,12 +72,20 @@ $uri = service('uri');
 					</li>
 					
 					<li class="nav-item">
-						<a href="#" class="nav-link btn btn-1"><?= lang('App.menu_protocolos') ?></a>
+							<?php if (session()->get('isLoggedIn')): ?>
+								<a href="#" class="nav-link btn btn-1"><?= lang('App.menu_protocolos') ?></a>	
+							<?php else: ?>
+								<a href="#" class="nav-link btn btn-1"><?= lang('App.menu_hazte_miembro')?></a>
+							<?php endif ?>
+
+						
 					</li>
 					<li class="nav-item dropdown">
+						
 						<a class="nav-link dropdown-toggle" href="#" id="dd-user" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
 							<img src="/img/user.png" alt="User">
 						</a>
+
 						<div class="dropdown-menu" aria-labelledby="dd-user">
 							<?php if (session()->get('isLoggedIn')): ?>
 								<a class="dropdown-item" href="/<?= $locale ?>/mi-cuenta">Mi cuenta</a>

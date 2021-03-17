@@ -8,6 +8,7 @@ return [
 	'menu_protocolos' => 'Protocols',
 	'menu_login' => 'Log in',
 	'menu_registro' => 'Register',
+	'menu_hazte_miembro' => 'Become a GALOP member',
 	'cuenta_creada' => 'Account successfully created',
 	'saludo_perfil' => 'Hello, {0}!',
 	'error' => [
@@ -81,7 +82,8 @@ return [
 		'mision' => 'Mission',
 		'vision' => 'Vision',
 		'objetivos' => 'Goals',
-		'decarga_pdf' => 'download the strategy PDF'
+		'estrategia' => 'Strategy',
+		'descarga_pdf' => 'download the strategy PDF'
 	],
 	'contacto' => [
 		'titulo' => 'Send us a message',

@@ -104,13 +104,13 @@ class Users extends BaseController
 				$model = new UsersModel;
 				$orgas = "";
 				if($this->request->getVar('organizaciones')) {
-					$orgas = implode($this->request->getVar('organizaciones'), ",");
+					$orgas = implode(",",$this->request->getVar('organizaciones'));
 				}else{ 
 					$orgas = "";
 				}
 				$intereses = "";
-				if($this->request->getVar('organizaciones')) {
-					$intereses = implode($this->request->getVar('interes[]'), ",");
+				if($this->request->getVar('interes[]')) {
+					$intereses = implode(",",$this->request->getVar('interes[]'));
 				}else{ 
 					$intereses = "";
 				}

@@ -8,11 +8,11 @@ class Institucional extends BaseController
 		$locale = $this->request->getLocale();
 
 		$data['locale'] = $locale;
-		$data['ruta_es'] = "/es/institucional";
-		$data['ruta_en'] = "/en/institucional";
+		$data['ruta_es'] = "/es/institucional/quienes-somos";
+		$data['ruta_en'] = "/en/institucional/quienes-somos";
 
 		echo view('templates/header',$data);
-		echo view('pages/institucional');
+		echo view('pages/institucional/quienes-somos');
 		echo view('templates/footer');
 	}
 

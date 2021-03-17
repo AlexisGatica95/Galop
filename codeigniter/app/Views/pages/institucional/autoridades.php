@@ -159,7 +159,7 @@
 		</div>
 		<ul class="buttons-right">
 		<li >
-			<a class="" href="/<?=$locale?>/institucional/institucional"><?=lang("App.menu_institucional")?></a>
+			<a class="" href="/<?=$locale?>/institucional/quienes-somos"><?=lang("App.menu_institucional")?></a>
 		</li>
 		<li>
 			<a class="active" href="/<?=$locale?>/institucional/autoridades"><?=ucfirst(lang("App.institucional.autoridades"))?></a>
@@ -174,7 +174,7 @@
 			<a class="" href="/<?=$locale?>/institucional/objetivos"><?=ucfirst(lang("App.institucional.objetivos"))?></a>
 		</li>
 		<li>
-			<a href="/recursos/GALOP-Estrategia.pdf"><?=ucfirst(lang("App.institucional.descarga_pdf"))?></a>
+			<a href="/<?=$locale?>/institucional/estrategia"><?=ucfirst(lang("App.institucional.estrategia"))?></a>
 		</li>
 		</div>
 		
