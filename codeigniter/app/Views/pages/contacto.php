@@ -7,12 +7,12 @@
             <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Enim ad debitis nisi deserunt impedit. Sunt minima doloribus eum quidem dolorum sint, in aperiam tempora, aliquid earum suscipit. Non, minus recusandae.</p>
             <span class="mail"></span>
             <span class="tel"></span>
-            <hr>
+            <!-- <hr>
             <h3><?=ucfirst(lang("App.contacto.redes"))?></h3>
             <hr>
             <div class="redes">
                 <img src="/img/facebook.png" alt="">
-            </div>
+            </div> -->
         </div>
 
         <div class="contacto-right">

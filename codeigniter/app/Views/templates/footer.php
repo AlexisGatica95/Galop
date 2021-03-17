@@ -1,6 +1,55 @@
 </div>
 <div class="footer">
-	
+	<div class="container">
+		<div class="col logo">
+			<img src="/img/galop_logo_2.jpg" alt="GALOP logo">
+		</div>
+		<div class="col">
+			<ul class="menu">
+				<li>
+					<a class="hover_underline" href="/<?=$locale?>/institucional/"><?= lang('App.menu_institucional') ?></span></a>
+				</li>
+				<li>
+					<a class="hover_underline" href="/<?=$locale?>/noticias/"><?= lang('App.menu_noticias') ?></a>
+				</li>
+				<li>
+					<a class="hover_underline" href="#"><?= lang('App.menu_eventos') ?></a>
+				</li>
+				<li style="margin-bottom: 15px;">
+					<a href="#" class="hover_underline"><?= lang('App.menu_contacto') ?></a>
+				</li>
+				<li style="margin-bottom: 10px;">
+				<?php if (session()->get('isLoggedIn')): ?>
+					<a href="#" class="nav-link btn btn-1"><?= lang('App.menu_protocolos') ?></a>	
+				<?php else: ?>
+					<a href="#" class="nav-link btn btn-1"><?= lang('App.menu_hazte_miembro')?></a>
+				<?php endif ?>
+				</li>
+				<li class="lang_switcher">
+					<a href="<?php if (isset($ruta_es)){echo $ruta_es;} ?>">
+						<img src="/img/es.png" alt="espanol">
+					</a>
+					<a href="<?php if(isset($ruta_en)){echo($ruta_en);} ?>">
+						<img src="/img/en.png" alt="english">
+					</a>
+				</li>
+			</ul>
+		</div>
+		<!-- <div class="col">
+			<ul class="actions">
+				<li>
+				<?php if (session()->get('isLoggedIn')): ?>
+					<a href="#" class="nav-link btn btn-1"><?= lang('App.menu_protocolos') ?></a>	
+				<?php else: ?>
+					<a href="#" class="nav-link btn btn-1"><?= lang('App.menu_hazte_miembro')?></a>
+				<?php endif ?>
+				</li>
+				<li>
+				<a href="#" class="nav-link btn btn-1"><?= lang('App.menu_contacto') ?></a>
+				</li>
+			</ul>
+		</div> -->
+	</div>
 </div>
 <script src="https://code.jquery.com/jquery-3.5.1.min.js" integrity="sha256-9/aliU8dGd2tb6OSsuzixeV4y/faTqgFtohetphbbj0=" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>

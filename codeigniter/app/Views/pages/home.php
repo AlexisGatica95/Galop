@@ -11,12 +11,33 @@
 	 	</div>
 	 <?php endif ?>
 	<div class="jumbotron">
+		<img src="/img/banner_1_pc.jpg" alt="GALOP">
+		<div class="overlay">
+		<h1>Grupo América Latina de Oncología Pediátrica</h1>
+		</div>
+	</div>
+</section>
+<section class="home_contenido">
+	<div class="block eventos">
 		<div class="container">
-			<h1 class="display-4">Contenido destacado</h1><!-- 
-			<p class="lead">Codeigniter is an awesome framework.</p>
-			<hr class="my-4">
-			<p>Hey check out my first web app built with Codeignier 4.</p>
-			<a class="btn btn-primary btn-lg" href="#" role="button">Llamada a la acct</a> -->
+			<h2 class="titulo-principal">Eventos</h2>
+			<div class="ultimas">
+				<div class="item">
+					<h4>Evento de ejemplo</h4>
+					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, alias. Perferendis libero nulla, p...</p>
+					<a href="#" class="btn btn-1">Leer más</a>
+				</div>
+				<div class="item">
+					<h4>Evento anterior</h4>
+					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto nulla, iure velit nam possimus p...</p>
+					<a href="#" class="btn btn-1">Leer más</a>
+				</div>
+				<div class="item">
+					<h4>Titulo de evento</h4>
+					<p>Recusandae nesciunt omnis architecto officia debitis odit adipisci, dolorem laudantium tempora susci...</p>
+					<a href="#" class="btn btn-1">Leer más</a>
+				</div>
+			</div>
 		</div>
 	</div>
 </section>

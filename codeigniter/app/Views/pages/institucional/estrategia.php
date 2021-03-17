@@ -4,8 +4,8 @@
 	<div class="content">
 		<div class="about-left">
 			<h3 class="subtitulo-principal"><?=ucfirst(lang("App.institucional.estrategia"))?></h3>
-				<a href="/recursos/GALOP-Estrategia.pdf"><?=ucfirst(lang("App.institucional.descarga_pdf"))?></a>
-
+			<iframe class="visualizar_doc" src="/recursos/GALOP-Estrategia.pdf">This browser does not support PDFs. Please download the PDF to view it:</iframe>
+			<a download href="/recursos/GALOP-Estrategia.pdf"><?=ucfirst(lang("App.institucional.descarga_pdf"))?></a>
 		</div>
 		<ul class="buttons-right">
 		<li >
