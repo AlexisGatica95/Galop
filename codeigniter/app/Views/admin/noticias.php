@@ -4,7 +4,7 @@
             <th class='tbl-noti-checkbox'></th>
             <th class='tbl-noti-date'><?= ucfirst(lang("Admin.tabla.fecha"))?></th>
             <th class='tbl-noti-titulo'><?= ucfirst(lang("Admin.tabla.titulo"))?></th>
-            <th class='tbl-noti-status'>idioma</th>
+            <th class='tbl-noti-status'><?= ucfirst(lang("Admin.tabla.idioma"))?></th>
             <th class='tbl-noti-status'><?= ucfirst(lang("Admin.tabla.estado"))?></th>
         </tr>
         <?php foreach($noticias as $noticia): ?>
@@ -22,7 +22,7 @@
 
     <div class="pagination">
         <div>
-           <a href="">< Anterior</a>
+           <a href="">< <?= ucfirst(lang("Admin.tabla.anterior"))?></a>
         </div>
         <div>
             <a href="" class="active">1</a>
@@ -30,6 +30,6 @@
             <a href="">3</a>
         </div>
         <div>
-            <a href=""> Siguiente ></a>
+            <a href=""> <?= ucfirst(lang("Admin.tabla.siguiente"))?> ></a>
         </div>
     </div>

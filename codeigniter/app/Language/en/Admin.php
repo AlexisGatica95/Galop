@@ -1,38 +1,47 @@
 <?php
 return [
     'noticia' => [
-		'titulo_crear'=> 'create new entry',
+		'titulo_crear'=> 'Create new entry',
 		'titulo_editar'=> 'Edit news entry',
-		'titulo'=> 'title',
-		'contenido'=>'body',
-		'crear'=>'publish'
+		'titulo'=> 'Title',
+		'contenido'=>'Body',
+		'crear'=>'Publish'
 	],
 	'menu' => [
-		'titulo_crear'=> 'create new entry',
-		'noticias'=> 'news',
-		'ver' => 'see all',
-		'nuevo' => 'new',
-		'nueva' => 'new',
-		'categorias' => 'manage categories'
+		'recursos'=>'Resources',
+		'noticias'=> 'News',
+		'eventos'=> 'Events',
+		'usuarios'=> 'Users',
+		'config'=>'Settings',
+
+		'titulo_crear'=> 'Create new entry',
+		'ver' => 'See all',
+		'nuevo' => 'New',
+		'nueva' => 'New',
+		'categorias' => 'Manage categories'
 	],
 	'tabla' => [
-		'fecha' => 'date',
-		'titulo' => 'title',
-		'estado' => 'status'
+		'idioma'=>'Lenguage',
+		'anterior'=>'Previous',
+		'siguiente'=>'Next',
+
+		'fecha' => 'Date',
+		'titulo' => 'Title',
+		'estado' => 'Status'
 	],
 	'sidebar_noticias' => [
-		'estado' => 'status',
-		'publico' => 'public',
-		'privado' => 'private',
-		'papelera' => 'trash',
-		'idioma' => 'language',
-		'selecciona' =>'choose',
-		'es' => 'spanish',
-		'en' => 'english',
-		'pt' => 'portuguese',
+		'estado' => 'Status',
+		'publico' => 'Public',
+		'privado' => 'Private',
+		'papelera' => 'Trash',
+		'idioma' => 'Language',
+		'selecciona' =>'Choose',
+		'es' => 'Spanish',
+		'en' => 'English',
+		'pt' => 'Portuguese',
 		'traduccion_check' => 'Is a translation of an entry',
-		'traduccion_de' => 'is the translation of',
-		'elegir' => 'choose'
+		'traduccion_de' => 'Is the translation of',
+		'elegir' => 'Choose'
 	]
 ]
 

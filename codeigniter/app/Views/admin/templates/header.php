@@ -24,7 +24,7 @@ $uri = service('uri');
 	<img src="/img/logo.png" class='logo' alt="GALOP">
 	<ul class="menu-barra">
 		<li class="dropdown">
-			<span>Recursos<img src="/img/arrow_down.png" alt=""></span>
+			<span><?= ucfirst(lang("Admin.menu.recursos"))?><img src="/img/arrow_down.png" alt=""></span>
 			
 			<ul class="dropdown_content">
 				<li><a href=""><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
@@ -33,7 +33,7 @@ $uri = service('uri');
 			</ul>
 		</li>
 		<li class="dropdown">
-			<span>Noticias<img src="/img/arrow_down.png" alt=""></span>
+			<span><?= ucfirst(lang("Admin.menu.noticias"))?><img src="/img/arrow_down.png" alt=""></span>
 			
 			<ul class="dropdown_content">
 				<li><a href="/admin/noticia"><?= ucfirst(lang("Admin.menu.nueva"))?></a></li>
@@ -41,7 +41,7 @@ $uri = service('uri');
 			</ul>
 		</li>
 		<li class="dropdown">
-			<span>Eventos<img src="/img/arrow_down.png" alt=""></span>
+			<span><?= ucfirst(lang("Admin.menu.eventos"))?><img src="/img/arrow_down.png" alt=""></span>
 			
 			<ul class="dropdown_content">
 				<li><a href=""><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
@@ -50,7 +50,7 @@ $uri = service('uri');
 			</ul>
 		</li>
 		<li class="dropdown">
-			<span>Usuarios<img src="/img/arrow_down.png" alt=""></span>
+			<span><?= ucfirst(lang("Admin.menu.usuarios"))?><img src="/img/arrow_down.png" alt=""></span>
 			
 			<ul class="dropdown_content">
 				<li><a href=""><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
@@ -58,7 +58,7 @@ $uri = service('uri');
 			</ul>
 		</li>
 		<li class=""> 
-			<span>Configuraciones</span>
+			<span><?= ucfirst(lang("Admin.menu.config"))?></span>
 		</li>
 		
 		<li class="nav-item lang_switcher">
