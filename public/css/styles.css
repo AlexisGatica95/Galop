@@ -216,7 +216,8 @@ section.slide_inicio .jumbotron .overlay {
     border-radius: 40px 0;
 }
 section.slide_inicio .jumbotron .overlay h1 {
-    font-size: 3.1rem;
+    font-size: 2.5rem;
+    text-align: center;
 }
 section.slide_inicio .jumbotron::after {
     content: "";

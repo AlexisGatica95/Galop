@@ -8,7 +8,7 @@
             <span class="mail"></span>
             <span class="tel"></span>
             <!-- <hr>
-            <h3><?=ucfirst(lang("App.contacto.redes"))?></h3>
+            <h3><?php # ucfirst(lang("App.contacto.redes"))?></h3>
             <hr>
             <div class="redes">
                 <img src="/img/facebook.png" alt="">
