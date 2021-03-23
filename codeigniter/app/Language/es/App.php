@@ -20,7 +20,7 @@ return [
 		'enter' => 'Ingresar'	
 	],
 	'registro' => [
-		'registro_galop'=>'Solicitud de membrecia GALOP',
+		'registro_galop'=>'Solicitud de membresía GALOP',
 		'span_nombre' => 'Nombre',
 		'span_apellido' => 'Apellido',
 		'span_correo' => 'Correo electrónico',

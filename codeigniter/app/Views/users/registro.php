@@ -37,7 +37,7 @@
 			</select>
 		</label>
 		<label for="pais_residencia" class="">
-			<span><?= lang('App.registro.span_residencia_pais'); ?></</span>
+			<span><?= lang('App.registro.span_residencia_pais');?></span>
 			<select name="pais_residencia" id="sel_pais_residencia">
 				<option value="" disabled selected><?= lang('App.registro.option_seleccionar'); ?>...</option>
 				<?php foreach ($countries as $c): ?>
