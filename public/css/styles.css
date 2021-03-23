@@ -300,12 +300,12 @@ section.slide_inicio .jumbotron {
     padding: 0!important;
     overflow: hidden;
     margin-bottom: 0!important;
-    height: 700px;
 }
+
 section.slide_inicio .jumbotron .overlay {
     position: absolute;
-    top: 50px;
-    left: 50px;
+    top: 35px;
+    left: 35px;
     color: #fff;
     background-color: #f5a0149e;
     max-width: 560px;
@@ -338,11 +338,11 @@ section.slide_inicio .jumbotron::before {
 }
 
 .div_img_pc{
-    background: url(/img/banner_1_pc.jpg) no-repeat center;
-    height: 750px;
-    background-size: cover;
-    display: block;
-    min-height: 300px;
+    display: block; 
+}
+
+.div_img_tb, .div_img_mb{
+    display: none;
 }
 
 
@@ -894,9 +894,6 @@ iframe.visualizar_doc {
     }
 
     .div_img_tb{
-    background: url(/img/banner_1_tb.jpg) no-repeat center;
-    height: 500px;
-    background-size: cover;
     display: block;
     }
 
@@ -1085,11 +1082,8 @@ iframe.visualizar_doc {
         display: none
     }
 
-    .div_img_mb{    
-    background: url(/img/banner_1_mb.jpg) no-repeat center;
-    height: 400px;
-    background-size: cover;
-    display: block;
+    .div_img_mb{
+        display: block;
     }
 
     section.slide_inicio .jumbotron {
@@ -1099,8 +1093,6 @@ iframe.visualizar_doc {
 
     section.slide_inicio .jumbotron .overlay {
     position: absolute;
-    /*max-width: 200px;*/
-    /*height: 70px;*/
     padding: 1rem;
     border-radius: 20px 0;
     margin: 0 25px 0 0;

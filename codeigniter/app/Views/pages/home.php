@@ -10,8 +10,10 @@
 	 		</button>
 	 	</div>
 	 <?php endif ?>
-	<div class="jumbotron div_img_pc div_img_tb div_img_mb">
-		<!-- <img src="/img/banner_1_pc.jpg" alt="GALOP"> -->
+	<div class="jumbotron">
+		<img class="div_img_pc" src="/img/banner_1_pc.jpg" alt="GALOP">
+		<img class="div_img_tb" src="/img/banner_1_tb.jpg" alt="GALOP">
+		<img class="div_img_mb" src="/img/banner_1_mb.jpg" alt="GALOP">
 		<div class="overlay">
 		<h1>Grupo América Latina de Oncología Pediátrica</h1>
 		</div>
