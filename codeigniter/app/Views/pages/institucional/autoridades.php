@@ -37,13 +37,15 @@
 						<div class="div-miembros">
 							<div class="miembro-left">
 								<div class="user-img">
+									<img src="/img/miembros/GuillermoChantada.jpg" class="user-img" alt="">
 								</div>
 								<h3 class="miembros-titulo">Guillermo Chantada</h3>
 								<h4 class="miembros-cargo">Co-chair</h4>
 								<p>(Uruguay)</p>
 							</div>
 							<div class="miembro-right">
-							<p></p>
+							<p>Director cientifico y academico, Servicio de Hemato-oncologia. Fundacion Perez Scremini-Centro Hospitalario Pereira. Rossell, Montevideo-Uruguay.
+							 Presidente Contienental SIOP.</p>
 							</div>
 
 							<div class="redes">
@@ -109,6 +111,7 @@
 						<div class="div-miembros">
 							<div class="miembro-left">
 								<div class="user-img">
+									<img src="/img/miembros/LauroGregianin.jpg" class="user-img" alt="">
 								</div>
 								<h3 class="miembros-titulo">Lauro Gregianin</h3>
 								<h4 class="miembros-cargo">Comisión Fiscal</h4>
@@ -116,7 +119,12 @@
 							</div>
 
 							<div class="miembro-right">
-							<p></p>
+							<p>
+								Oncologo Pediatra,
+								 Profesor del Departament de Pediatria de la Universidade Federal do Rio Grande do Sul (UFRGS).
+								 Profesor del Curso de Posgrado en Salud del Nino y el adolescente UFRGS.
+								 Jefe de servicio Jefe de Servicio de Oncologia Pediátrica del Hospital de Clínicas de Porto Alegre, Brasil
+							</p>
 							</div>
 
 							

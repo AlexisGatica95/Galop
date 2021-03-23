@@ -27,7 +27,25 @@ return [
 
 		'fecha' => 'Date',
 		'titulo' => 'Title',
-		'estado' => 'Status'
+		'estado' => 'Status',
+
+		'publico' => 'Public',
+		'privado' => 'Private',
+		'papelera' => 'Trashs',
+
+		'estado' => 'Status',
+		'lenguaje' => 'Public',
+		'categoria' => 'Category',
+		'buscar' => 'Search',
+
+		'nombre' => 'Name',
+		'apellido' => 'Lastname',
+		'permisos' => 'Permissions',
+
+		'pendiente' => 'Pendent',
+		'usuario' => 'User',
+		'admin' => 'Administrator'
+
 	],
 	'sidebar_noticias' => [
 		'estado' => 'Status',

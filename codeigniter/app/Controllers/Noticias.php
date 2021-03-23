@@ -170,7 +170,7 @@ class Noticias extends BaseController
 		$data['locale'] = $locale;
 		$data['ruta_es'] = '/es/admin/noticias/';
 		$data['ruta_en'] = '/en/admin/noticias/';
-		$model = new NoticiasModel();
+		$data['scripts'][] = 'tabla_noticias';
 		$model = new NoticiasModel();
 		//cambiar
 		$noticias = $model->getPosts();

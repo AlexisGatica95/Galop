@@ -171,6 +171,21 @@ class Users extends BaseController
 		return redirect()->to('/'.$locale.'/');
 	}
 
+	public function adminUsuarios(){
+		$locale = $this->request->getLocale();
+		$data['locale'] = $locale;
+		$data['ruta_es'] = '/es/admin/usuarios';
+		$data['ruta_en'] = '/en/admin/usuarios';
+		$data['scripts'][] = 'tabla_usuarios';
+		$model = new UsersModel();
+		$usuarios = $model->getAllUsers();
+		$data['usuarios'] = $usuarios;
+
+		echo view('admin/templates/header',$data);
+		echo view('admin/usuarios');
+		echo view('admin/templates/footer');
+	}
+
 	//--------------------------------------------------------------------
 
 }

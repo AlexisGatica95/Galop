@@ -71,6 +71,12 @@ $routes->match(['get','post'],'{locale}/admin/noticia', 'Noticias::create');
 $routes->match(['get','post'],'admin/ver/noticias', 'Noticias::adminNoticias');
 $routes->match(['get','post'],'{locale}/admin/ver/noticias', 'Noticias::adminNoticias');
 
+
+//Usuarios
+$routes->match(['get','post'],'admin/usuarios','Users::adminUsuarios');
+$routes->match(['get','post'],'{locale}/admin/usuarios','Users::adminUsuarios');
+
+// ----------------------------------------------------------------------
 //Login/Logout y Registro
 $routes->match(['get','post'],'{locale}/registro','Users::registro');
 $routes->match(['get','post'],'{locale}/login','Users::index');
@@ -78,6 +84,7 @@ $routes->get('{locale}/logout','Users::logout');
 //Cuenta
 $routes->match(['get','post'],'{locale}/mi-cuenta','Users::perfil');
 
+// ----------------------------------------------------------------------
 
 
 // $routes->get('{locale}/', 'Pages::index');

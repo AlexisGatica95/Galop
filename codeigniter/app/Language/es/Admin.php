@@ -22,13 +22,30 @@ return [
 		'categorias' => 'Manejar categorias'
 	],
 	'tabla' => [
-		'idioma'=>'Idioma',
+		'idioma'=>'Lenguaje',
 		'anterior'=>'Anterior',
 		'siguiente'=>'Siguiente',
 
 		'fecha' => 'Fecha',
 		'titulo' => 'Titulo',
-		'estado' => 'Estado'
+		'estado' => 'Estado',
+
+		'publico' => 'Público',
+		'privado' => 'Privado',
+		'papelera' => 'Papelera',
+
+		'estado' => 'Estado',
+		'lenguaje' => 'Público',
+		'categoria' => 'Categoria',
+		'buscar' => 'Buscar',
+
+		'nombre' => 'Nombre',
+		'apellido' => 'Apellido',
+		'permisos' => 'Permisos',
+
+		'pendiente' => 'Pendiente',
+		'usuario' => 'Usuario',
+		'admin' => 'Adminitrador'
 	],
 	'sidebar_noticias' => [
 		'estado' => 'Estado',
@@ -40,8 +57,8 @@ return [
 		'es' => 'Español',
 		'en' => 'Ingles',
 		'pt' => 'Portugues',
-		'traduccion_check' => 'Es una traduccion de una entrada',
-		'traduccion_de' => 'Es traduccion de',
+		'traduccion_check' => 'Es una traducción de una entrada',
+		'traduccion_de' => 'Es traducción de',
 		'elegir' => 'Elegir'
 	]
 ]
