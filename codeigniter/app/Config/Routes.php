@@ -33,6 +33,7 @@ $routes->setAutoRoute(false);
 
 //Home
 $routes->get('/', 'Pages::index');
+
 //Institucional
 $routes->get('institucional','Institucional::index');
 $routes->get('{locale}/institucional','Institucional::index');
@@ -57,24 +58,24 @@ $routes->get('about', 'Pages::showme/about');
 
 //---------------------------------------------------
 //ADMIN
-// $routes->match(['get','post'],'admin','Noticias::create');
-// $routes->match(['get','post'],'{locale},admin','Noticas::create');
-// //Posts
-// $routes->match(['get','post'],'admin/noticia/editar/(:num)', 'Noticias::edit/$1');
-// $routes->match(['get','post'],'{locale}/admin/noticia/editar/(:num)', 'Noticias::edit/$1');
+$routes->match(['get','post'],'admin','Noticias::create');
+$routes->match(['get','post'],'{locale}/admin','Noticas::create');
+//Posts
+$routes->match(['get','post'],'admin/noticia/editar/(:num)', 'Noticias::edit/$1');
+$routes->match(['get','post'],'{locale}/admin/noticia/editar/(:num)', 'Noticias::edit/$1');
 
-// $routes->match(['get','post'],'admin/noticia', 'Noticias::create');
-// $routes->match(['get','post'],'{locale}/admin/noticia', 'Noticias::create');
-
-
-// //Noticias
-// $routes->match(['get','post'],'admin/ver/noticias', 'Noticias::adminNoticias');
-// $routes->match(['get','post'],'{locale}/admin/ver/noticias', 'Noticias::adminNoticias');
+$routes->match(['get','post'],'admin/noticia', 'Noticias::create');
+$routes->match(['get','post'],'{locale}/admin/noticia', 'Noticias::create');
 
 
-// //Usuarios
-// $routes->match(['get','post'],'admin/usuarios','Users::adminUsuarios');
-// $routes->match(['get','post'],'{locale}/admin/usuarios','Users::adminUsuarios');
+//Noticias
+$routes->match(['get','post'],'admin/ver/noticias', 'Noticias::adminNoticias');
+$routes->match(['get','post'],'{locale}/admin/ver/noticias', 'Noticias::adminNoticias');
+
+
+//Usuarios
+$routes->match(['get','post'],'admin/usuarios','Users::adminUsuarios');
+$routes->match(['get','post'],'{locale}/admin/usuarios','Users::adminUsuarios');
 
 // ----------------------------------------------------------------------
 //Login/Logout y Registro
@@ -86,7 +87,7 @@ $routes->match(['get','post'],'{locale}/mi-cuenta','Users::perfil');
 
 // ----------------------------------------------------------------------
 
-
+$routes->post('upload/img','Upload::img');
 // $routes->get('{locale}/', 'Pages::index');
 // $routes->get('{locale}/(:any)', 'Pages::showme/$1');
 

@@ -33,14 +33,35 @@ $(document).ready(function(){
           onPaste: function(e) {
             // console.log('Called event paste');
           },
-          // onImageUpload: function(files, editor, $editable) {
-          //   // sendFile(files[0],editor,$editable);
-          // } 
+          onImageUpload: function(files, editor, $editable) {
+            sendFile(files[0],editor,$editable);
+          } 
         }
       });
       $('.summernote').summernote('reset');
-      $('.summernote').summernote('editor.pasteHTML', post_body);
-      $('.note-editable p').first().remove();
+      if (typeof post_body !== 'undefined') {
+        $('.summernote').summernote('editor.pasteHTML', post_body);
+        $('.note-editable p').first().remove();
+      }
+
+      function sendFile(file, editor, $Editable) {
+        data = new FormData();
+        data.append("file", file);
+        $.ajax({
+          data: data,
+          type: "POST",
+          url: "/upload/img",
+          cache: false,
+          contentType: false,
+          processData: false,
+          success: function(url) {
+            // editor.insertImage($Editable, url);
+            url = url.replace('../../../public/','/');
+            $('.summernote').summernote('insertImage', url);
+            console.log(url);
+          }
+        });
+      }
   });
 
 
