@@ -172,16 +172,35 @@ class Noticias extends BaseController
 		$data['ruta_en'] = '/en/admin/noticias/';
 		$data['scripts'][] = 'tabla_noticias';
 		$model = new NoticiasModel();
-		//cambiar
-		$noticias = $model->getPosts();
-		$page = 0;
-		if (isset($_GET['p'])) {
-			$page = $_GET['p'] - 1;
+		//me fijo si tengo una query
+		if (array_key_exists('st', $_GET) || array_key_exists('s', $_GET) || array_key_exists('cat', $_GET) || array_key_exists('lg', $_GET)) {
+			$condiciones = [];
+			if (array_key_exists('st', $_GET)) {
+				$condiciones['status'] = $_GET['st'];
+			}
+			if (array_key_exists('lg', $_GET)) {
+				$condiciones['lang'] = $_GET['lg'];
+			}
+			if (array_key_exists('s', $_GET)) {
+				$condiciones['string'] = $_GET['s'];
+			} else {
+				$condiciones['string'] = "";
+			}
+			$noticias = $model->getAllPostsPaginadosFiltros($condiciones);
+		} else {
+			$noticias = $model->getAllPostsPaginados();
 		}
-		if (!array_key_exists($page,$noticias)) {
-			$page = 0;
+		
+
+		$data['paginacion'] = $this->createPagination($noticias);
+
+		// $data['paginacion'] = $paginacion;
+		
+		// agarro y paso la pagina que corresponde como array de noticias
+		$page = $this->getPage($noticias);
+		if (count($noticias) > 0) {
+			$noticias = $noticias[$page];
 		}
-		$noticias = $noticias[$page];
 		$data['noticias'] = $noticias;
 		// return view('welcome_message');
 		echo view('admin/templates/header',$data);
