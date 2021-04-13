@@ -288,7 +288,7 @@ ul.dropdown_content {
     display: flex;
 }
 
-.header_admin_right input[type="search"]{    
+input[type="search"]{    
     border: 1px solid #dcdee2;
     border-radius: 5px;
     height: 30px;
@@ -297,7 +297,7 @@ ul.dropdown_content {
     margin-right: .5rem;
 }
 
-.header_admin_right input[type="submit"]{ 
+input[type="submit"]{ 
     background-color: #f5a014;
     border-radius: 5px;
     color: white;
