@@ -86,11 +86,15 @@ class Noticias extends BaseController
 			'body' => 'required',
 			'idioma_select' => 'required'
 		])) {
+			// obtenemos las taxonomias y sus terminos
+			$taxonomias = $model->getTaxTerms($this->locale);
+			$data['taxonomias'] = $taxonomias;
+
 			echo view('admin/templates/header',$data);
 			echo view('admin/crear_noticia');
 			echo view('admin/templates/footer');
 		} else {
-			$o = [
+			$post = [
 				'title' => $this->request->getVar('title'),
 				'body' => $this->request->getVar('body'),
 				'slug' => url_title($this->request->getVar('title')),
@@ -99,9 +103,24 @@ class Noticias extends BaseController
 				'lang' => $this->request->getVar('idioma_select')
 			];
 			if ($this->request->getVar('traduccion_de')) {
-				$o['traduccion_de'] = $this->request->getVar('traduccion_de');
+				$post['traduccion_de'] = $this->request->getVar('traduccion_de');
 			}
-			$model->save($o);
+			$model->save($post);
+
+			$postID = $model->db->insertID();
+
+			$db = \Config\Database::connect();
+			$builder = $db->table('posts_terms');
+			
+			if (array_key_exists('terms', $_POST)) {
+				foreach ($this->request->getVar('terms') as $term) {
+					$d = [
+						'id_post' => $postID,
+						'id_term' => $term
+					];
+					$query = $builder->insert($d);
+				}
+			}
 			$session = \Config\Services::session();
 			$session->setFlashdata('success','New post has been created!');
 			return redirect()->to("/".$this->request->getVar('idioma_select').'/noticias/'.url_title($this->request->getVar('title')));
@@ -111,9 +130,7 @@ class Noticias extends BaseController
 	// edicion
 	public function edit($id)
 	{
-		$locale = $this->request->getLocale();
-
-		$data['locale'] = $locale;
+		$data['locale'] = $this->locale;
 		$data['ruta_es'] = '/es/admin/noticia/';
 		$data['ruta_en'] = '/en/admin/noticia/';
 		$data['scripts'][] = 'edicion_noticia';
@@ -123,6 +140,22 @@ class Noticias extends BaseController
 		$model = new NoticiasModel();
 		$data['notis'] = $model->getPostsParents($id);
 
+		// obtenemos las taxonomias y sus terminos
+		$taxonomias = $model->getTaxTerms($this->locale);
+		$data['taxonomias'] = $taxonomias;
+
+		// obtenemos las relaciones que ya tiene este post con terminos
+		$terms = [];
+		$db = \Config\Database::connect();
+		$builder = $db->table('posts_terms');
+		$query = $builder->getWhere(['id_post' => $id]);
+
+		foreach ($query->getResultArray() as $relacion) {
+			$terms[] = $relacion['id_term'];
+		}
+
+		$data['terms'] = $terms;
+
 		if (!$this->validate([
 			'title' => 'required|max_length[255]',
 			'body' => 'required',
@@ -130,7 +163,7 @@ class Noticias extends BaseController
 		])) {
 			$post = $model->getPost($id);
 			$data['post'] = $post;
-			
+
 			echo view('admin/templates/header',$data);
 			echo view('admin/crear_noticia');
 			echo view('admin/templates/footer');
@@ -150,6 +183,35 @@ class Noticias extends BaseController
 				$o['translation_of'] = null;
 			}
 			$model->save($o);
+
+			// guardamos los terms
+			$db = \Config\Database::connect();
+			$builder = $db->table('posts_terms');
+			
+			if (array_key_exists('terms', $_POST)) {
+				foreach ($this->request->getVar('terms') as $term) {
+					$d = [
+						'id_post' => $id,
+						'id_term' => $term
+					];
+					$query = $builder->insert($d);
+					$data['terms'][] = $term;
+				}
+			}
+
+			$terms_borrar = [];
+			foreach ($data['terms'] as $term_anterior) {
+				if (!in_array($term_anterior, $this->request->getVar('terms'))) {
+					$terms_borrar[] = $term_anterior;
+				}
+			}
+
+			foreach ($terms_borrar as $term_borrar) {
+				$query_b = $builder->delete(['id_post' => $id, 'id_term' => $term_borrar]);
+			}
+
+			$data['terms'] = array_diff($data['terms'], $terms_borrar);
+
 			$session = \Config\Services::session();
 			$session->setFlashdata('success','Cambios guardados!');
 			// return redirect()->to('/noticias/');
@@ -189,12 +251,10 @@ class Noticias extends BaseController
 			$noticias = $model->getAllPostsPaginadosFiltros($condiciones);
 		} else {
 			$noticias = $model->getAllPostsPaginados();
-		}
-		
+			$condiciones = [];
+		}		
 
 		$data['paginacion'] = $this->createPagination($noticias);
-
-		// $data['paginacion'] = $paginacion;
 		
 		// agarro y paso la pagina que corresponde como array de noticias
 		$page = $this->getPage($noticias);

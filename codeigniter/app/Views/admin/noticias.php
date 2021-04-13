@@ -20,7 +20,7 @@
                 <div class="d-flex">
                     <div class="column_filtro_left d-flex flex-column">
                         <label><h4><?= ucfirst(lang("Admin.tabla.lenguaje"))?></h4></label>
-                        <select name="lang" id="filtro_lenguaje">
+                        <select name="lg" id="filtro_lenguaje">
                             <option value="" selected disabled></option>
                             <option value="es">
                                 <?= ucfirst(lang("Admin.sidebar_noticias.es"))?>
@@ -99,5 +99,5 @@
     </table>
     <?php echo $paginacion ?>
     <pre>
-        <?php #var_dump($_SERVER) ?>
+        <?php #var_dump($condiciones) ?>
     </pre>

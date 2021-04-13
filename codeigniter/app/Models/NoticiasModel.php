@@ -96,4 +96,39 @@ class NoticiasModel extends Model {
 		return $res;
 	}
 
+	public function getTaxTerms($lang = "es") {
+		$res = [];
+
+		$db = \Config\Database::connect();
+		$builder = $db->table('taxonomias');
+		$query = $builder->getWhere(['tipo' => 'noticia']);
+		foreach ($query->getResultArray() as $row){
+			$nombre = json_decode($row['nombre']);
+			$nombre = $nombre->$lang;
+			$row['nombre'] = ucfirst($nombre);
+			$slug = json_decode($row['slug']);
+			$slug = $slug->$lang;
+			$row['slug'] = ucfirst($slug);
+
+			// buscar los terminos de esta taxonomia
+			$terms = [];
+			$builder2 = $db->table('terms');
+			$query2 = $builder2->getWhere(['id_tax' => $row['id']]);
+			foreach ($query2->getResultArray() as $row2) {
+				$nombre = json_decode($row2['nombre']);
+				$nombre = $nombre->$lang;
+				$row2['nombre'] = ucfirst($nombre);
+				$slug = json_decode($row2['slug']);
+				$slug = $slug->$lang;
+				$row2['slug'] = ucfirst($slug);
+
+				$terms[] = $row2;
+			}
+			$row['terms'] = $terms;
+		    $res[] = $row;
+		}
+
+		return $res;
+	}
+
 }

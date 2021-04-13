@@ -71,7 +71,23 @@
 					</div>	
 				</div>
 
+				<?php foreach ($taxonomias as $taxonomia): ?>
+				<div class="taxonomia">
+					<h4><?=$taxonomia['nombre']?></h4>
+					<div class="lista">
+						<?php foreach ($taxonomia['terms'] as $term): ?>
+							<label for="<?=$term['slug'].$term['id']?>">
+								<input type="checkbox" id="<?=$term['slug'].$term['id']?>" name="terms[]" value="<?=$term['id']?>" <?php if (in_array($term['id'], $terms)) { echo "checked"; } ?>>
+								<?=$term['nombre']?>
+							</label>
+						<?php endforeach ?>
+					</div>
+				</div>
+				<?php endforeach ?>
 			</div>
 		</form>
 	</div>
+	<pre>
+		<?php if(isset($insertID)){var_dump($insertID);} ?>
+	</pre>
 </div>
