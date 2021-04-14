@@ -21,7 +21,26 @@ ul{
 h1,h2,h3,h4,h5,h6,a,th,button,input[type=submit],.btn {
 	font-family: 'Josefin Sans', sans-serif;
 }
-
+.acc {
+    margin-bottom: 5px;
+    width: 100%;
+}
+.acc_cont {
+    padding: 1rem;
+    background-color: #fff;
+    display: none;
+}
+.acc_head {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+}
+.acc_head > * {
+    padding: .5rem 1rem;
+}
+.acc_btn {
+    cursor: pointer;
+}
 li{
     list-style: none;
 }

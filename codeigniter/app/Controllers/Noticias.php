@@ -76,6 +76,7 @@ class Noticias extends BaseController
 		$data['ruta_en'] = '/en/admin/noticia/';
 		$data['scripts'][] = 'edicion_noticia';
 		$data['titulo_vista'] = 'titulo_crear';
+		$data['terms'] = [];
 
 		helper('form');
 		$model = new NoticiasModel();
@@ -266,6 +267,92 @@ class Noticias extends BaseController
 		echo view('admin/templates/header',$data);
 		echo view('admin/noticias');
 		echo view('admin/templates/footer');
+	}
+
+	// manejar taxonomias
+	public function taxonomias(){
+		$data['locale'] = $this->locale;
+		$data['ruta_es'] = '/es/admin/categorias/noticia/';
+		$data['ruta_en'] = '/en/admin/categorias/noticia/';
+		$data['scripts'][] = 'taxonomias_noticias';
+		$data['titulo_vista'] = 'titulo_categorias';
+
+		helper('form');
+		$model = new NoticiasModel;
+		// obtenemos las taxonomias y sus terminos
+		$taxonomias = $model->getTaxTerms($this->locale,true);
+		$data['taxonomias'] = $taxonomias;
+		$data['locales'] = $this->locales;
+
+		if (!$this->validate([
+			'action' => 'required'
+		])) {
+			echo view('admin/templates/header',$data);
+			echo view('admin/taxonomias');
+			echo view('admin/templates/footer');
+		} else {
+			$db = \Config\Database::connect();
+			$builder = $db->table('terms');
+
+			switch ($this->request->getVar('action')) {
+				case 'edit':
+					$id_term = $this->request->getVar('id');
+					$array_nuevo = $this->request->getVar($id_term);
+
+					$array_slug = [];
+					foreach ($array_nuevo as $loc => $nombre) {
+						$array_slug[$loc] = url_title($nombre);
+					}
+
+					$array_nuevo = json_encode($array_nuevo);
+					$array_slug = json_encode($array_slug);
+
+					$update_data = [
+					    'nombre' => $array_nuevo,
+					    'slug' => $array_slug
+					];
+					$builder->where('id', $id_term);
+					$builder->update($update_data);
+					break;
+
+				case 'delete':
+					$id_term = $this->request->getVar('id');
+
+					$query = $builder->delete(['id' => $id_term]);
+
+					$db2 = \Config\Database::connect();
+					$builder2 = $db2->table('posts_terms');
+					$query2 = $builder2->delete(['id_term' => $id_term]);
+
+					break;
+
+				case 'new':
+					$array_nuevo = $this->request->getVar('new');
+					$array_slug = [];
+					foreach ($array_nuevo as $loc => $nombre) {
+						$array_slug[$loc] = url_title($nombre);
+					}
+					$data_term = [
+						'nombre' => json_encode($array_nuevo),
+						'slug' => json_encode($array_slug),
+						'id_tax' => $this->request->getVar('taxonomia')
+					];
+					
+					$query = $builder->insert($data_term);
+				
+				default:
+					# code...
+					break;
+			}
+
+			// obtenemos las taxonomias y sus terminos
+			$taxonomias = $model->getTaxTerms($this->locale,true);
+			$data['taxonomias'] = $taxonomias;
+
+			echo view('admin/templates/header',$data);
+			echo view('admin/taxonomias');
+			echo view('admin/templates/footer');
+		}
 	}
 
 	//--------------------------------------------------------------------

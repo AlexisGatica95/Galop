@@ -28,6 +28,7 @@ class BaseController extends Controller
 	 */
 	protected $helpers = [];
 	protected $locale;
+	protected $locales = [];
 
 	/**
 	 * Constructor.
@@ -43,6 +44,10 @@ class BaseController extends Controller
 		// E.g.:
 		$this->session = \Config\Services::session();
 		$this->locale = $this->request->getLocale();
+
+		$config = new \Config\App();
+		$this->locales = $config->supportedLocales;
+
 	}
 	protected function getPage($array){
 		$page = 0;

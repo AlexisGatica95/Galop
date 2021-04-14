@@ -27,7 +27,7 @@ $uri = service('uri');
 			<span><?= ucfirst(lang("Admin.menu.recursos"))?><img src="/img/arrow_down.png" alt=""></span>
 			
 			<ul class="dropdown_content">
-				<li><a href=""><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
+				<li><a href="/"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
 				<li><a href="/"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
 				<li><a href="/"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
 			</ul>
@@ -38,13 +38,14 @@ $uri = service('uri');
 			<ul class="dropdown_content">
 				<li><a href="/admin/noticia"><?= ucfirst(lang("Admin.menu.nueva"))?></a></li>
 				<li><a href="/admin/ver/noticias"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
+				<li><a href="/admin/categorias/noticias"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
 			</ul>
 		</li>
 		<li class="dropdown">
 			<span><?= ucfirst(lang("Admin.menu.eventos"))?><img src="/img/arrow_down.png" alt=""></span>
 			
 			<ul class="dropdown_content">
-				<li><a href=""><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
+				<li><a href="/"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
 				<li><a href="/"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
 				<li><a href="/"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
 			</ul>

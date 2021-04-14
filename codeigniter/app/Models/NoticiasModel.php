@@ -96,31 +96,45 @@ class NoticiasModel extends Model {
 		return $res;
 	}
 
-	public function getTaxTerms($lang = "es") {
+	public function getTaxTerms($lang = "es",$all = false) {
 		$res = [];
 
 		$db = \Config\Database::connect();
 		$builder = $db->table('taxonomias');
 		$query = $builder->getWhere(['tipo' => 'noticia']);
 		foreach ($query->getResultArray() as $row){
-			$nombre = json_decode($row['nombre']);
-			$nombre = $nombre->$lang;
-			$row['nombre'] = ucfirst($nombre);
-			$slug = json_decode($row['slug']);
-			$slug = $slug->$lang;
-			$row['slug'] = ucfirst($slug);
+			if (!$all) {
+				$nombre = json_decode($row['nombre']);
+				$nombre = $nombre->$lang;
+				$row['nombre'] = ucfirst($nombre);
+				$slug = json_decode($row['slug']);
+				$slug = $slug->$lang;
+				$row['slug'] = ucfirst($slug);
+			} else {
+				$nombre = json_decode($row['nombre']);
+				$row['nombre'] = $nombre;
+				$slug = json_decode($row['slug']);
+				$row['slug'] = $slug;
+			}
 
 			// buscar los terminos de esta taxonomia
 			$terms = [];
 			$builder2 = $db->table('terms');
 			$query2 = $builder2->getWhere(['id_tax' => $row['id']]);
 			foreach ($query2->getResultArray() as $row2) {
-				$nombre = json_decode($row2['nombre']);
-				$nombre = $nombre->$lang;
-				$row2['nombre'] = ucfirst($nombre);
-				$slug = json_decode($row2['slug']);
-				$slug = $slug->$lang;
-				$row2['slug'] = ucfirst($slug);
+				if (!$all) {
+					$nombre = json_decode($row2['nombre']);
+					$nombre = $nombre->$lang;
+					$row2['nombre'] = ucfirst($nombre);
+					$slug = json_decode($row2['slug']);
+					$slug = $slug->$lang;
+					$row2['slug'] = ucfirst($slug);
+				} else {
+					$nombre = json_decode($row2['nombre']);
+					$row2['nombre'] = $nombre;
+					$slug = json_decode($row2['slug']);
+					$row2['slug'] = $slug;
+				}				
 
 				$terms[] = $row2;
 			}

@@ -4,10 +4,9 @@
 		<!-- <pre>
 			<?php #var_dump($post) ?>
 		</pre> -->
-	<script>
-		
+	<script>	
 		const post_body = '<?php echo($post['body']) ?>';
-		console.log(post_body);
+		// console.log(post_body);
 	</script>
 	<?php endif; ?>
 	<!-- <pre>
