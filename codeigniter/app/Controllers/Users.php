@@ -9,7 +9,7 @@ class Users extends BaseController
 		$model = new UsersModel();
 		$locale = $this->request->getLocale();
 		helper(['form']);
-		$data['locale'] = $locale;
+		$data['locale'] = $locale;		
 		$data['ruta_es'] = '/es/login';
 		$data['ruta_en'] = '/en/login';
 
@@ -178,7 +178,16 @@ class Users extends BaseController
 		$data['ruta_en'] = '/en/admin/usuarios';
 		$data['scripts'][] = 'tabla_usuarios';
 		$model = new UsersModel();
-		$usuarios = $model->getAllUsers();
+
+		$usuarios = $model->getUsersPaginados($this->locale);		
+		$data['paginacion'] = $this->createPagination($usuarios);
+
+		// agarro y paso la pagina que corresponde como array de noticias
+		$page = $this->getPage($usuarios);
+		if (count($usuarios) > 0) {
+			$usuarios = $usuarios[$page];
+		}
+
 		$data['usuarios'] = $usuarios;
 
 		echo view('admin/templates/header',$data);

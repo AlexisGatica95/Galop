@@ -32,4 +32,17 @@ class UsersModel extends Model {
 					->findAll();	
 		return $res;
 	}
+
+
+	public function getUsersPaginados() {
+		$res = $this->asArray()
+					// ->where([
+					// 	'lang' => $lang
+					// 	])
+					->orderBy('fecha_registro','DESC')
+					->findAll();
+		return array_chunk($res,2,true);
+	}
+
+
 } 

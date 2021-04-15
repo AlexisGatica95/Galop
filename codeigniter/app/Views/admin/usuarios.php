@@ -1,9 +1,7 @@
-<pre><?php var_dump($usuarios) ?></pre> 
-
 <h1>Usuarios</h1>
     <div class="header_admin d-flex">
 
-        <div class="header_admin_left">
+        <div class="">
           <div class="column_filtro_left d-flex flex-column">
                 <label><h4><?= ucfirst(lang("Admin.tabla.permisos"))?></h4></label>
                 <select name="" id="filtro_permisos">
@@ -22,7 +20,7 @@
 
          </div>
 
-        <div class="header_admin_right">
+        <div class="d-flex">
             <input class="buscar_menu_header" type="search" >
             <input type="submit" value="<?= ucfirst(lang("Admin.tabla.buscar"))?>">
         </div>
@@ -63,16 +61,4 @@
         <?php endforeach ?>  
     </table>
 
-    <div class="pagination">
-        <div>
-           <a href="">< <?= ucfirst(lang("Admin.tabla.anterior"))?></a>
-        </div>
-        <div>
-            <a href="" class="active">1</a>
-            <a href="">2</a>
-            <a href="">3</a>
-        </div>
-        <div>
-            <a href=""> <?= ucfirst(lang("Admin.tabla.siguiente"))?> ></a>
-        </div>
-    </div>
+<?php echo $paginacion ?>

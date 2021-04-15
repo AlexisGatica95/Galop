@@ -1,7 +1,7 @@
 <h1>Noticias</h1>
-    <div class="header_admin d-flex">
+    <div class="">
         <form action="<?=$_SERVER['PATH_INFO']?>" method="GET" id="query_form">
-            <div class="header_admin_left">
+            <div class="header_admin">
               <div class="column_filtro_left d-flex flex-column">
                     <label><h4><?= ucfirst(lang("Admin.tabla.estado"))?></h4></label>
                     <select name="st" id="filtro_estado">
@@ -19,7 +19,7 @@
                 </div>
                 <div class="d-flex">
                     <div class="column_filtro_left d-flex flex-column">
-                        <label><h4><?= ucfirst(lang("Admin.tabla.lenguaje"))?></h4></label>
+                        <label><h4><?= ucfirst(lang("Admin.tabla.idioma"))?></h4></label>
                         <select name="lg" id="filtro_lenguaje">
                             <option value="" selected disabled></option>
                             <option value="es">
@@ -43,16 +43,14 @@
                         </select>               
                     </div>  
                 </div>
+
                 <div class="d-flex">
-                    <div class="column_filtro_left d-flex flex-column">
+                    <div class="column_filtro_left d-flex flex-row align-self-end">
                         <input class="buscar_menu_header" name="s" id="query_string" type="search" >
-                    </div>
-                </div>
-                <div class="d-flex">
-                    <div class="column_filtro_left d-flex flex-column">
                         <input type="submit" value="<?= ucfirst(lang("Admin.tabla.buscar"))?>" id="filtrar_items">
                     </div>
                 </div>
+
             </div>
         </form>            
     </div>

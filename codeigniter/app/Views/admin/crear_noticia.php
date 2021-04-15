@@ -30,7 +30,8 @@
 			
 			</div>
 			<div class="sidebar">
-				<div class="estado">
+
+				<div class="estado bloque_panel">
 					<label for=""><h4><?= ucfirst(lang("Admin.sidebar_noticias.estado"))?></h4></label>
 					<select name="estado" id="status">
 						<option value="0" <?php if (isset($post) && $post['status'] == "0") {echo 'selected';} ?>><?= ucfirst(lang("Admin.sidebar_noticias.privado"))?></option>
@@ -43,7 +44,7 @@
 					</div>
 				</div>
 				
-				<div class="idioma">
+				<div class="idioma bloque_panel">
 					<label for=""><h4><?= ucfirst(lang("Admin.sidebar_noticias.idioma"))?></h4></label>
 					<select name="idioma_select" id="lang">
 					<!-- <option value="" disabled><?= ucfirst(lang("Admin.sidebar_noticias.elegir"))?></option> -->
@@ -57,7 +58,7 @@
 						<?= ucfirst(lang("Admin.sidebar_noticias.traduccion_check"))?>
 					</label>
 
-					<div class="traduccion" id="traduccion" <?php if (isset($post) && $post['translation_of'] != NULL) {echo 'style="display:block;"';} ?>>
+					<div class="traduccion " id="traduccion" <?php if (isset($post) && $post['translation_of'] != NULL) {echo 'style="display:block;"';} ?>>
 						<label class="traduccion_label">
 							<h4><?= ucfirst(lang("Admin.sidebar_noticias.traduccion_de"))?></h4>
 						</label>
@@ -71,7 +72,7 @@
 				</div>
 
 				<?php foreach ($taxonomias as $taxonomia): ?>
-				<div class="taxonomia">
+				<div class="taxonomia bloque_panel">
 					<h4><?=$taxonomia['nombre']?></h4>
 					<div class="lista">
 						<?php foreach ($taxonomia['terms'] as $term): ?>

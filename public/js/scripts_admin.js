@@ -65,9 +65,9 @@ function traduccionDe(){
   var traduccion = $(".traduccion");
 
   if (checkbox.prop("checked")){
-    traduccion.show();
+    traduccion.show("fast");
   } else {
-    traduccion.hide();
+    traduccion.hide("fast");
   }
 };
 
