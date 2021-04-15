@@ -46,7 +46,7 @@
 
                 <div class="d-flex">
                     <div class="column_filtro_left d-flex flex-row align-self-end">
-                        <input class="buscar_menu_header" name="s" id="query_string" type="search" >
+                        <input class="buscar_menu_header" name="s" type="search" >
                         <input type="submit" value="<?= ucfirst(lang("Admin.tabla.buscar"))?>" id="filtrar_items">
                     </div>
                 </div>

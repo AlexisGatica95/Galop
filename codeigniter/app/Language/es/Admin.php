@@ -42,6 +42,7 @@ return [
 		'nombre' => 'Nombre',
 		'apellido' => 'Apellido',
 		'permisos' => 'Permisos',
+		'mail' => 'Mail',
 
 		'pendiente' => 'Pendiente',
 		'usuario' => 'Usuario',

@@ -36,11 +36,29 @@ class UsersModel extends Model {
 
 	public function getUsersPaginados() {
 		$res = $this->asArray()
-					// ->where([
-					// 	'lang' => $lang
-					// 	])
 					->orderBy('fecha_registro','DESC')
 					->findAll();
+		return array_chunk($res,2,true);
+	}
+
+	public function getAllUsersPaginadosFiltros($condiciones){
+	
+		if (array_key_exists('permisos', $condiciones)) {
+			$where['permisos'] = $condiciones["permisos"];
+		} else {
+			$where = [];
+		}
+
+		$res = $this->asArray()
+					
+					->orLike(['nombre'=>$condiciones['string'],
+						'apellido'=>$condiciones['string'],
+						'mail'=>$condiciones['string']
+					])
+					->where($where)
+					->orderBy('fecha_registro','DESC')
+					->findAll();
+
 		return array_chunk($res,2,true);
 	}
 

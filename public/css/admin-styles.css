@@ -112,6 +112,7 @@ input[type=checkbox], input[type=radio] {
     width: 32%;
 }
 
+
 /*------TABLA-----*/
 
 .btn.btn-1 {
@@ -347,6 +348,10 @@ input[type="submit"]{
 
 .tbl_noti_date{
     min-width: 150px;  
+}
+
+.tbl_noti_mail{
+    width: 100%
 }
 
 .pagination {

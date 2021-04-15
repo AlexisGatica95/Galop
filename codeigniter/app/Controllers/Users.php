@@ -173,22 +173,41 @@ class Users extends BaseController
 
 	public function adminUsuarios(){
 		$locale = $this->request->getLocale();
+
 		$data['locale'] = $locale;
 		$data['ruta_es'] = '/es/admin/usuarios';
 		$data['ruta_en'] = '/en/admin/usuarios';
 		$data['scripts'][] = 'tabla_usuarios';
 		$model = new UsersModel();
 
-		$usuarios = $model->getUsersPaginados($this->locale);		
+		if(array_key_exists('permisos', $_GET)||array_key_exists('s', $_GET)){
+			$condiciones = [];
+			if(array_key_exists('permisos',$_GET)){
+				$condiciones['permisos'] = $_GET['permisos'];
+			}
+			if (array_key_exists('s', $_GET)) {
+				$condiciones['string'] = $_GET['s'];
+			}else{
+				$condiciones['string'] = "";
+			} 
+			$usuarios = $model->getAllUsersPaginadosFiltros($condiciones);
+		}else {
+			$usuarios = $model->getUsersPaginados();
+			$condiciones = [];
+		}
+		$data['condiciones']=$condiciones;
+
+
 		$data['paginacion'] = $this->createPagination($usuarios);
 
-		// agarro y paso la pagina que corresponde como array de noticias
+		// agarro y paso la pagina que corresponde como array de tabla_usuarios
 		$page = $this->getPage($usuarios);
 		if (count($usuarios) > 0) {
 			$usuarios = $usuarios[$page];
 		}
 
 		$data['usuarios'] = $usuarios;
+
 
 		echo view('admin/templates/header',$data);
 		echo view('admin/usuarios');
