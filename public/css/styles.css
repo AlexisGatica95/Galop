@@ -865,7 +865,19 @@ iframe.visualizar_doc {
     display: flex;
     justify-content: flex-start;
 }
-
+.noticias-content .item {
+    margin-bottom: 25px;
+}
+.noticias-content .item:last-child {
+    margin-bottom: 0;
+}
+.noticia-body span {
+    font-family: 'Open Sans', sans-serif;
+}
+.timestamp {
+        color: #a0a0a0;
+        font-size: .9rem;
+    }
 /*SLICK*/
 
 .miembros-container .slick-prev:before,.miembros-container .slick-next:before{
@@ -1021,15 +1033,12 @@ iframe.visualizar_doc {
     /*-----CONTACTO-----*/
 
     /*      NOTICIAS     */
-    .item {
+/*    .item {
         padding: 1rem;
         margin: 1rem 0;
-    }
+    }*/
 
-    .timestamp {
-        color: #a0a0a0;
-        font-size: .9rem;
-    }
+    
 
     .item-button{
         border: none;

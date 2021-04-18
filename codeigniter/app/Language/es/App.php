@@ -100,7 +100,8 @@ return [
 		'titulo_crear'=> 'Crear una nueva noticia',
 		'titulo'=> 'Titulo',
 		'contenido'=>'Contenido',
-		'crear'=>'Crear'
+		'crear'=>'Crear',
+		'titulo_todas' => 'noticias'
 	],
 	'menu-admin' => [
 		'titulo_crear'=> 'Crear noticia',

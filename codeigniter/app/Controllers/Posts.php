@@ -1,86 +1,84 @@
 <?php namespace App\Controllers;
 
-use App\Models\NoticiasModel;
+use App\Models\PostsModel;
 
-class Noticias extends BaseController
+class Posts extends BaseController
 {	
 	//trae todos los post paginados con status 1
-	public function index()
+	public function index($type)
 	{	
-		$data['locale'] = $this->locale;
-		$data['ruta_es'] = '/es/noticias/';
-		$data['ruta_en'] = '/en/noticias/';
-		$model = new NoticiasModel();
-		$noticias = $model->getPostsPaginados($this->locale);		
+		foreach ($this->locales as $loc) {
+			$data['ruta_'.$loc] = '/'.$loc.'/'.$type.'s/';
+		}
+		$model = new PostsModel();
+		$posts = $model->getPostsPaginados($type, $this->locale);		
 
-		$data['paginacion'] = $this->createPagination($noticias);
-
-		// $data['paginacion'] = $paginacion;
+		$data['paginacion'] = $this->createPagination($posts);
 		
 		// agarro y paso la pagina que corresponde como array de noticias
-		$page = $this->getPage($noticias);
-		if (count($noticias) > 0) {
-			$noticias = $noticias[$page];
+		$page = $this->getPage($posts);
+		if (count($posts) > 0) {
+			$posts = $posts[$page];
 		}
 		
 		$longitud_extracto = 250;
 
-		foreach ($noticias as $key => $noticia) {
-			$extracto = substr(strip_tags($noticia['body'], '<br>'),0,$longitud_extracto);
+		foreach ($posts as $key => $post) {
+			$extracto = substr(strip_tags($post['body'], '<br>'),0,$longitud_extracto);
 			if (strlen($extracto)>=$longitud_extracto) {
 				$extracto .= '…';
 			}
-			$noticias[$key]['extracto'] = $extracto;
+			$posts[$key]['extracto'] = $extracto;
 		}
-		$data['noticias'] = $noticias;
-		
+		$data['posts'] = $posts;
+		$data['type'] = $type;
+		$data['locale'] = $this->locale;
 
 		// return view('welcome_message');
 		echo view('templates/header',$data);
-		echo view('noticias');
+		echo view('posts');
 		echo view('templates/footer');
 	}
 
 	//trae la noticia en si
-	public function noticia($slug)
+	public function post($slug,$type)
 	{
-		// if (! is_file(APPPATH.'/Views/pages/'.$page.'.php')) {
-		// 	// no existe la pag
-		// 	throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
-		// }
-
-		$locale = $this->request->getLocale();
-
-		$data['locale'] = $locale;
-		$data['ruta_es'] = '/es/noticias/'.$slug;
-		$data['ruta_en'] = '/en/noticias/'.$slug;
-
-		$model = new NoticiasModel();
-		$data['noticia'] = $model->getPostSlug($slug);
-		if ($data['noticia']['status'] !== "1") {
-			return redirect()->to("/".$locale.'/noticias/');
+		$data['locale'] = $this->locale;
+		foreach ($this->locales as $loc) {
+			$data['ruta_'.$loc] = '/'.$loc.'/'.$type.'s/'.$slug;
 		}
+
+		$model = new PostsModel();
+		$data['post'] = $model->getPostSlug($slug);
+		if (!$data['post']) {
+			throw new \CodeIgniter\Exceptions\PageNotFoundException($slug);
+		}
+		if ($data['post']['status'] !== "1") {
+			return redirect()->to("/".$this->locale.'/'.$type.'s/');
+		}
+		$data['type'] = $type;
 		
 		echo view('templates/header',$data);
-		echo view('noticia');
+		echo view('post');
 		echo view('templates/footer');
 	}
 
 	// creacion
-	public function create()
+	public function create($type)
 	{
 		$locale = $this->request->getLocale();
 
 		$data['locale'] = $locale;
-		$data['ruta_es'] = '/es/admin/noticia/';
-		$data['ruta_en'] = '/en/admin/noticia/';
-		$data['scripts'][] = 'edicion_noticia';
+		foreach ($this->locales as $loc) {
+			$data['ruta_'.$loc] = '/'.$loc.'/admin/'.$type.'/';
+		}
+		$data['scripts'][] = 'edicion_post';
 		$data['titulo_vista'] = 'titulo_crear';
 		$data['terms'] = [];
 
 		helper('form');
-		$model = new NoticiasModel();
-		$data['notis'] = $model->getPostsParents();
+		$model = new PostsModel();
+		$data['notis'] = $model->getPostsParents($type);
 
 		if (!$this->validate([
 			'title' => 'required|max_length[255]',
@@ -88,7 +86,7 @@ class Noticias extends BaseController
 			'idioma_select' => 'required'
 		])) {
 			// obtenemos las taxonomias y sus terminos
-			$taxonomias = $model->getTaxTerms($this->locale);
+			$taxonomias = $model->getTaxTerms($type, $this->locale);
 			$data['taxonomias'] = $taxonomias;
 
 			echo view('admin/templates/header',$data);
@@ -99,7 +97,7 @@ class Noticias extends BaseController
 				'title' => $this->request->getVar('title'),
 				'body' => $this->request->getVar('body'),
 				'slug' => url_title($this->request->getVar('title')),
-				'type' =>'noticia',
+				'type' => $type,
 				'status' => $this->request->getVar('estado'),
 				'lang' => $this->request->getVar('idioma_select')
 			];
@@ -124,25 +122,28 @@ class Noticias extends BaseController
 			}
 			$session = \Config\Services::session();
 			$session->setFlashdata('success','New post has been created!');
-			return redirect()->to("/".$this->request->getVar('idioma_select').'/noticias/'.url_title($this->request->getVar('title')));
+			return redirect()->to("/".$this->request->getVar('idioma_select').'/'.$type.'s/'.url_title($this->request->getVar('title')));
 		}
 	}
 
 	// edicion
-	public function edit($id)
+	public function edit($id,$type)
 	{
 		$data['locale'] = $this->locale;
 		$data['ruta_es'] = '/es/admin/noticia/';
 		$data['ruta_en'] = '/en/admin/noticia/';
-		$data['scripts'][] = 'edicion_noticia';
+		foreach ($this->locales as $loc) {
+			$data['ruta_'.$loc] = '/'.$loc.'/admin/'.$type.'/editar/'.$id;
+		}
+		$data['scripts'][] = 'edicion_post';
 		$data['titulo_vista'] = 'titulo_editar';
 
 		helper('form');
-		$model = new NoticiasModel();
-		$data['notis'] = $model->getPostsParents($id);
+		$model = new PostsModel();
+		$data['posts'] = $model->getPostsParents($type, $id);
 
 		// obtenemos las taxonomias y sus terminos
-		$taxonomias = $model->getTaxTerms($this->locale);
+		$taxonomias = $model->getTaxTerms($type, $this->locale);
 		$data['taxonomias'] = $taxonomias;
 
 		// obtenemos las relaciones que ya tiene este post con terminos
@@ -166,7 +167,7 @@ class Noticias extends BaseController
 			$data['post'] = $post;
 
 			echo view('admin/templates/header',$data);
-			echo view('admin/crear_noticia');
+			echo view('admin/crear_post');
 			echo view('admin/templates/footer');
 		} else {
 			$o = [
@@ -174,7 +175,7 @@ class Noticias extends BaseController
 				'title' => $this->request->getVar('title'),
 				'body' => str_replace("<p><br></p>","",$this->request->getVar('body')),
 				'slug' => url_title($this->request->getVar('title')),
-				'type' =>'noticia',
+				'type' => $type,
 				'status' => $this->request->getVar('estado'),
 				'lang' => $this->request->getVar('idioma_select')
 			];
@@ -220,21 +221,23 @@ class Noticias extends BaseController
 			$data['post'] = $post;
 			
 			echo view('admin/templates/header',$data);
-			echo view('admin/crear_noticia');
+			echo view('admin/crear_post');
 			echo view('admin/templates/footer');
 			// return redirect()->to("/".$this->request->getVar('idioma_select').'/noticias/'.url_title($this->request->getVar('title')));
 		}
 	}
 
 	// listado de noticias 
-	public function adminNoticias(){
+	public function adminPosts($type){
 		$locale = $this->request->getLocale();
 
 		$data['locale'] = $locale;
-		$data['ruta_es'] = '/es/admin/noticias/';
-		$data['ruta_en'] = '/en/admin/noticias/';
-		$data['scripts'][] = 'tabla_noticias';
-		$model = new NoticiasModel();
+
+		foreach ($this->locales as $loc) {
+			$data['ruta_'.$loc] = '/'.$loc.'/admin/'.$type.'s/';
+		}
+		$data['scripts'][] = 'tabla_posts';
+		$model = new PostsModel();
 		//me fijo si tengo una query
 		if (array_key_exists('st', $_GET) || array_key_exists('s', $_GET) || array_key_exists('cat', $_GET) || array_key_exists('lg', $_GET)) {
 			$condiciones = [];
@@ -249,24 +252,25 @@ class Noticias extends BaseController
 			} else {
 				$condiciones['string'] = "";
 			}
-			$noticias = $model->getAllPostsPaginadosFiltros($condiciones);
+			$posts = $model->getAllPostsPaginadosFiltros($type,$condiciones);
 		} else {
-			$noticias = $model->getAllPostsPaginados();
+			$posts = $model->getAllPostsPaginados($type);
 			$condiciones = [];
 		}		
 
-		$data['paginacion'] = $this->createPagination($noticias);
+		$data['paginacion'] = $this->createPagination($posts);
 		
 		// agarro y paso la pagina que corresponde como array de noticias
-		$page = $this->getPage($noticias);
-		if (count($noticias) > 0) {
-			$noticias = $noticias[$page];
+		$page = $this->getPage($posts);
+		if (count($posts) > 0) {
+			$posts = $posts[$page];
 		}
-		$data['posts'] = $noticias;
-		$data['type'] = 'noticia';
+		$data['posts'] = $posts;
+		$data['type'] = $type;
+		// return view('welcome_message');
 		$taxonomias = $model->getTaxTerms($this->locale);
 		$data['taxonomias'] = $taxonomias;
-		// return view('welcome_message');
+		
 		echo view('admin/templates/header',$data);
 		echo view('admin/posts');
 		echo view('admin/templates/footer');

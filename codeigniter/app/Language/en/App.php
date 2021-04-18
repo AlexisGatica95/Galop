@@ -100,7 +100,8 @@ return [
 		'titulo_crear'=> 'create new entry',
 		'titulo'=> 'title',
 		'contenido'=>'body',
-		'crear'=>'create'
+		'crear'=>'create',
+		'titulo_todas' => 'news'
 	],
 	'menu-admin' => [
 		'titulo_crear'=> 'create new entry',

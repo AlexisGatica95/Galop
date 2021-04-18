@@ -14,7 +14,7 @@ class Users extends BaseController
 		$data['ruta_en'] = '/en/login';
 
 		if (array_key_exists('isLoggedIn',$_SESSION) && $_SESSION['isLoggedIn']) {
-			return redirect()->to('/'.$locale.'/mi-cuenta');
+			return redirect()->to('/'.$locale.'/perfil');
 		}
 
 		if ($this->request->getMethod() == 'post') {
@@ -40,7 +40,7 @@ class Users extends BaseController
 				if ($user['permisos'] > 1) {
 					return redirect()->to('/admin');
 				}
-				return redirect()->to('/'.$locale.'/mi-cuenta');
+				return redirect()->to('/'.$locale.'/perfil');
 			}
 		}
 
@@ -77,7 +77,7 @@ class Users extends BaseController
 		$data['scripts'][] = "registro";
 
 		if (array_key_exists('isLoggedIn',$_SESSION) && $_SESSION['isLoggedIn']) {
-			return redirect()->to('/'.$locale.'/mi-cuenta');
+			return redirect()->to('/'.$locale.'/perfil');
 		}
 
 		if ($this->request->getMethod() == 'post') {
@@ -99,6 +99,11 @@ class Users extends BaseController
 			if (! $this->validate($rules)) {
 				$data['validation'] = $this->validator;
 				$data['llego'] = $_POST;
+				$session = \Config\Services::session();
+				$session->setFlashdata('success',lang('Errores.mail_existente'));
+				if (! $this->validate(['mail' => 'is_unique[users.mail]'])) {
+					return redirect()->to('/'.$locale.'/login');
+				}
 			} else {
 				// guardamos en la db
 				$model = new UsersModel;

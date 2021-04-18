@@ -477,8 +477,11 @@ img.lang {
     border-radius: 0px; 
 }
 
-.lista {
-    max-height: 300px;
+.taxonomia .lista {
+    background-color: #ecf4f7;
+    padding: 5px 10px;
+    border-radius: 5px;
+    max-height: 200px;
     overflow-y: auto;
 }
 

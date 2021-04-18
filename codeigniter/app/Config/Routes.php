@@ -37,10 +37,10 @@ $routes->get('/', 'Pages::index');
 //Institucional
 $routes->get('institucional','Institucional::index');
 $routes->get('{locale}/institucional','Institucional::index');
-	//Institucional Subpaginas
-	//Estatuto
-	$routes->get('institucional/(:any)','Institucional::subpaginas/$1');
-	$routes->get('{locale}/institucional/(:any)','Institucional::subpaginas/$1');
+//Institucional Subpaginas
+//Estatuto
+$routes->get('institucional/(:any)','Institucional::subpaginas/$1');
+$routes->get('{locale}/institucional/(:any)','Institucional::subpaginas/$1');
 //Posts
 $routes->get('noticias/(:any)','Noticias::noticia/$1');
 $routes->get('{locale}/noticias/(:any)','Noticias::noticia/$1');
@@ -48,8 +48,11 @@ $routes->get('{locale}/noticias/(:any)','Noticias::noticia/$1');
 $routes->get('noticias','Noticias::index');
 $routes->get('{locale}/noticias','Noticias::index');
 //Eventos
-$routes->get('eventos','Eventos::index');
-$routes->get('{locale}/eventos','Eventos::index');
+$routes->get('eventos','Posts::index/evento');
+$routes->get('{locale}/eventos','Posts::index/evento');
+
+$routes->get('eventos/(:any)','Posts::post/$1/evento');
+$routes->get('{locale}/eventos/(:any)','Posts::post/$1/evento');
 //Contacto
 $routes->get('contacto','Contacto::index');
 $routes->get('{locale}/contacto','Contacto::index');
@@ -60,6 +63,15 @@ $routes->get('about', 'Pages::showme/about');
 //ADMIN
 $routes->match(['get','post'],'admin','Noticias::create');
 $routes->match(['get','post'],'{locale}/admin','Noticas::create');
+
+$routes->match(['get','post'],'admin/evento','Posts::create/evento');
+$routes->match(['get','post'],'{locale}/admin/evento','Posts::create/evento');
+
+$routes->match(['get','post'],'admin/evento/editar/(:num)','Posts::edit/$1/evento');
+$routes->match(['get','post'],'{locale}/admin/evento/editar/(:num)','Posts::edit/$1/evento');
+
+$routes->match(['get','post'],'admin/ver/eventos', 'Posts::adminPosts/evento');
+$routes->match(['get','post'],'{locale}/admin/ver/eventos', 'Posts::adminPosts/evento');
 //Noticias
 $routes->match(['get','post'],'admin/noticia/editar/(:num)', 'Noticias::edit/$1');
 $routes->match(['get','post'],'{locale}/admin/noticia/editar/(:num)', 'Noticias::edit/$1');
@@ -83,13 +95,16 @@ $routes->match(['get','post'],'{locale}/registro','Users::registro');
 $routes->match(['get','post'],'{locale}/login','Users::index');
 $routes->get('{locale}/logout','Users::logout');
 //Cuenta
-$routes->match(['get','post'],'{locale}/mi-cuenta','Users::perfil');
+$routes->match(['get','post'],'perfil','Users::perfil',['filter' => 'userAuth']);
+$routes->match(['get','post'],'{locale}/perfil','Users::perfil',['filter' => 'userAuth']);
 
 // ----------------------------------------------------------------------
 
 $routes->post('upload/img','Upload::img');
 // $routes->get('{locale}/', 'Pages::index');
 // $routes->get('{locale}/(:any)', 'Pages::showme/$1');
+
+$routes->get('{locale}/', 'Pages::index');
 
 /**
  * --------------------------------------------------------------------
