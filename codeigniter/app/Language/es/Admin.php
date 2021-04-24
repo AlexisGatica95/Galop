@@ -26,7 +26,7 @@ return [
 		'anterior'=>'Anterior',
 		'siguiente'=>'Siguiente',
 
-		'fecha' => 'Fecha',
+		'fecha' => 'Subido en',
 		'titulo' => 'Titulo',
 		'estado' => 'Estado',
 
@@ -45,8 +45,9 @@ return [
 		'mail' => 'Mail',
 
 		'pendiente' => 'Pendiente',
-		'usuario' => 'Usuario',
-		'admin' => 'Adminitrador'
+		'usuario' => 'Miembro',
+		'rechazado' => 'Rechazado',
+		'admin' => 'Administrador'
 	],
 	'sidebar_noticias' => [
 		'estado' => 'Estado',

@@ -202,7 +202,6 @@ class Users extends BaseController
 		}
 		$data['condiciones']=$condiciones;
 
-
 		$data['paginacion'] = $this->createPagination($usuarios);
 
 		// agarro y paso la pagina que corresponde como array de tabla_usuarios

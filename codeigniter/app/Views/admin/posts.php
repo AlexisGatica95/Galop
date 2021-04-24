@@ -1,11 +1,14 @@
 <h1><?=ucfirst($type)?>s</h1>
     <div class="">
+        <?php if ($filtered): ?>
+            <a class="quitar_filtros" href="/<?=$locale?>/admin/ver/<?=$type?>s"><?php #ucfirst(lang('Admin.ver_todos')) ?>Ver todos</a>
+        <?php endif ?>
         <form action="<?=$_SERVER['PATH_INFO']?>" method="GET" id="query_form">
             <div class="header_admin">
               <div class="column_filtro_left d-flex flex-column">
                     <label><h4><?= ucfirst(lang("Admin.tabla.estado"))?></h4></label>
                     <select name="st" id="filtro_estado">
-                        <option value="" selected disabled></option>
+                        <option value="" selected disabled><?=ucfirst(lang('App.select_placeholder'))?></option>
                         <option value="0">
                             <?= ucfirst(lang("Admin.tabla.privado"))?>
                         </option>
@@ -21,7 +24,7 @@
                     <div class="column_filtro_left d-flex flex-column">
                         <label><h4><?= ucfirst(lang("Admin.tabla.idioma"))?></h4></label>
                         <select name="lg" id="filtro_lenguaje">
-                            <option value="" selected disabled></option>
+                            <option value="" selected disabled><?=ucfirst(lang('App.select_placeholder'))?></option>
                             <option value="es">
                                 <?= ucfirst(lang("Admin.sidebar_noticias.es"))?>
                             </option>
@@ -39,7 +42,7 @@
                     <div class="column_filtro_left d-flex flex-column">
                      <label><h4><?= ucfirst(lang("Admin.tabla.categoria"))?></h4></label>
                         <select name="cat" id="filtro_categoria">  
-                        <option selected disabled></option>
+                        <option value="" selected disabled><?=ucfirst(lang('App.select_placeholder'))?></option>
                         <?php foreach ($taxonomias as $tax): ?>
                         <?php foreach ($tax['terms'] as $term): ?>
                         <option value="<?=$term['id']?>"><?=$term['nombre']?></option>
@@ -74,7 +77,7 @@
                 <?= date("d/m/y G:i",strtotime($post['timestamp']))?>
             </td>
             <td class='tbl_noti_titulo'>
-                <a href="/admin/noticia/editar/<?= $post['id']?>"><?= $post['title']?></a>        
+                <a href="/admin/<?=$type?>/editar/<?= $post['id']?>"><?= $post['title']?></a>        
             </td>            
             <td class="text-center tbl_noti_status lenguaje">
                 <a href="<?=$_SERVER['PATH_INFO']?>?lg=<?=$post["lang"]?>"><img class="lang" src="/img/<?=$post["lang"]?>.png" alt="<?=$post["lang"]?>"></a>
@@ -102,5 +105,5 @@
     </table>
     <?php echo $paginacion ?>
     <pre>
-        <?php #var_dump($condiciones) ?>
+        <?php #var_dump($rutas_auto) ?>
     </pre>

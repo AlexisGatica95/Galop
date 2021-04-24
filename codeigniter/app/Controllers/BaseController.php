@@ -48,6 +48,19 @@ class BaseController extends Controller
 		$config = new \Config\App();
 		$this->locales = $config->supportedLocales;
 
+		foreach ($this->locales as $loc) {
+			if (preg_match('/^\/'.$loc.'\//', $_SERVER['REQUEST_URI'])) {
+				$ruta_base = str_replace("/".$loc."/", "/", $_SERVER['REQUEST_URI']);
+				break;
+			} else {
+				$ruta_base = $_SERVER['REQUEST_URI'];
+			}
+		}
+
+		$this->rutas = [];
+		foreach ($this->locales as $loc) {
+			$this->rutas[$loc] = '/'.$loc.$ruta_base;
+		}
 	}
 	protected function getPage($array){
 		$page = 0;

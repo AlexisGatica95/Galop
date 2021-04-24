@@ -5,9 +5,14 @@ $(".edit_term").on("click tap",function(){
 	});
 });
 $(".delete_term").on("click tap",function(){
-	if (confirm("Desea borrar esto postis?")) {
+	if (confirm("Eliminar?")) {
 		let id_term = $(this).data("term");
 		$("form.termino"+id_term+" input[name=action]").val("delete");
 		$("form.termino"+id_term).submit();
 	}
+});
+$(".save_term").on("click tap",function(){
+	let id_term = $(this).data("term");
+	$("form.termino"+id_term+" input[name=action]").val("edit");
+	$("form.termino"+id_term).submit();
 });

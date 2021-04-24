@@ -17,3 +17,7 @@ $("#query_form").on("submit",function(e){
     });
     $("#query_form").off().submit();
 });
+
+$(".responder_solicitud").on("click tap", function(){
+    // let id_user = $(this).data("")
+});

@@ -21,6 +21,47 @@ ul{
 h1,h2,h3,h4,h5,h6,a,th,button,input[type=submit],.btn {
 	font-family: 'Josefin Sans', sans-serif;
 }
+.mod-w {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    z-index: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    max-height: 100vh;
+    overflow-y: auto;
+}
+.modal_ {
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    margin: 1rem;
+    width: 100%;
+    max-width: 700px;
+}
+.modal_ > div {
+    padding: 15px;
+}
+.mod-header {
+    display: flex;
+    justify-content: space-between;
+}
+.mod-body {
+    padding-top: 5px!important;
+}
+.mod-close {
+    font-size: 2.2rem;
+    height: 1.5rem;
+    line-height: 1.5rem;
+    width: 1.5rem;
+    text-align: right;
+    cursor: pointer;
+    font-family: 'Open sans', sans-serif;
+}
 .acc {
     margin-bottom: 5px;
     width: 100%;
@@ -114,6 +155,47 @@ input[type=checkbox], input[type=radio] {
 
 
 /*------TABLA-----*/
+
+/* users admin */
+.modal_card {
+    background-color: #ffe4c4;
+    border-radius: 10px;
+}
+.modal_card .status a {
+    font-family: 'Open Sans', sans-serif;
+}
+.modal_card .status .responder_solicitud {
+    display: flex;
+    flex-wrap: wrap;
+    margin: 0 5px;
+}
+.modal_card ul {
+    display: flex;
+    flex-wrap: wrap;
+    background-color: #fff;
+    border-radius: 10px;
+    margin-bottom: 5px;
+    padding: 10px;
+}
+.modal_card ul li {
+    display: flex;
+    padding-right: 10px;
+    flex-wrap: wrap;
+}
+.modal_card ul li b {
+    margin-right: 5px;
+    flex-wrap: wrap;
+}
+.modal_card ul li span {
+    background-color: bisque;
+    padding: 0px 3px;
+    display: inline-flex;
+    border-radius: 5px;
+    align-self: flex-start;
+    text-align: nowrap;
+    border: 2px solid #fff;
+}
+/* / users admin */
 
 .btn.btn-1 {
     background-color: #a4cdcf;

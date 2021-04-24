@@ -33,6 +33,23 @@ class PostsModel extends Model {
 					->like('title',$condiciones['string'])
 					->orderBy('timestamp','DESC')
 					->findAll();
+		// ya tengo a los que cumplen con condicion de lenguaje, status y string. ahora tengo que obtener los de la categoria si es que la pasaron y luego dejar solo los que estan en ambos arrays
+		if (array_key_exists('cat', $condiciones)) {
+			$db = \Config\Database::connect();
+			$builder = $db->table('posts_terms');
+			$query = $builder->getWhere(['id_term' => $condiciones['cat']]);
+			$posts_cat = [];
+			foreach ($query->getResultArray() as $row){
+				$posts_cat[] = $row['id_post'];
+			}
+			$finalres = [];
+			foreach ($res as $r) {
+				if (in_array($r['id'], $posts_cat)) {
+					$finalres[] = $r;
+				}
+			}
+			$res = $finalres;
+		}
 		return array_chunk($res,4,true);
 	}
 

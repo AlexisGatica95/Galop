@@ -30,15 +30,34 @@ class UsersModel extends Model {
 					->where(['permisos <=' => 2])
 					->orderBy('fecha_registro','DESC')
 					->findAll();	
-		return $res;
+		return $this->listArrays($res);
 	}
 
+	public function listArrays($userArray) {
+		if (count($userArray) > 0) {
+			foreach ($userArray as $userKey => $userItem) {
+				if ($userItem['organizaciones'] != "") {
+					$userArray[$userKey]['organizaciones'] = explode(',', $userItem['organizaciones']);
+				} else {
+					$userArray[$userKey]['organizaciones'] = [];
+				}
+				if ($userItem['intereses'] != "") {
+					$userArray[$userKey]['intereses'] = explode(',', $userItem['intereses']);
+				} else {
+					$userArray[$userKey]['intereses'] = [];
+				}				
+			}
+			return $userArray;
+		} else {
+			return $userArray;
+		}
+	}
 
 	public function getUsersPaginados() {
 		$res = $this->asArray()
 					->orderBy('fecha_registro','DESC')
 					->findAll();
-		return array_chunk($res,2,true);
+		return array_chunk($this->listArrays($res),2,true);
 	}
 
 	public function getAllUsersPaginadosFiltros($condiciones){
@@ -49,17 +68,17 @@ class UsersModel extends Model {
 			$where = [];
 		}
 
-		$res = $this->asArray()
-					
+		$res = $this->asArray()		
+					->groupStart()	
 					->orLike(['nombre'=>$condiciones['string'],
 						'apellido'=>$condiciones['string'],
 						'mail'=>$condiciones['string']
 					])
-					->where($where)
+					->groupEnd()
+					->where($where)			
 					->orderBy('fecha_registro','DESC')
 					->findAll();
-
-		return array_chunk($res,2,true);
+		return array_chunk($this->listArrays($res),2,true);
 	}
 
 

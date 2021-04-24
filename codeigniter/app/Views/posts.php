@@ -1,5 +1,5 @@
 <div class="container">
-    <h1 class="titulo-principal"><?=ucfirst(lang('App.noticia.titulo_todas'))?></h1>
+    <h1 class="titulo-principal"><?=ucfirst(lang('App.posts.plural_'.$type))?></h1>
     <div class="noticias-content">
     <?php foreach($posts as $post): ?>
         <div class="item">
@@ -11,7 +11,7 @@
     <?php endforeach ?>
     </div>
     <?php echo $paginacion ?>
-  <!--   <pre>
-        <?php #var_dump($test) ?>
+    <!-- <pre>
+        <?php #var_dump($rutas_auto) ?>
     </pre> -->
 </div>

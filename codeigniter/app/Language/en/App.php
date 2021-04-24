@@ -11,6 +11,7 @@ return [
 	'menu_hazte_miembro' => 'Become a GALOP member',
 	'cuenta_creada' => 'Account successfully created',
 	'saludo_perfil' => 'Hello, {0}!',
+	'select_placeholder' => 'Select...',
 	'error' => [
 		'validacion_login' => 'Wrong user or password'
 	],
@@ -18,6 +19,11 @@ return [
 		'span_correo' => 'Email',
 		'span_contraseña' => 'Password',
 		'enter' => 'Login'	
+	],
+	'posts' => [
+		'plural_noticia' => 'news',
+		'plural_evento' => 'events',
+		'plural_protocolo' => 'protocols'
 	],
 	'registro' => [
 		'registro_galop'=>'Sing up for a GALOP membership',

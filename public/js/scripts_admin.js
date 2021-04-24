@@ -18,6 +18,22 @@ function sendFile(file,editor,welEditable) {
   });
 }
 
+$(".modbtn").click(function(){
+  var nmodal = $(this).attr("data-open");
+  $("#"+nmodal).css("display","flex");
+});
+$(".mod-close").click(function(){
+  var nmodal = $(this).attr("data-close");
+  $("#"+nmodal).css("display","none");
+});
+$(".mod-w").click(function(e){
+  var targetClasses = e.target.className;
+  if (targetClasses.indexOf("mod-w") >= 0) {
+    var nmodal = $(this).attr("id");
+    $("#"+nmodal).css("display","none");
+  }
+});
+
 //Carga de noticias
 
 $("#guardar_noticia").on("click tap",function() {
@@ -70,8 +86,6 @@ function traduccionDe(){
     traduccion.hide("fast");
   }
 };
-
-
 
 $(".dropdown>span").on("click tap",function(){
   var hijo = $(this).closest(".dropdown").find(".dropdown_content");

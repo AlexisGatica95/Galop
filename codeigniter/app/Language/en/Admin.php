@@ -21,30 +21,31 @@ return [
 		'categorias' => 'Manage categories'
 	],
 	'tabla' => [
-		'idioma'=>'Lenguage',
+		'idioma'=>'Language',
 		'anterior'=>'Previous',
 		'siguiente'=>'Next',
 
-		'fecha' => 'Date',
+		'fecha' => 'Uploaded',
 		'titulo' => 'Title',
 		'estado' => 'Status',
 
 		'publico' => 'Public',
 		'privado' => 'Private',
-		'papelera' => 'Trashs',
+		'papelera' => 'Trash',
 
 		'estado' => 'Status',
-		'lenguaje' => 'Public',
+		'lenguaje' => 'Language',
 		'categoria' => 'Category',
 		'buscar' => 'Search',
 
 		'nombre' => 'Name',
-		'apellido' => 'Lastname',
+		'apellido' => 'Last name',
 		'permisos' => 'Permissions',
-		'mail' => 'Mail'
+		'mail' => 'Mail',
 
-		'pendiente' => 'Pendent',
-		'usuario' => 'User',
+		'pendiente' => 'Pending',
+		'usuario' => 'Member',
+		'rechazado' => 'Rejected',
 		'admin' => 'Administrator'
 
 	],

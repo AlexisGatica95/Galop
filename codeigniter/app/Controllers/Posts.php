@@ -247,15 +247,20 @@ class Posts extends BaseController
 			if (array_key_exists('lg', $_GET)) {
 				$condiciones['lang'] = $_GET['lg'];
 			}
+			if (array_key_exists('cat', $_GET)) {
+				$condiciones['cat'] = $_GET['cat'];
+			}
 			if (array_key_exists('s', $_GET)) {
 				$condiciones['string'] = $_GET['s'];
 			} else {
 				$condiciones['string'] = "";
 			}
 			$posts = $model->getAllPostsPaginadosFiltros($type,$condiciones);
+			$hayfiltros = 1;
 		} else {
 			$posts = $model->getAllPostsPaginados($type);
 			$condiciones = [];
+			$hayfiltros = 0;
 		}		
 
 		$data['paginacion'] = $this->createPagination($posts);
@@ -268,8 +273,10 @@ class Posts extends BaseController
 		$data['posts'] = $posts;
 		$data['type'] = $type;
 		// return view('welcome_message');
-		$taxonomias = $model->getTaxTerms($this->locale);
+		$taxonomias = $model->getTaxTerms($type, $this->locale);
 		$data['taxonomias'] = $taxonomias;
+		$data['rutas_auto'] = $this->rutas;
+		$data['filtered'] = $hayfiltros;
 		
 		echo view('admin/templates/header',$data);
 		echo view('admin/posts');
@@ -277,17 +284,17 @@ class Posts extends BaseController
 	}
 
 	// manejar taxonomias
-	public function taxonomias(){
+	public function taxonomias($type){
 		$data['locale'] = $this->locale;
 		$data['ruta_es'] = '/es/admin/categorias/noticia/';
 		$data['ruta_en'] = '/en/admin/categorias/noticia/';
-		$data['scripts'][] = 'taxonomias_noticias';
+		$data['scripts'][] = 'taxonomias_admin';
 		$data['titulo_vista'] = 'titulo_categorias';
 
 		helper('form');
-		$model = new NoticiasModel;
+		$model = new PostsModel;
 		// obtenemos las taxonomias y sus terminos
-		$taxonomias = $model->getTaxTerms($this->locale,true);
+		$taxonomias = $model->getTaxTerms($type, $this->locale,true);
 		$data['taxonomias'] = $taxonomias;
 		$data['locales'] = $this->locales;
 
@@ -346,6 +353,7 @@ class Posts extends BaseController
 					];
 					
 					$query = $builder->insert($data_term);
+					break;
 				
 				default:
 					# code...
@@ -353,7 +361,7 @@ class Posts extends BaseController
 			}
 
 			// obtenemos las taxonomias y sus terminos
-			$taxonomias = $model->getTaxTerms($this->locale,true);
+			$taxonomias = $model->getTaxTerms($type, $this->locale,true);
 			$data['taxonomias'] = $taxonomias;
 
 			echo view('admin/templates/header',$data);

@@ -12,6 +12,7 @@ class Filters extends BaseConfig
 		'honeypot' => \CodeIgniter\Filters\Honeypot::class,
 		'userAuth' => \App\Filters\UserAuth::class,
 		'adminAuth' => \App\Filters\AdminAuth::class,
+		'memberAuth' => \App\Filters\MemberAuth::class,
 	];
 
 	// Always applied before every request

@@ -7,7 +7,7 @@
 		        <span class="acc_btn" data-toggle="<?=$taxonomia['slug']->$locale.$taxonomia['id']?>">✏️</span>
 		    </div>
 		    <div class="acc_cont" id="<?=$taxonomia['slug']->$locale.$taxonomia['id']?>">
-		        <div class="lista">
+		        <div>
 					<?php foreach ($taxonomia['terms'] as $term): ?>
 						<form action="" method="POST" class="termino termino<?=$term['id']?>">
 							<input type="hidden" name="action" value="edit">
