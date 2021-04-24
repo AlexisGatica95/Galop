@@ -18,6 +18,11 @@ $("#query_form").on("submit",function(e){
     $("#query_form").off().submit();
 });
 
-$(".responder_solicitud").on("click tap", function(){
-    // let id_user = $(this).data("")
+$(".responder_solicitud div").on("click tap", function(){
+    let id_user = $(this).data("user");
+    let valor = $(this).data("valor");
+    console.log(id_user,valor);
+    $("#responder_solicitud input[name=valor]").val(valor);
+    $("#responder_solicitud input[name=id_user]").val(id_user);
+    $("#responder_solicitud").submit();
 });

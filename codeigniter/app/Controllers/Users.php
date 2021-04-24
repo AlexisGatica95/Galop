@@ -200,7 +200,7 @@ class Users extends BaseController
 			$usuarios = $model->getUsersPaginados();
 			$condiciones = [];
 		}
-		$data['condiciones']=$condiciones;
+		$data['condiciones'] = $condiciones;
 
 		$data['paginacion'] = $this->createPagination($usuarios);
 
@@ -212,10 +212,49 @@ class Users extends BaseController
 
 		$data['usuarios'] = $usuarios;
 
+		if (!$this->validate([
+			'accion' => 'required'
+		])) {
+			echo view('admin/templates/header',$data);
+			echo view('admin/usuarios');
+			echo view('admin/templates/footer');
+		} else {
+			$data_update = ['permisos' => $this->request->getVar('valor')];
+			$model->update($this->request->getVar('id_user'),$data_update);
+			
+			// repito
+			if(array_key_exists('permisos', $_GET)||array_key_exists('s', $_GET)){
+				$condiciones = [];
+				if(array_key_exists('permisos',$_GET)){
+					$condiciones['permisos'] = $_GET['permisos'];
+				}
+				if (array_key_exists('s', $_GET)) {
+					$condiciones['string'] = $_GET['s'];
+				}else{
+					$condiciones['string'] = "";
+				} 
+				$usuarios = $model->getAllUsersPaginadosFiltros($condiciones);
+			}else {
+				$usuarios = $model->getUsersPaginados();
+				$condiciones = [];
+			}
+			$data['condiciones'] = $condiciones;
 
-		echo view('admin/templates/header',$data);
-		echo view('admin/usuarios');
-		echo view('admin/templates/footer');
+			$data['paginacion'] = $this->createPagination($usuarios);
+
+			// agarro y paso la pagina que corresponde como array de tabla_usuarios
+			$page = $this->getPage($usuarios);
+			if (count($usuarios) > 0) {
+				$usuarios = $usuarios[$page];
+			}
+
+			$data['usuarios'] = $usuarios;
+			// repito
+
+			echo view('admin/templates/header',$data);
+			echo view('admin/usuarios');
+			echo view('admin/templates/footer');
+		}		
 	}
 
 	//--------------------------------------------------------------------

@@ -52,7 +52,7 @@
                         $permisos = "<a href='".$_SERVER['PATH_INFO']."?permisos=".$usuario['permisos']."'>".ucfirst(lang("Admin.tabla.rechazado"))."</a>";
                         break;
                     case "0":
-                        $permisos = "<a href='".$_SERVER['PATH_INFO']."?permisos=".$usuario['permisos']."'>".ucfirst(lang("Admin.tabla.pendiente"))."</a>"."<div class='responder_solicitud'><div class='aceptar' data-user='".$usuario['ID']."'>✔️</div><div class='rechazar' data-user='".$usuario['ID']."'>❌</div></div>";
+                        $permisos = "<a href='".$_SERVER['PATH_INFO']."?permisos=".$usuario['permisos']."'>".ucfirst(lang("Admin.tabla.pendiente"))."</a>"."<div class='responder_solicitud'><div class='aceptar' data-user='".$usuario['ID']."' data-valor='1'>✔️</div><div class='rechazar' data-user='".$usuario['ID']."' data-valor='-1'>❌</div></div>";
                         break;
                     case "1":
                         $permisos = "<a href='".$_SERVER['PATH_INFO']."?permisos=".$usuario['permisos']."'>".ucfirst(lang("Admin.tabla.usuario"))."</a>";
