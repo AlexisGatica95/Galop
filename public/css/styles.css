@@ -960,10 +960,8 @@ iframe.visualizar_doc {
         width: 100%;
         align-items: flex-start;
     }
-    .navbar-collapse {
-        display: flex;
-        margin-top: 20px;
-    }
+
+
     ul.navbar-nav {
         display: flex;
         flex-direction: row;

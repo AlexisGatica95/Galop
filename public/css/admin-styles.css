@@ -3,6 +3,21 @@
 	font-family: 'Open Sans', sans-serif;
     margin: 0;
     padding: 0;
+    --a: #A0CBCD;
+    --a-1: #B2D5D6;
+    --a-2: #C5DFE0;
+    --a-3: #D9EAEB;
+    --a-4: #ECF4F5;
+    --n: #F5A014;
+    --n-1: #C48010;
+    --n-2: #93600C;
+    --n-3: #624008;
+    --n-4: #312004;
+    --g-1: #CDCDCD;
+    --g-2: #9A9A9A;
+    --g-3: #666666;
+    --g-4: #333333;
+}
 }
 
 html{
@@ -12,7 +27,7 @@ html{
 body{
     min-height: 100%;
     display: flex;
-}
+    }
 
 ul{
     margin-bottom: 0;
@@ -308,6 +323,10 @@ label {
     justify-content: space-between;
     align-items: center;
 }
+
+.navbar-toggler{
+    display: none;
+} 
 
 .barra .menu-barra a,.barra span{
     padding:1rem 1.3rem 1rem;
@@ -641,6 +660,26 @@ img.lang {
 }
 
 @media (max-width: 900px){
-        /* ADMIN */
+    
+
+    .barra{
+        position: static;
+        width: 100%;    
+    }
+
+    .barra .logo{
+        align-self: center;
+    }
+
+    .contenido{
+        margin-left: 0px;
+    }
+
+    .navbar-toggler{
+        display: block;
+    }
+
+
+
 
 }

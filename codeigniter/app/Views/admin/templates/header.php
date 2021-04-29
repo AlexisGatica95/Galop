@@ -20,59 +20,67 @@ $uri = service('uri');
 	<?php endif; ?>
 </head>
 <body>
-<div class="barra">
-	<img src="/img/logo.png" class='logo' alt="GALOP">
-	<ul class="menu-barra">
-		<li class="dropdown">
-			<span><?= ucfirst(lang("Admin.menu.recursos"))?><img src="/img/arrow_down.png" alt=""></span>
-			
-			<ul class="dropdown_content">
-				<li><a href="/"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
-				<li><a href="/"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
-				<li><a href="/"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
-			</ul>
-		</li>
-		<li class="dropdown">
-			<span><?= ucfirst(lang("Admin.menu.noticias"))?><img src="/img/arrow_down.png" alt=""></span>
-			
-			<ul class="dropdown_content">
-				<li><a href="/admin/noticia"><?= ucfirst(lang("Admin.menu.nueva"))?></a></li>
-				<li><a href="/admin/ver/noticias"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
-				<li><a href="/admin/categorias/noticia"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
-			</ul>
-		</li>
-		<li class="dropdown">
-			<span><?= ucfirst(lang("Admin.menu.eventos"))?><img src="/img/arrow_down.png" alt=""></span>
-			
-			<ul class="dropdown_content">
-				<li><a href="/"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
-				<li><a href="/"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
-				<li><a href="/"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
-			</ul>
-		</li>
-		<li class="dropdown">
-			<span><?= ucfirst(lang("Admin.menu.usuarios"))?><img src="/img/arrow_down.png" alt=""></span>
-			
-			<ul class="dropdown_content">
-				<li><a href=""><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
-				<li><a href="/admin/usuarios"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
-			</ul>
-		</li>
-		<li class=""> 
-			<span><?= ucfirst(lang("Admin.menu.config"))?></span>
-		</li>
+<div class="main_content">
+	<div class="barra">
 		
-		<li class="nav-item lang_switcher">
-			<a href="<?php if (isset($ruta_es)){echo $ruta_es;} ?>" class="nav-link">
-				<img src="/img/es.png" alt="espanol">
-			</a>
-			<a href="<?php if(isset($ruta_en)){echo($ruta_en);} ?>" class="nav-link">
-				<img src="/img/en.png" alt="english">
-			</a>
-		</li>
-	</ul>
-	
-</div>
+		<img src="/img/logo.png" class='logo' alt="GALOP">
 
-<div class="contenido">
+		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+					<!-- <span class="navbar-toggler-icon"></span> -->
+					<span class="toggle-menu">&#9776;</span>
+		</button>
+
+		<ul class="menu-barra" id="navbarSupportedContent">
+			<li class="dropdown">
+				<span><?= ucfirst(lang("Admin.menu.recursos"))?><img src="/img/arrow_down.png" alt=""></span>
+
+				<ul class="dropdown_content">
+					<li><a href="/admin/recurso"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
+					<li><a href="/admin/ver/recusos"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
+					<li><a href="/categorias/recursos"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
+				</ul>
+			</li>
+			<li class="dropdown">
+				<span><?= ucfirst(lang("Admin.menu.noticias"))?><img src="/img/arrow_down.png" alt=""></span>
+				
+				<ul class="dropdown_content">
+					<li><a href="/admin/noticia"><?= ucfirst(lang("Admin.menu.nueva"))?></a></li>
+					<li><a href="/admin/ver/noticias"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
+					<li><a href="/admin/categorias/noticias"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
+				</ul>
+			</li>
+			<li class="dropdown">
+				<span><?= ucfirst(lang("Admin.menu.eventos"))?><img src="/img/arrow_down.png" alt=""></span>
+				
+				<ul class="dropdown_content">
+					<li><a href="/admin/evento"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
+					<li><a href="/admin/ver/eventos"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
+					<li><a href="/admin/categorias/eventos"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
+				</ul>
+			</li>
+			<li class="dropdown">
+				<span><?= ucfirst(lang("Admin.menu.usuarios"))?><img src="/img/arrow_down.png" alt=""></span>
+				
+				<ul class="dropdown_content">
+					<li><a href="/admin/usuario"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
+					<li><a href="/admin/usuarios"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
+				</ul>
+			</li>
+			<li class=""> 
+				<span><?= ucfirst(lang("Admin.menu.config"))?></span>
+			</li>
+			
+			<li class="nav-item lang_switcher">
+				<a href="<?php if (isset($ruta_es)){echo $ruta_es;} ?>" class="nav-link">
+					<img src="/img/es.png" alt="espanol">
+				</a>
+				<a href="<?php if(isset($ruta_en)){echo($ruta_en);} ?>" class="nav-link">
+					<img src="/img/en.png" alt="english">
+				</a>
+			</li>
+		</ul>
+		
+	</div>
+
+	<div class="contenido">
 
