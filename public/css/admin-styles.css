@@ -36,6 +36,12 @@ ul{
 h1,h2,h3,h4,h5,h6,a,th,button,input[type=submit],.btn {
 	font-family: 'Josefin Sans', sans-serif;
 }
+
+button{
+    border: none;
+    background: none;
+}
+
 .mod-w {
     position: fixed;
     top: 0;
@@ -324,22 +330,22 @@ label {
     align-items: center;
 }
 
-.navbar-toggler{
+#toggler{
     display: none;
 } 
 
-.barra .menu-barra a,.barra span{
+.barra .menu_barra a,.barra span{
     padding:1rem 1.3rem 1rem;
     display: block;
     font-family: 'Josefin Sans', sans-serif;
 }
 
-.barra .menu-barra a{
+.barra .menu_barra a{
     padding-left: 3rem;
     color: grey;
 }
 
-.barra .menu-barra a:hover,.barra li span:hover{
+.barra .menu_barra a:hover,.barra li span:hover{
     cursor: pointer;
     background-color:#a4cdcf;
     color: #fff;
@@ -351,7 +357,7 @@ label {
     width: 12px;
 }
 
-ul.menu-barra {
+ul.menu_barra {
     flex-grow: 1;
     margin-bottom: 0;
     overflow: auto;
@@ -360,9 +366,12 @@ ul.menu-barra {
 
 
 .contenido {
-    width: 100%;
     padding: 2rem 1rem;
     margin-left: 300px;
+}
+
+.main_content{
+    width: 100%;
 }
 
 ul.dropdown_content {
@@ -631,6 +640,8 @@ img.lang {
     margin-right: .8rem;
 }
 
+
+
 /* ----CATEGORIA NOTICIA---- */
 
 
@@ -656,15 +667,29 @@ img.lang {
 
     .header_admin_right {
     margin-top: 1rem;
-}
+    }
+
+    .menu_barra{
+        display:block;
+    }
+
+    .header_admin {
+        flex-wrap: wrap;
+    }
+
+    .div_buscar {
+    padding-top: .5rem;
+    }
+
+
 }
 
 @media (max-width: 900px){
     
-
     .barra{
         position: static;
-        width: 100%;    
+        width: 100%;  
+        border-right: none;  
     }
 
     .barra .logo{
@@ -672,13 +697,53 @@ img.lang {
     }
 
     .contenido{
-        margin-left: 0px;
+        margin:1rem;
+        padding: 0px;
     }
 
-    .navbar-toggler{
+  
+    #toggler{
         display: block;
     }
 
+    .barra .logo {
+        padding: 1rem 0 0;
+    }
+
+    .menu_barra{
+        display:none;
+    }
+}
+
+
+@media (max-width: 550px){
+    .header_admin {
+        flex-direction: column;
+        align-items: baseline;
+        padding: 1rem 1rem .4rem;
+    }
+
+    th {
+        display: none;
+    }
+
+    tr {
+    display: flex;
+    flex-wrap: wrap;
+    flex-grow: 1;
+    }
+
+    .tbl_noti_date,.tbl_noti_status,.tbl_noti_apellido,.tbl_noti_nombre {
+    flex-grow: 1;
+    }
+
+    .tbl_noti_email,table{
+        width: 100%
+    }
+
+    .header_admin>div{
+        padding-bottom: .8rem;
+    }
 
 
 

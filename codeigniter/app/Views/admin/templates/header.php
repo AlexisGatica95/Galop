@@ -25,12 +25,12 @@ $uri = service('uri');
 		
 		<img src="/img/logo.png" class='logo' alt="GALOP">
 
-		<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+		<button id="toggler">
 					<!-- <span class="navbar-toggler-icon"></span> -->
 					<span class="toggle-menu">&#9776;</span>
 		</button>
 
-		<ul class="menu-barra" id="navbarSupportedContent">
+		<ul class="menu_barra" id="navbarSupportedContent">
 			<li class="dropdown">
 				<span><?= ucfirst(lang("Admin.menu.recursos"))?><img src="/img/arrow_down.png" alt=""></span>
 

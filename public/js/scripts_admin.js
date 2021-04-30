@@ -102,6 +102,10 @@ $(".dropdown>span").on("click tap",function(){
 });
 
 
+$("#toggler").on("click tap",function(){
+    $(".menu_barra").toggle();
+});
+
 $(document).on("click",".acc_btn, .acc_head[data-toggle]",function(){
     var cont = $(this).data('toggle');
     $("#"+cont).slideToggle();

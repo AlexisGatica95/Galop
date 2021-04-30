@@ -52,7 +52,7 @@
                     </div>  
                 </div>
 
-                <div class="d-flex">
+                <div class="d-flex div_buscar">
                     <div class="column_filtro_left d-flex flex-row align-self-end">
                         <input class="buscar_menu_header" name="s" type="search" >
                         <input type="submit" value="<?= ucfirst(lang("Admin.tabla.buscar"))?>" id="filtrar_items">
@@ -62,47 +62,49 @@
             </div>
         </form>            
     </div>
-    <table class='w-100 noticias-tabla' >
-        <tr>
-            <!-- <th class='tbl_noti_checkbox'></th> -->
-            <th class='tbl_noti_date'><?= ucfirst(lang("Admin.tabla.fecha"))?></th>
-            <th class='tbl_noti_titulo'><?= ucfirst(lang("Admin.tabla.titulo"))?></th>
-            <th class='tbl_noti_status'><?= ucfirst(lang("Admin.tabla.idioma"))?></th>
-            <th class='tbl_noti_status'><?= ucfirst(lang("Admin.tabla.estado"))?></th>
-        </tr>
-        <?php foreach($posts as $post): ?>
-        <tr id="row_noticia">
-        <!-- <td class="text-center tbl_noti_checkbox'"><input type="checkbox" id="<?= $post['id']?>"></td> -->
-            <td class='tbl_noti_date'>
-                <?= date("d/m/y G:i",strtotime($post['timestamp']))?>
-            </td>
-            <td class='tbl_noti_titulo'>
-                <a href="/admin/<?=$type?>/editar/<?= $post['id']?>"><?= $post['title']?></a>        
-            </td>            
-            <td class="text-center tbl_noti_status lenguaje">
-                <a href="<?=$_SERVER['PATH_INFO']?>?lg=<?=$post["lang"]?>"><img class="lang" src="/img/<?=$post["lang"]?>.png" alt="<?=$post["lang"]?>"></a>
-            </td>
-                    <?php
-                    switch ($post['status']) {
-                        case "0":
-                            $estado= ucfirst(lang("Admin.tabla.privado"));
-                            break;
-                        case "1":
-                            $estado=ucfirst(lang("Admin.tabla.publico"));
-                            break;
-                        case "2":
-                            $estado= ucfirst(lang("Admin.tabla.papelera"));
-                            break;
-                        default:
-                            $estado="";
-                        }
-                    ?>
-            <td class="text-center tbl_noti_status">
-                <a href="<?=$_SERVER['PATH_INFO']?>?st=<?=$post["status"]?>"><?= $estado ?></a>
-            </td>
-        </tr>
-        <?php endforeach ?>  
-    </table>
+
+        <table class='noticias-tabla' >
+            <tr>
+                <!-- <th class='tbl_noti_checkbox'></th> -->
+                <th class='tbl_noti_date'><?= ucfirst(lang("Admin.tabla.fecha"))?></th>
+                <th class='tbl_noti_titulo'><?= ucfirst(lang("Admin.tabla.titulo"))?></th>
+                <th class='tbl_noti_status'><?= ucfirst(lang("Admin.tabla.idioma"))?></th>
+                <th class='tbl_noti_status'><?= ucfirst(lang("Admin.tabla.estado"))?></th>
+            </tr>
+            <?php foreach($posts as $post): ?>
+            <tr id="row_noticia">
+            <!-- <td class="text-center tbl_noti_checkbox'"><input type="checkbox" id="<?= $post['id']?>"></td> -->
+                <td class='tbl_noti_date'>
+                    <?= date("d/m/y G:i",strtotime($post['timestamp']))?>
+                </td>
+                <td class='tbl_noti_titulo'>
+                    <a href="/admin/<?=$type?>/editar/<?= $post['id']?>"><?= $post['title']?></a>        
+                </td>            
+                <td class="text-center tbl_noti_status lenguaje">
+                    <a href="<?=$_SERVER['PATH_INFO']?>?lg=<?=$post["lang"]?>"><img class="lang" src="/img/<?=$post["lang"]?>.png" alt="<?=$post["lang"]?>"></a>
+                </td>
+                        <?php
+                        switch ($post['status']) {
+                            case "0":
+                                $estado= ucfirst(lang("Admin.tabla.privado"));
+                                break;
+                            case "1":
+                                $estado=ucfirst(lang("Admin.tabla.publico"));
+                                break;
+                            case "2":
+                                $estado= ucfirst(lang("Admin.tabla.papelera"));
+                                break;
+                            default:
+                                $estado="";
+                            }
+                        ?>
+                <td class="text-center tbl_noti_status">
+                    <a href="<?=$_SERVER['PATH_INFO']?>?st=<?=$post["status"]?>"><?= $estado ?></a>
+                </td>
+            </tr>
+            <?php endforeach ?>  
+        </table>        
+
     <?php echo $paginacion ?>
     <pre>
         <?php #var_dump($rutas_auto) ?>
