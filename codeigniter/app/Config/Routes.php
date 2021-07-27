@@ -75,6 +75,35 @@ $routes->get('about', 'Pages::showme/about');
 //---------------------------------------------------
 //ADMIN
 
+$routes->match(['get','post'], 'admin/','Users::adminUsuarios');
+$routes->match(['get','post'], '{locale}/admin/','Users::adminUsuarios');
+
+//crear
+$routes->match(['get','post'], 'admin/noticia','Noticias::create');
+$routes->match(['get','post'], '{locale}/admin/noticia','Noticias::create');
+//editar
+$routes->match(['get','post'], 'admin/noticia/editar/(:num)','Noticias::edit/$1');
+$routes->match(['get','post'], '{locale}/admin/noticia/editar/(:num)','Noticias::edit/$1');
+//tabla
+$routes->match(['get','post'], 'admin/ver/noticia','Noticias::adminNoticias');
+$routes->match(['get','post'], '{locale}/admin/ver/noticia','Noticias::adminNoticias');
+//taxonomias
+$routes->match(['get','post'], 'admin/categorias/noticia','Noticias::taxonomias');
+$routes->match(['get','post'], '{locale}/admin/categorias/noticia','Noticias::taxonomias');
+
+//crear
+$routes->match(['get','post'], 'admin/evento','Eventos::create');
+$routes->match(['get','post'], '{locale}/admin/evento','Eventos::create');
+//editar
+$routes->match(['get','post'], 'admin/evento/editar/(:num)','Eventos::edit/$1');
+$routes->match(['get','post'], '{locale}/admin/evento/editar/(:num)','Eventos::edit/$1');
+//tabla
+$routes->match(['get','post'], 'admin/ver/evento','Eventos::adminEventos');
+$routes->match(['get','post'], '{locale}/admin/ver/evento','Eventos::adminEventos');
+//taxonomias
+$routes->match(['get','post'], 'admin/categorias/evento','Eventos::taxonomias');
+$routes->match(['get','post'], '{locale}/admin/categorias/evento','Eventos::taxonomias');
+
 $tipos = ['noticia','evento','protocolo'];
 foreach ($tipos as $tipo) {
 	// crear

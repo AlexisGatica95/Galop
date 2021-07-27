@@ -2,14 +2,14 @@
 
 use CodeIgniter\Model;
 
-class NoticiasModel extends Model {
+class EventosModel extends Model {
 	protected $table = 'posts';
 	protected $allowedFields = ['title','body','slug','timestamp','type','status','translation_of','lang','fecha'];
 
 	public function getPostsPaginados($lang) {
 		$res = $this->asArray()
 					->where([
-						'type' => 'noticia',
+						'type' => 'evento',
 						'status'=> 1,
 						'lang' => $lang
 						])
@@ -20,7 +20,7 @@ class NoticiasModel extends Model {
 
 	public function getAllPostsPaginadosFiltros($condiciones){
 		$where = [
-				'type' => 'noticia'
+				'type' => 'evento'
 				];
 		if (array_key_exists('status', $condiciones)) {
 			$where['status'] = $condiciones["status"];
@@ -39,7 +39,7 @@ class NoticiasModel extends Model {
 	public function getAllPostsPaginados() {
 		$res = $this->asArray()
 					->where([
-						'type' => 'noticia'
+						'type' => 'evento'
 						])
 					->orderBy('timestamp','DESC')
 					->findAll();
@@ -71,7 +71,7 @@ class NoticiasModel extends Model {
 	public function getPosts() {
 		$res = $this->asArray()
 					->where([
-						'type' => 'noticia',
+						'type' => 'evento',
 					])
 					->orderBy('timestamp','DESC')
 					->findAll();	
@@ -81,14 +81,14 @@ class NoticiasModel extends Model {
 	public function getPostsParents($id = NULL) {
 		$res = $this->asArray()
 					->where([
-						'type' => 'noticia',
+						'type' => 'evento',
 						'translation_of'=> NULL
 					])
 					->orderBy('timestamp','DESC')
 					->findAll();
 		if ($id !== NULL) {
-			foreach ($res as $nk => $noticia) {
-				if ($noticia['id'] == $id) {
+			foreach ($res as $nk => $evento) {
+				if ($evento['id'] == $id) {
 					unset($res[$nk]);
 				}
 			}
@@ -101,7 +101,7 @@ class NoticiasModel extends Model {
 
 		$db = \Config\Database::connect();
 		$builder = $db->table('taxonomias');
-		$query = $builder->getWhere(['tipo' => 'noticia']);
+		$query = $builder->getWhere(['tipo' => 'evento']);
 		foreach ($query->getResultArray() as $row){
 			if (!$all) {
 				$nombre = json_decode($row['nombre']);
