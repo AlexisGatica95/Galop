@@ -89,7 +89,7 @@ $uri = service('uri');
 
 						<div class="dropdown-menu" aria-labelledby="dd-user">
 							<?php if (session()->get('isLoggedIn')): ?>
-								<a class="dropdown-item" href="/<?= $locale ?>/mi-cuenta">Mi cuenta</a>
+								<a class="dropdown-item" href="/<?= $locale ?>/perfil">Mi cuenta</a>
 								<div class="dropdown-divider"></div>
 								<a class="dropdown-item" href="/<?= $locale ?>/logout">Cerrar sesi&oacute;n</a>
 							<?php else: ?>
