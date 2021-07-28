@@ -32,7 +32,7 @@
 			<div class="sidebar">
 
 				<div class="estado bloque_panel">
-					<label for=""><h4><?= ucfirst(lang("Admin.sidebar_noticias.estado"))?></h4></label>
+					<h4><?= ucfirst(lang("Admin.sidebar_noticias.estado"))?></h4>
 					<select name="estado" id="status">
 						<option value="0" <?php if (isset($post) && $post['status'] == "0") {echo 'selected';} ?>><?= ucfirst(lang("Admin.sidebar_noticias.privado"))?></option>
 						<option value="1" <?php if (isset($post) && $post['status'] == "1") {echo 'selected';} ?>><?= ucfirst(lang("Admin.sidebar_noticias.publico"))?></option>
@@ -45,7 +45,7 @@
 				</div>
 				
 				<div class="idioma bloque_panel">
-					<label for=""><h4><?= ucfirst(lang("Admin.sidebar_noticias.idioma"))?></h4></label>
+					<h4><?= ucfirst(lang("Admin.sidebar_noticias.idioma"))?></h4>
 					<select name="idioma_select" id="lang">
 					<!-- <option value="" disabled><?= ucfirst(lang("Admin.sidebar_noticias.elegir"))?></option> -->
 					<option value="es" <?php if (isset($post) && $post['lang'] == "es") {echo 'selected';} ?>><?= ucfirst(lang("Admin.sidebar_noticias.es"))?><img src="/img/es.png" alt=""></option>
@@ -69,6 +69,11 @@
 							<?php endforeach ?>  
 						</select>
 					</div>	
+				</div>
+
+				<div class="fecha bloque_panel">
+					<h4><?=ucfirst(lang("Admin.evento.fecha"))?></h4>
+					<div id="litepicker"></div>
 				</div>
 
 				<?php foreach ($taxonomias as $taxonomia): ?>
