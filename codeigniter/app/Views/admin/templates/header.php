@@ -35,9 +35,9 @@ $uri = service('uri');
 				<span><?= ucfirst(lang("Admin.menu.recursos"))?><img src="/img/arrow_down.png" alt=""></span>
 
 				<ul class="dropdown_content">
-					<li><a href="/admin/recurso"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
-					<li><a href="/admin/ver/recusos"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
-					<li><a href="/categorias/recursos"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
+					<li><a href="/admin/protocolo"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
+					<li><a href="/admin/ver/protocolos"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
+					<li><a href="/admin/categorias/protocolos"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
 				</ul>
 			</li>
 			<li class="dropdown">

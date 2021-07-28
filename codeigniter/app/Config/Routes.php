@@ -104,6 +104,19 @@ $routes->match(['get','post'], '{locale}/admin/ver/evento','Eventos::adminEvento
 $routes->match(['get','post'], 'admin/categorias/evento','Eventos::taxonomias');
 $routes->match(['get','post'], '{locale}/admin/categorias/evento','Eventos::taxonomias');
 
+//crear
+$routes->match(['get','post'], 'admin/protocolo','Protocolos::create');
+$routes->match(['get','post'], '{locale}/admin/protocolo','Protocolos::create');
+//editar
+$routes->match(['get','post'], 'admin/protocolo/editar/(:num)','Protocolos::edit/$1');
+$routes->match(['get','post'], '{locale}/admin/protocolo/editar/(:num)','Protocolos::edit/$1');
+//tabla
+$routes->match(['get','post'], 'admin/ver/protocolo','Protocolos::adminProtocolos');
+$routes->match(['get','post'], '{locale}/admin/ver/protocolo','Protocolos::adminProtocolos');
+//taxonomias
+$routes->match(['get','post'], 'admin/categorias/protocolo','Protocolos::taxonomias');
+$routes->match(['get','post'], '{locale}/admin/categorias/protocolo','Protocolos::taxonomias');
+
 $tipos = ['noticia','evento','protocolo'];
 foreach ($tipos as $tipo) {
 	// crear
