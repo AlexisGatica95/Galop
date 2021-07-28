@@ -14,8 +14,10 @@
 							<input type="hidden" name="id" value="<?=$term['id']?>">
 							<div class="taxonomias_input">
 							<?php foreach ($locales as $loc): ?>
-								<img src="<?=base_url()?>/img/<?=$loc?>.png">
-								<input type="text" class="input_<?=$term['id']?>" name="<?=$term['id']?>[<?=$loc?>]" value="<?=$term['nombre']->$loc?>" disabled>
+								<div class="item">
+									<img src="<?=base_url()?>/img/<?=$loc?>.png">
+									<input type="text" class="input_<?=$term['id']?>" name="<?=$term['id']?>[<?=$loc?>]" value="<?=$term['nombre']->$loc?>" disabled>
+								</div>								
 							<?php endforeach ?>	
 							</div>
 
@@ -35,8 +37,10 @@
 							<input type="hidden" name="action" value="new">
 							<input type="hidden" name="taxonomia" value="<?=$taxonomia['id']?>">
 							<?php foreach ($locales as $loc): ?>
-								<img src="<?=base_url()?>/img/<?=$loc?>.png">
-								<input type="text"name="new[<?=$loc?>]">
+								<div class="item">
+									<img src="<?=base_url()?>/img/<?=$loc?>.png">
+									<input type="text"name="new[<?=$loc?>]">
+								</div>								
 							<?php endforeach ?>		
 						</div>
 						<div class="d-flex justify-content-end aligne-items-center flex-grow-1">
