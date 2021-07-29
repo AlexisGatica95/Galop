@@ -1,6 +1,6 @@
 <?php namespace App\Models;
 
-use CodeIgniter\Model;
+use CodeIgniter\Model; 
 
 class NoticiasModel extends Model {
 	protected $table = 'posts';

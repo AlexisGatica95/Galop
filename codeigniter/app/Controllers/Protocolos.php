@@ -268,7 +268,7 @@ class Protocolos extends BaseController
 		$data['taxonomias'] = $taxonomias;
 		// return view('welcome_message');
 		echo view('admin/templates/header',$data);
-		echo view('admin/posts');
+		echo view('admin/protocolos');
 		echo view('admin/templates/footer');
 	}
 

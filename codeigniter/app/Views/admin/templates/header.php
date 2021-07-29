@@ -32,7 +32,7 @@ $uri = service('uri');
 
 		<ul class="menu_barra" id="navbarSupportedContent">
 			<li class="dropdown">
-				<span><?= ucfirst(lang("Admin.menu.recursos"))?><img src="/img/arrow_down.png" alt=""></span>
+				<span><?= ucfirst(lang("Admin.menu.protocolos"))?><img src="/img/arrow_down.png" alt=""></span>
 
 				<ul class="dropdown_content">
 					<li><a href="/admin/protocolo"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>

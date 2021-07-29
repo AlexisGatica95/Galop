@@ -1,4 +1,4 @@
-<h1>Usuarios</h1>
+<h1><?= ucfirst(lang("Admin.usuarios"))?></h1>
     <form action="<?=$_SERVER['PATH_INFO']?>" method="GET" id="query_form">
         <div class="header_admin d-flex">
             <div class="">
@@ -11,7 +11,7 @@
                         </option>
                         <option value="0">
                             <?= ucfirst(lang("Admin.tabla.pendiente"))?>
-                        </option>
+                        </option> 
                         <option value="1">
                             <?= ucfirst(lang("Admin.tabla.usuario"))?>
                         </option>

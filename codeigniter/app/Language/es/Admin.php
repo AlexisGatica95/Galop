@@ -1,5 +1,9 @@
 <?php 
 return [
+	'eventos'=>'Eventos',
+	'protocolos'=>'Protocolos',
+	'noticias'=>'Noticias',
+	'usuarios'=>'Usuarios',
     'noticia' => [
         'titulo_crear'=> 'Crear una nueva noticia',
         'titulo_editar'=> 'Editar noticia',
@@ -7,8 +11,14 @@ return [
         'contenido'=>'Contenido',
         'crear'=>'Publicar'
     ],
+    'protocolo' => [
+    	'titulo_crear'=> 'Crear un nuevo protocolo'
+    ],
+    'evento' => [
+    	'titulo_crear'=> 'Crear un nuevo evento'
+    ],
     'menu' => [
-		'recursos'=>'Recursos',
+		'protocolos'=>'Protocolos',
 		'noticias'=> 'Noticias',
 		'eventos'=> 'Eventos',
 		'usuarios'=> 'Usuarios',
@@ -62,6 +72,13 @@ return [
 		'traduccion_check' => 'Es una traducción de una entrada',
 		'traduccion_de' => 'Es traducción de',
 		'elegir' => 'Elegir'
+	],
+	'galop_form' =>[
+		'crear_usuario' => 'Crear nuevo usuario',
+		'span_permiso' => 'Otorga permiso para que lo contacten y hagan llegar información sobre las actividades de GALOP',
+		'permisos' => 'Permisos',
+		'miembro' => 'Miembro',
+		'administrador' => 'Administrador'
 	]
 ]
 ?>

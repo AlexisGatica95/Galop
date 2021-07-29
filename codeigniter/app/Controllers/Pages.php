@@ -1,16 +1,39 @@
 <?php namespace App\Controllers;
 
-use App\Models\BlogModel;
+use App\Models\EventosModel;
 
 class Pages extends BaseController
 {
-	public function index()
-	{
-		$model = new BlogModel();
-		$locale = $this->request->getLocale();
 
-		$data['news'] = $model->getPosts();
-		$data['locale'] = $locale;
+public function index()
+	{	
+		$data['locale'] = $this->locale;
+		$data['ruta_es'] = '/es/pages/home/'; 
+		$data['ruta_en'] = '/en/pages/home/';
+		$model = new EventosModel();
+		$eventos = $model->getPostsPaginados($this->locale);		
+
+		$data['paginacion'] = $this->createPagination($eventos);
+
+		// $data['paginacion'] = $paginacion;
+		
+		// agarro y paso la pagina que corresponde como array de eventos
+		$page = $this->getPage($eventos);
+		if (count($eventos) > 0) {
+			$eventos = $eventos[$page];
+		}
+		
+		$longitud_extracto = 250;
+
+		foreach ($eventos as $key => $evento) {
+			$extracto = substr(strip_tags($evento['body'], '<br>'),0,$longitud_extracto);
+			if (strlen($extracto)>=$longitud_extracto) {
+				$extracto .= '…';
+			}
+			$eventos[$key]['extracto'] = $extracto;
+		}
+		$data['eventos'] = $eventos;
+		
 
 		// return view('welcome_message');
 		echo view('templates/header',$data);
@@ -18,18 +41,31 @@ class Pages extends BaseController
 		echo view('templates/footer');
 	}
 
-	public function showme($page = 'institucional')
+	//trae la evento en si
+	public function evento($slug)
 	{
-		if (! is_file(APPPATH.'/Views/pages/'.$page.'.php')) {
-			// no existe la pag
-			throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
-		}
+		// if (! is_file(APPPATH.'/Views/pages/'.$page.'.php')) {
+		// 	// no existe la pag
+		// 	throw new \CodeIgniter\Exceptions\PageNotFoundException($page);
+		// }
+
 		$locale = $this->request->getLocale();
+
 		$data['locale'] = $locale;
+		$data['ruta_es'] = '/es/eventos/'.$slug;
+		$data['ruta_en'] = '/en/eventos/'.$slug;
+
+		$model = new eventosModel();
+		$data['evento'] = $model->getPostSlug($slug);
+		if ($data['evento']['status'] !== "1") {
+			return redirect()->to("/".$locale.'/eventos/');
+		}
+		
 		echo view('templates/header',$data);
-		echo view('pages/'.$page);
+		echo view('evento');
 		echo view('templates/footer');
 	}
+
 
 	//--------------------------------------------------------------------
 

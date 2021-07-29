@@ -37,7 +37,11 @@ let sel_organizaciones = new SlimSelect({
         }
       }
 });
-
+let sel_permisos = new SlimSelect({
+    select: '#sel_permisos',
+    hideSelectedOption: true,
+    showSearch: false
+});
 
 
 let info = {
