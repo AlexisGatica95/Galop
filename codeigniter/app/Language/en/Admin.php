@@ -1,5 +1,9 @@
 <?php
 return [
+	'eventos'=>'Events',
+	'protocolos'=>'Protocols',
+	'noticias'=>'News',
+	'usuarios'=>'Users',
     'noticia' => [
 		'titulo_crear'=> 'Create new entry',
 		'titulo_editar'=> 'Edit news entry',
@@ -7,8 +11,14 @@ return [
 		'contenido'=>'Body',
 		'crear'=>'Publish'
 	],
+	'protocolo' => [
+    	'titulo_crear'=> 'Create new protocol'
+    ],
+    'evento' => [
+    	'titulo_crear'=> 'Create new event'
+    ],
 	'menu' => [
-		'recursos'=>'Resources',
+		'protocolos'=>'protocols',
 		'noticias'=> 'News',
 		'eventos'=> 'Events',
 		'usuarios'=> 'Users',
@@ -62,6 +72,13 @@ return [
 		'traduccion_check' => 'Is a translation of an entry',
 		'traduccion_de' => 'Is the translation of',
 		'elegir' => 'Choose'
+	],
+	'galop_form' => [
+		'crear_usuario' => 'Create new user',
+		'span_permiso' => 'He grant permission for them to contact me and send information about GALOP activities',
+		'permisos' => 'permissions',
+		'miembro' => 'Member',
+		'administrador' => 'Administrator'
 	]
 ]
 

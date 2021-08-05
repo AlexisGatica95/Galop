@@ -32,9 +32,9 @@ class Database extends \CodeIgniter\Database\Config
 	public $default = [
 		'DSN'      => '',
 		'hostname' => 'localhost',
-		'username' => '',
+		'username' => 'root',
 		'password' => '',
-		'database' => '',
+		'database' => 'galop_db',
 		'DBDriver' => 'MySQLi',
 		'DBPrefix' => '',
 		'pConnect' => false,

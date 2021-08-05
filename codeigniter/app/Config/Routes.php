@@ -104,19 +104,6 @@ $routes->match(['get','post'], '{locale}/admin/ver/evento','Eventos::adminEvento
 $routes->match(['get','post'], 'admin/categorias/evento','Eventos::taxonomias');
 $routes->match(['get','post'], '{locale}/admin/categorias/evento','Eventos::taxonomias');
 
-//crear
-$routes->match(['get','post'], 'admin/protocolo','Protocolos::create');
-$routes->match(['get','post'], '{locale}/admin/protocolo','Protocolos::create');
-//editar
-$routes->match(['get','post'], 'admin/protocolo/editar/(:num)','Protocolos::edit/$1');
-$routes->match(['get','post'], '{locale}/admin/protocolo/editar/(:num)','Protocolos::edit/$1');
-//tabla
-$routes->match(['get','post'], 'admin/ver/protocolo','Protocolos::adminProtocolos');
-$routes->match(['get','post'], '{locale}/admin/ver/protocolo','Protocolos::adminProtocolos');
-//taxonomias
-$routes->match(['get','post'], 'admin/categorias/protocolo','Protocolos::taxonomias');
-$routes->match(['get','post'], '{locale}/admin/categorias/protocolo','Protocolos::taxonomias');
-
 $tipos = ['noticia','evento','protocolo'];
 foreach ($tipos as $tipo) {
 	// crear
@@ -126,7 +113,7 @@ foreach ($tipos as $tipo) {
 	$routes->match(['get','post'],'admin/'.$tipo.'/editar/(:num)','Posts::edit/$1/'.$tipo);
 	$routes->match(['get','post'],'{locale}/admin/'.$tipo.'/editar/(:num)','Posts::edit/$1/'.$tipo);
 	// tabla
-	$routes->match(['get','post'],'admin/ver/'.$tipo.'s', 'Posts::adminPosts/'.$tipo);
+	$routes->match(['get','post'],'admin/'.$tipo.'s', 'Posts::adminPosts/'.$tipo);
 	$routes->match(['get','post'],'{locale}/admin/ver/'.$tipo.'s', 'Posts::adminPosts/'.$tipo);
 	// taxonomias
 	$routes->match(['get','post'],'admin/categorias/'.$tipo.'s', 'Posts::taxonomias/'.$tipo);
@@ -137,6 +124,9 @@ foreach ($tipos as $tipo) {
 // tabla
 $routes->match(['get','post'], 'admin/usuarios','Users::adminUsuarios');
 $routes->match(['get','post'], '{locale}/admin/usuarios','Users::adminUsuarios');
+// crear usuario
+$routes->match(['get','post'], 'admin/usuario','Users::adminUsersRegistro');
+$routes->match(['get','post'], '{locale}/admin/usuario','Users::adminUsersRegistro');
 
 // ----------------------------------------------------------------------
 //USERS

@@ -8,7 +8,7 @@ class Noticias extends BaseController
 	public function index()
 	{	
 		$data['locale'] = $this->locale;
-		$data['ruta_es'] = '/es/noticias/';
+		$data['ruta_es'] = '/es/noticias/'; 
 		$data['ruta_en'] = '/en/noticias/';
 		$model = new NoticiasModel();
 		$noticias = $model->getPostsPaginados($this->locale);		

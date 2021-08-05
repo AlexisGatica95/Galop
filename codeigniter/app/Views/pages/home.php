@@ -24,22 +24,22 @@
 		<div class="container">
 			<h2 class="titulo-principal">Eventos</h2>
 			<div class="ultimas">
-				<div class="item">
-					<h4>Evento de ejemplo</h4>
-					<p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Beatae, alias. Perferendis libero nulla, p...</p>
-					<a href="#" class="btn btn-1">Leer más</a>
-				</div>
-				<div class="item">
-					<h4>Evento anterior</h4>
-					<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto nulla, iure velit nam possimus p...</p>
-					<a href="#" class="btn btn-1">Leer más</a>
-				</div>
-				<div class="item">
-					<h4>Titulo de evento</h4>
-					<p>Recusandae nesciunt omnis architecto officia debitis odit adipisci, dolorem laudantium tempora susci...</p>
-					<a href="#" class="btn btn-1">Leer más</a>
-				</div>
+
+				<?php foreach($eventos as $evento): ?>
+		        <div class="item">
+		            <h4 ><?= $evento['title']?></h4>
+		            <p class='item-body'><?= $evento['extracto']?></p>
+		            <a  class='btn btn-1 sm' href="/<?=$locale?>/eventos/<?=$evento['slug']?>"><?=ucfirst(lang("App.noticia.ver_mas"))?></a>
+		        </div>
+		    	<?php endforeach ?>		
+	    			
 			</div>
+
+
+
+    </div>
+    <?php echo $paginacion ?>
+
 		</div>
 	</div>
 </section>

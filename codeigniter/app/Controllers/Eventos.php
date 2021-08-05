@@ -1,7 +1,7 @@
 <?php namespace App\Controllers;
 
 use App\Models\EventosModel;
-
+ 
 class Eventos extends BaseController
 {	
 	//trae todos los post paginados con status 1
@@ -14,8 +14,6 @@ class Eventos extends BaseController
 		$eventos = $model->getPostsPaginados($this->locale);		
 
 		$data['paginacion'] = $this->createPagination($eventos);
-
-		// $data['paginacion'] = $paginacion;
 		
 		// agarro y paso la pagina que corresponde como array de eventos
 		$page = $this->getPage($eventos);
