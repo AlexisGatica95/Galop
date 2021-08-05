@@ -663,7 +663,7 @@ input[type="submit"]{
 
 .sidebar {
     margin-left: 1rem;
-    width: 280px;
+    width: 308px;
     flex-shrink: 0;
     flex-grow: 0;
 }
@@ -701,6 +701,15 @@ label.traduccion_label {
     margin-bottom: 0;
 }
 
+:root {
+    --litepicker-button-prev-month-color-hover: var(--n);
+    --litepicker-button-next-month-color-hover: var(--n);
+    --litepicker-day-color-hover: var(--n);
+    --litepicker-is-start-color-bg: var(--n);
+    --litepicker-is-end-color-bg: var(--n);
+    --litepicker-button-apply-color-bg: var(--n);
+    --litepicker-button-reset-color-hover: var(--n);
+}
 
 
 .main .title {

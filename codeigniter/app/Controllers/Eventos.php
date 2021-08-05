@@ -71,7 +71,8 @@ class Eventos extends BaseController
 
 		$data['locale'] = $locale;
 		$data['ruta_es'] = '/es/admin/evento/';
-		$data['ruta_en'] = '/en/admin/evento/';
+		$data['ruta_en'] = '/en/admin/evento/';		
+		$data['scripts'][] = 'litepicker';
 		$data['scripts'][] = 'edicion_evento';
 		$data['titulo_vista'] = 'titulo_crear';
 		$data['terms'] = [];
@@ -132,6 +133,7 @@ class Eventos extends BaseController
 		$data['locale'] = $this->locale;
 		$data['ruta_es'] = '/es/admin/evento/';
 		$data['ruta_en'] = '/en/admin/evento/';
+		$data['scripts'][] = 'litepicker';
 		$data['scripts'][] = 'edicion_evento';
 		$data['titulo_vista'] = 'titulo_editar';
 

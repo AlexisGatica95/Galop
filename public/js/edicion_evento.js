@@ -64,4 +64,9 @@ $(document).ready(function(){
       }
   });
 
-
+  const picker = new Litepicker({ 
+    element: document.getElementById('litepicker'),
+    inlineMode: true,
+    lang: "es-ES",
+    singleMode: true
+  });
