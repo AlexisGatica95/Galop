@@ -45,8 +45,8 @@ $routes->get('{locale}/institucional/(:any)','Institucional::subpaginas/$1');
 //Posts
 
 //Eventos
-$routes->get('eventos','Posts::index/evento');
-$routes->get('{locale}/eventos','Posts::index/evento');
+$routes->get('eventos','Eventos::index');
+$routes->get('{locale}/eventos','Eventos::index');
 
 $routes->get('eventos/(:any)','Posts::post/$1/evento');
 $routes->get('{locale}/eventos/(:any)','Posts::post/$1/evento');

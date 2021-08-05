@@ -102,7 +102,8 @@ class Eventos extends BaseController
 				'slug' => url_title($this->request->getVar('title')),
 				'type' =>'evento',
 				'status' => $this->request->getVar('estado'),
-				'lang' => $this->request->getVar('idioma_select')
+				'lang' => $this->request->getVar('idioma_select'),
+				'fecha' => $this->request->getVar('fecha')
 			];
 			if ($this->request->getVar('traduccion_de')) {
 				$post['traduccion_de'] = $this->request->getVar('traduccion_de');
@@ -178,7 +179,8 @@ class Eventos extends BaseController
 				'slug' => url_title($this->request->getVar('title')),
 				'type' =>'evento',
 				'status' => $this->request->getVar('estado'),
-				'lang' => $this->request->getVar('idioma_select')
+				'lang' => $this->request->getVar('idioma_select'),
+				'fecha' => $this->request->getVar('fecha')
 			];
 			if ($this->request->getVar('es_traduccion') == "on") {
 				$o['translation_of'] = $this->request->getVar('traduccion_de');

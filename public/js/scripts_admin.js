@@ -35,6 +35,7 @@ $(".mod-w").click(function(e){
 });
 
 //Carga de noticias
+let fecha_evento = false;
 
 $("#guardar_noticia").on("click tap",function() {
   var title = $("input#title").val();
@@ -44,7 +45,7 @@ $("#guardar_noticia").on("click tap",function() {
   if (title == "") {
     errores.push("El campo título es obligatorio");
   }
-  if (body == "") {
+  if (body == "" || body == "<p><br></p>") {
     errores.push("El campo cuerpo es obligatorio");
   }
   if (title.length>255) {
@@ -52,6 +53,9 @@ $("#guardar_noticia").on("click tap",function() {
   }
   if (lang == "") {
     errores.push("Debe seleccionar un idioma para la entrada")
+  }
+  if (!fecha_evento) {
+    errores.push("Debe seleccionar la fecha del evento")
   }
   if(errores.length>0){
     let html = "<ul>";

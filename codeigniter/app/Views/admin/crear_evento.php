@@ -6,6 +6,7 @@
 		</pre> -->
 	<script>	
 		const post_body = '<?php echo($post['body']) ?>';
+		const post_date = '<?php echo($post['fecha']) ?>';
 		// console.log(post_body);
 	</script>
 	<?php endif; ?>
@@ -15,6 +16,7 @@
 	<div class="crear-noti-content d-flex">
 		<form action="" method="post" id="nueva_noticia">
 			<div class="main">
+				
 				<div class="title form-group">
 					<label for="title"><?= ucfirst(lang("Admin.noticia.titulo"))?></label>
 					<input type="text" name="title" class="form-control" id="title" value="<?php if (isset($post)) {echo $post['title'];} ?>">
@@ -22,15 +24,13 @@
 				<div class="form-group">
 					<label for="body"><?= ucfirst(lang("Admin.noticia.contenido"))?></label>
 					<textarea name="body" id="body" class="form-control summernote"></textarea>
-				</div>
-				<?php if ($_POST): ?>
+				</div>			
+			</div>
+			<div class="sidebar">
+			<?php if ($_POST): ?>
 				<?= \Config\Services::validation()->listErrors() ?>
 				<?php endif ?>
 				<div class="errors"></div>
-			
-			</div>
-			<div class="sidebar">
-
 				<div class="estado bloque_panel">
 					<h4><?= ucfirst(lang("Admin.sidebar_noticias.estado"))?></h4>
 					<select name="estado" id="status">
@@ -38,7 +38,6 @@
 						<option value="1" <?php if (isset($post) && $post['status'] == "1") {echo 'selected';} ?>><?= ucfirst(lang("Admin.sidebar_noticias.publico"))?></option>
 						<option value="2" <?php if (isset($post) && $post['status'] == "2") {echo 'selected';} ?>><?= ucfirst(lang("Admin.sidebar_noticias.papelera"))?></option>
 					</select>
-
 					<div class="d-flex justify-content-center ">
 						<span id="guardar_noticia" class="boton-crear btn btn-1"><?= ucfirst(lang("Admin.noticia.crear"))?></span>
 					</div>
@@ -74,6 +73,9 @@
 				<div class="fecha bloque_panel">
 					<h4><?=ucfirst(lang("Admin.evento.fecha"))?></h4>
 					<div id="litepicker"></div>
+					<input type="hidden" name="fecha" value="<?php if (isset($post)) {
+						echo($post['fecha']);
+					}?>">
 				</div>
 
 				<?php foreach ($taxonomias as $taxonomia): ?>

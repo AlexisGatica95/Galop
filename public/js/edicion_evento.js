@@ -40,8 +40,14 @@ $(document).ready(function(){
       });
       $('.summernote').summernote('reset');
       if (typeof post_body !== 'undefined') {
-        $('.summernote').summernote('editor.pasteHTML', post_body);
-        $('.note-editable p').first().remove();
+        try {
+          $('.summernote').summernote('editor.pasteHTML', post_body);
+          $('.note-editable p').first().remove();
+        } catch (e) {
+          //console.error('no hay body');
+          // expected output: ReferenceError: nonExistentFunction is not defined
+          // Note - error messages will vary depending on browser
+        }
       }
 
       function sendFile(file, editor, $Editable) {
@@ -68,5 +74,20 @@ $(document).ready(function(){
     element: document.getElementById('litepicker'),
     inlineMode: true,
     lang: "es-ES",
-    singleMode: true
+    singleMode: true,
+    setup: (picker) => {
+      picker.on('selected', (date1) => {
+        fecha_evento = true;
+        
+        console.log(date1);
+        date1 = date1.dateInstance;
+        date1.setHours(date1.getHours() + 4);
+        let fecha = date1.toISOString().slice(0, 19).replace('T', ' ');
+        $("input[name=fecha]").val(fecha);
+      });
+    },
   });
+
+  if (typeof post_date !== 'undefined') {
+    picker.setDate(post_date);
+  }

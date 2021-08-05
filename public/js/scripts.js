@@ -17,6 +17,59 @@
 //       ]
 //     });
 //   });
+
+const cal_strings = {
+  "es": {
+    "months": {
+      "1": "Enero",
+      "2": "Febrero",
+      "3": "Marzo",
+      "4": "Abril",
+      "5": "Mayo",
+      "6": "Junio",
+      "7": "Julio",
+      "8": "Agosto",
+      "9": "Septiembre",
+      "10": "Octubre",
+      "11": "Noviembre",
+      "12": "Diciembre"
+    },
+    "days": {
+      "0": "Dom",
+      "1": "Lun",
+      "2": "Mar",
+      "3": "Mie",
+      "4": "Jue",
+      "5": "Vie",
+      "6": "Sab"
+    }
+  },
+  "en": {
+    "months": {
+      "1": "January",
+      "2": "February",
+      "3": "March",
+      "4": "April",
+      "5": "May",
+      "6": "June",
+      "7": "July",
+      "8": "August",
+      "9": "September",
+      "10": "October",
+      "11": "November",
+      "12": "December"
+    },
+    "days": {
+      "0": "Sun",
+      "1": "Mon",
+      "2": "Tue",
+      "3": "Wed",
+      "4": "Thu",
+      "5": "Fri",
+      "6": "Sat"
+    }
+  }
+};
 (function($) {
     var CheckboxDropdown = function(el) {
       var _this = this;
@@ -108,7 +161,48 @@
     for(var i = 0, length = checkboxesDropdowns.length; i < length; i++) {
       new CheckboxDropdown(checkboxesDropdowns[i]);
     }
+
+    $(".event_calendar").data("activeyear",currentYear);
+    $(".event_calendar").data("activemonth",currentMonth);
+    $(".event_calendar").find(".current_month h4").html(cal_strings[lang]["months"][currentMonth]+" "+currentYear);
+    $(".event_calendar").find(".grid.month[data-year="+currentYear+"][data-month="+currentMonth+"]").addClass("active");
   })(jQuery);
+
+ 
+
+  $(".event_calendar .next_month").on("click tap", function(){
+    let calendar = $(this).closest(".event_calendar");
+    let activeYear = $(calendar).data("activeyear");
+    let activeMonth = $(calendar).data("activemonth");
+    let newMonth = activeMonth + 1;
+    let newYear = activeYear;
+    if (newMonth > 12){
+      newMonth = 1;
+      newYear = activeYear + 1;
+    }
+    $(calendar).find(".grid.month").removeClass("active");
+    $(calendar).find(".current_month h4").html(cal_strings[lang]["months"][newMonth]+" "+newYear);
+    $(calendar).data("activeyear",newYear);
+    $(calendar).data("activemonth",newMonth);
+    $(calendar).find(".grid.month[data-year="+newYear+"][data-month="+newMonth+"]").addClass("active");
+  });
+
+  $(".event_calendar .prev_month").on("click tap", function(){
+    let calendar = $(this).closest(".event_calendar");
+    let activeYear = $(calendar).data("activeyear");
+    let activeMonth = $(calendar).data("activemonth");
+    let newMonth = activeMonth - 1;
+    let newYear = activeYear;
+    if (newMonth < 1){
+      newMonth = 12;
+      newYear = activeYear - 1;
+    }
+    $(calendar).find(".grid.month").removeClass("active");
+    $(calendar).find(".current_month h4").html(cal_strings[lang]["months"][newMonth]+" "+newYear);
+    $(calendar).data("activeyear",newYear);
+    $(calendar).data("activemonth",newMonth);
+    $(calendar).find(".grid.month[data-year="+newYear+"][data-month="+newMonth+"]").addClass("active");
+  });
 
   Array.prototype.remove = function(value) {
     for (var i = this.length; i--; ) {
