@@ -49,6 +49,7 @@ class Users extends BaseController
 		echo view('templates/footer');
 	}
 
+	// NO SABES LO QUE ME COSTO DARME CUENTA DE ESTO ARI LPM :')
 	private function setUser($user){
 		$data = [
 			'id' => $user['ID'],
@@ -56,6 +57,7 @@ class Users extends BaseController
 			'apellido' => $user['apellido'],
 			'mail' => $user['mail'],
 			'permisos' => $user['permisos'],
+
 			'isLoggedIn' => true
 		];
 		session()->set($data);
@@ -113,6 +115,8 @@ class Users extends BaseController
 				}else{ 
 					$orgas = "";
 				}
+
+
 				$intereses = "";
 				if($this->request->getVar('interes[]')) {
 					$intereses = implode(",",$this->request->getVar('interes[]'));
@@ -123,6 +127,7 @@ class Users extends BaseController
 				if(array_key_exists("consent_contacto",$_POST)){
 					$consent = 1;
 				}
+				
 				$newData = [
 					'nombre' => $this->request->getVar('nombre'),
 					'apellido' => $this->request->getVar('apellido'),
@@ -157,14 +162,20 @@ class Users extends BaseController
 	}
 
 	public function perfil(){
+		
 		$model = new UsersModel();
+		$this->session = session();
+		$id = $this->session->get('id');
+
+		$data = $model->getUser($id);
+
 		$locale = $this->request->getLocale();
 		helper(['form']);
 		$data['locale'] = $locale;
 		$data['ruta_es'] = '/es/perfil';
 		$data['ruta_en'] = '/en/perfil';
-		session();
-
+		session()->set($data);
+		
 		echo view('templates/header',$data);
 		echo view('users/perfil');
 		echo view('templates/footer');

@@ -81,5 +81,14 @@ class UsersModel extends Model {
 		return array_chunk($this->listArrays($res),2,true);
 	}
 
+	
+	public function getUser($id){
+		$res = $this->asArray()
+			->where(['id' => $id])
+			->findAll();
+		$res = $this->listArrays($res);
+		return $res[0];
+}
+
 
 } 

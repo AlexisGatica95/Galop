@@ -962,6 +962,43 @@ iframe.visualizar_doc {
 /* --- SUBSECCIONES --- */
 
 
+    /* PERFIL USUARIOS */
+
+    .perfil-body{
+        background-color: #ffe4c4;
+        border-radius: 10px;
+        max-width: 750px;
+        padding: 15px;
+    }
+
+    .perfil-body ul {
+        display: flex;
+        flex-wrap: wrap;
+        background-color: #fff;
+        border-radius: 10px;
+        margin-bottom: 5px;
+        padding: 10px;
+    }
+
+    .perfil-body ul li {
+        /* display: flex; */
+        padding-right: 10px;
+        flex-wrap: wrap;
+    }
+
+    .perfil-body ul li span {
+        background-color: bisque;
+        padding: 0px 3px;
+        display: inline-flex;
+        border-radius: 5px;
+        align-self: flex-start;
+        text-align: nowrap;
+        border: 2px solid #fff;
+    }
+
+    /*-----PERFIL USUARIOS-----*/
+
+
 @media(max-width : 991px){ 
 
         /*    INICIO     */
@@ -1096,6 +1133,7 @@ iframe.visualizar_doc {
 
     /*-----CONTACTO-----*/
 
+    
     /*      NOTICIAS     */
 /*    .item {
         padding: 1rem;
