@@ -252,9 +252,11 @@ class Eventos extends BaseController
 				$condiciones['string'] = "";
 			}
 			$eventos = $model->getAllPostsPaginadosFiltros($condiciones);
+			$hayfiltros = 1;
 		} else {
 			$eventos = $model->getAllPostsPaginados();
 			$condiciones = [];
+			$hayfiltros = 0;
 		}		
 
 		$data['paginacion'] = $this->createPagination($eventos);
@@ -268,6 +270,8 @@ class Eventos extends BaseController
 		$data['type'] = 'evento';
 		$taxonomias = $model->getTaxTerms($this->locale);
 		$data['taxonomias'] = $taxonomias;
+		$data['rutas_auto'] = $this->rutas;
+		$data['filtered'] = $hayfiltros;
 		// return view('welcome_message');
 		echo view('admin/templates/header',$data);
 		echo view('admin/posts');

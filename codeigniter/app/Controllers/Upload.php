@@ -15,8 +15,7 @@ class Upload extends BaseController
 	}
 
 	public function img()
-	{
-    
+	{   
 		$locale = $this->request->getLocale();
 
 		$data['locale'] = $locale;
@@ -25,5 +24,6 @@ class Upload extends BaseController
 
 		echo $path;
 	}
+
 	//--------------------------------------------------------------------
 }

@@ -250,9 +250,11 @@ class Noticias extends BaseController
 				$condiciones['string'] = "";
 			}
 			$noticias = $model->getAllPostsPaginadosFiltros($condiciones);
+			$hayfiltros = 1;
 		} else {
 			$noticias = $model->getAllPostsPaginados();
 			$condiciones = [];
+			$hayfiltros = 0;
 		}		
 
 		$data['paginacion'] = $this->createPagination($noticias);
@@ -266,6 +268,8 @@ class Noticias extends BaseController
 		$data['type'] = 'noticia';
 		$taxonomias = $model->getTaxTerms($this->locale);
 		$data['taxonomias'] = $taxonomias;
+		$data['rutas_auto'] = $this->rutas;
+		$data['filtered'] = $hayfiltros;
 		// return view('welcome_message');
 		echo view('admin/templates/header',$data);
 		echo view('admin/posts');

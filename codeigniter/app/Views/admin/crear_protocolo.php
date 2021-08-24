@@ -14,6 +14,7 @@
 		</pre> -->
 	<div class="crear-noti-content d-flex">
 		<form action="" method="post" id="nueva_noticia">
+			<input type="hidden" name="tipo_post" value="protocolo">
 			<div class="main">
 				<div class="title form-group">
 					<label for="title"><?= ucfirst(lang("Admin.noticia.titulo"))?></label>
@@ -30,7 +31,6 @@
 			
 			</div>
 			<div class="sidebar">
-
 				<div class="estado bloque_panel">
 					<label for=""><h4><?= ucfirst(lang("Admin.sidebar_noticias.estado"))?></h4></label>
 					<select name="estado" id="status">
@@ -69,6 +69,17 @@
 							<?php endforeach ?>  
 						</select>
 					</div>	
+				</div>
+
+				<div class="bloque_panel archivos">
+					<h4><?=lang('Admin.sidebar.archivos')?></h4>
+					<div class="inputs">
+
+					</div>
+					<div class="archivos_subidos">
+
+					</div>
+					<div class="sumar_input">+</div>
 				</div>
 
 				<?php foreach ($taxonomias as $taxonomia): ?>

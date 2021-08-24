@@ -15,6 +15,7 @@
 		</pre> -->
 	<div class="crear-noti-content d-flex">
 		<form action="" method="post" id="nueva_noticia">
+		<input type="hidden" name="tipo_post" value="evento">
 			<div class="main">
 				
 				<div class="title form-group">

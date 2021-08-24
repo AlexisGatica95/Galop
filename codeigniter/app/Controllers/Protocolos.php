@@ -110,6 +110,17 @@ class Protocolos extends BaseController
 
 			$postID = $model->db->insertID();
 
+			// chequeo si hay archivos y los proceso
+			log_message('error', print_r($this->request->getFiles(), true));
+			if($post_files = $this->request->getFiles()){
+				foreach($post_files['adjuntos'] as $file){
+					if ($file->isValid() && !$file->hasMoved()){
+						$newName = $file->getRandomName();
+						$file->move(WRITEPATH.'uploads', $newName);
+					}
+				}
+			}
+
 			$db = \Config\Database::connect();
 			$builder = $db->table('posts_terms');
 			
@@ -250,9 +261,11 @@ class Protocolos extends BaseController
 				$condiciones['string'] = "";
 			}
 			$protocolos = $model->getAllPostsPaginadosFiltros($condiciones);
+			$hayfiltros = 1;
 		} else {
 			$protocolos = $model->getAllPostsPaginados();
 			$condiciones = [];
+			$hayfiltros = 0;
 		}		
 
 		$data['paginacion'] = $this->createPagination($protocolos);
@@ -266,6 +279,8 @@ class Protocolos extends BaseController
 		$data['type'] = 'protocolo';
 		$taxonomias = $model->getTaxTerms($this->locale);
 		$data['taxonomias'] = $taxonomias;
+		$data['rutas_auto'] = $this->rutas;
+		$data['filtered'] = $hayfiltros;
 		// return view('welcome_message');
 		echo view('admin/templates/header',$data);
 		echo view('admin/protocolos');

@@ -41,6 +41,7 @@ $("#guardar_noticia").on("click tap",function() {
   var title = $("input#title").val();
   var body = $("textarea#body").val();
   var lang = $("#lang").val();
+  var tipo = $("[name=tipo_post]").val();
   var errores = [];
   if (title == "") {
     errores.push("El campo título es obligatorio");
@@ -54,7 +55,7 @@ $("#guardar_noticia").on("click tap",function() {
   if (lang == "") {
     errores.push("Debe seleccionar un idioma para la entrada")
   }
-  if (!fecha_evento) {
+  if (tipo == "evento" && !fecha_evento) {
     errores.push("Debe seleccionar la fecha del evento")
   }
   if(errores.length>0){

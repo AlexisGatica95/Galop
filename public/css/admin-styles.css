@@ -18,7 +18,6 @@
     --g-3: #666666;
     --g-4: #333333;
 }
-}
 
 html{
     height: 100%;
@@ -655,7 +654,7 @@ input[type="submit"]{
 /* sidebar */
 
 .sidebar select,.sidebar input,.main input{
-    border: 1px solid #ced4da;
+    border: 1px solid #ced4da!important;
     border-radius: 0;
     padding: .375rem .75rem;
     font-size: 1rem;
@@ -820,7 +819,29 @@ img.lang {
     cursor: pointer;
 }
 
+.sumar_input {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    background-color: var(--a);
+    height: 2rem;
+    width: 2rem;
+    border-radius: 1rem;
+    font-size: 1.5rem;
+    font-weight: bold;
+    margin-top: 15px;
+    cursor: pointer;
+}
 
+.sumar_input:hover {
+    background-color: var(--n);
+}
+
+.archivos .inputs input {
+    width: 100%;
+    font-size: .8rem;
+    border: none!important;
+}
 
 /* ----CATEGORIA NOTICIA---- */
 

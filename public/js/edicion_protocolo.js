@@ -64,4 +64,6 @@ $(document).ready(function(){
       }
   });
 
-
+$(".sumar_input").on("click tap", function(){
+  $(".bloque_panel.archivos .inputs").append("<input type='file' name='adjuntos[]'/>");
+});

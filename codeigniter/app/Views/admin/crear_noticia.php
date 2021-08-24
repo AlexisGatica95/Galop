@@ -14,6 +14,7 @@
 		</pre> -->
 	<div class="crear-noti-content d-flex">
 		<form action="" method="post" id="nueva_noticia">
+		<input type="hidden" name="tipo_post" value="noticia">
 			<div class="main">
 				<div class="title form-group">
 					<label for="title"><?= ucfirst(lang("Admin.noticia.titulo"))?></label>
