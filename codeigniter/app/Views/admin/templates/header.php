@@ -36,7 +36,7 @@ $uri = service('uri');
 
 				<ul class="dropdown_content">
 					<li><a href="/admin/protocolo"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
-					<li><a href="/admin/ver/protocolos"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
+					<li><a href="/admin/protocolos"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
 					<li><a href="/admin/categorias/protocolos"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
 				</ul>
 			</li>
@@ -45,7 +45,7 @@ $uri = service('uri');
 				
 				<ul class="dropdown_content">
 					<li><a href="/admin/noticia"><?= ucfirst(lang("Admin.menu.nueva"))?></a></li>
-					<li><a href="/admin/ver/noticias"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
+					<li><a href="/admin/noticias"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
 					<li><a href="/admin/categorias/noticias"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
 				</ul>
 			</li>
@@ -54,7 +54,7 @@ $uri = service('uri');
 				
 				<ul class="dropdown_content">
 					<li><a href="/admin/evento"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
-					<li><a href="/admin/ver/eventos"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
+					<li><a href="/admin/eventos"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
 					<li><a href="/admin/categorias/eventos"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
 				</ul>
 			</li>
@@ -66,9 +66,10 @@ $uri = service('uri');
 					<li><a href="/admin/usuarios"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
 				</ul>
 			</li>
-			<li class=""> 
-				<span><?= ucfirst(lang("Admin.menu.config"))?></span>
-			</li>
+
+			<li> 
+				<a href="/admin/configuraciones"><?= ucfirst(lang("Admin.menu.config"))?><a>
+			<li>
 			
 			<li class="nav-item lang_switcher">
 				<a href="<?php if (isset($ruta_es)){echo $ruta_es;} ?>" class="nav-link">

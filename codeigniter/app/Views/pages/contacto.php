@@ -1,6 +1,6 @@
 <script src="https://www.google.com/recaptcha/api.js?render=<?=getenv('captcha.sitekey')?>"></script>
 <div class="container">
-<h1 class="titulo-principal"><?=ucfirst(lang("App.menu_contacto"))?></h1>
+<h1 class="titulo-principal"><?=ucfirst(lang("App.contacto.contacto"))?></h1>
     <?php if (session()->get('success')): ?>
     <div class="success notification">
         <?= session()->get('success') ?>

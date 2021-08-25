@@ -7,22 +7,22 @@
 		<div class="col">
 			<ul class="menu">
 				<li>
-					<a class="hover_underline" href="/<?=$locale?>/institucional/"><?= lang('App.menu_institucional') ?></span></a>
+					<a class="hover_underline" href="/<?=$locale?>/institucional/"><?= lang('App.institucional.institucional') ?></span></a>
 				</li>
 				<li>
-					<a class="hover_underline" href="/<?=$locale?>/noticias/"><?= lang('App.menu_noticias') ?></a>
+					<a class="hover_underline" href="/<?=$locale?>/noticias/"><?= lang('App.noticias') ?></a>
 				</li>
 				<li>
-					<a class="hover_underline" href="#"><?= lang('App.menu_eventos') ?></a>
+					<a class="hover_underline" href="#"><?= lang('App.eventos') ?></a>
 				</li>
 				<li style="margin-bottom: 15px;">
-					<a href="#" class="hover_underline"><?= lang('App.menu_contacto') ?></a>
+					<a href="#" class="hover_underline"><?= lang('App.contacto.contacto') ?></a>
 				</li>
 				<li style="margin-bottom: 10px;">
 				<?php if (session()->get('isLoggedIn')): ?>
-					<a href="#" class="nav-link btn btn-1"><?= lang('App.menu_protocolos') ?></a>	
+					<a href="#" class="nav-link btn btn-1"><?= lang('App.protocolos') ?></a>	
 				<?php else: ?>
-					<a href="/<?= $locale ?>/registro" class="nav-link btn btn-1"><?= lang('App.menu_hazte_miembro')?></a>
+					<a href="/<?= $locale ?>/registro" class="nav-link btn btn-1"><?= lang('App.hazte_miembro')?></a>
 				<?php endif ?>
 				</li>
 				<li class="lang_switcher">
@@ -39,13 +39,13 @@
 			<ul class="actions">
 				<li>
 				<?php if (session()->get('isLoggedIn')): ?>
-					<a href="#" class="nav-link btn btn-1"><?= lang('App.menu_protocolos') ?></a>	
+					<a href="#" class="nav-link btn btn-1"><?= lang('App.protocolos') ?></a>	
 				<?php else: ?>
-					<a href="#" class="nav-link btn btn-1"><?= lang('App.menu_hazte_miembro')?></a>
+					<a href="#" class="nav-link btn btn-1"><?= lang('App.hazte_miembro')?></a>
 				<?php endif ?>
 				</li>
 				<li>
-				<a href="#" class="nav-link btn btn-1"><?= lang('App.menu_contacto') ?></a>
+				<a href="#" class="nav-link btn btn-1"><?= lang('App.contacto') ?></a>
 				</li>
 			</ul>
 		</div> -->

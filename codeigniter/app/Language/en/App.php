@@ -1,17 +1,18 @@
 <?php 
 return [
-	'menu' => 'menu',
-	'menu_institucional' => 'Our institution',
-	'menu_noticias' => 'News',
-	'menu_eventos' => 'Events',
-	'menu_contacto' => 'Contact',
-	'menu_protocolos' => 'Protocols',
-	'menu_login' => 'Log in',
-	'menu_registro' => 'Register',
-	'menu_hazte_miembro' => 'Become a GALOP member',
-	'cuenta_creada' => 'Account successfully created',
-	'saludo_perfil' => 'Hello, {0}!',
+	'galopHome' => 'Latin American Pediatric Oncology Group',
 	'select_placeholder' => 'Select...',
+	'menu' => 'menu',
+	'institucional' => 'Our institution',
+	'noticias' => 'News',
+	'eventos' => 'Events',
+	'protocolos' => 'Protocols',
+	'miCuenta' => 'My account',
+	'cerrarSesion' => 'Log out',
+	'hazte_miembro' => 'Become a GALOP member',
+	'cuenta_creada' => 'Account successfully created',
+	'miPerfil' => 'My profile',
+	'saludo_perfil' => 'Hello, {0}!',
 	'error' => [
 		'validacion_login' => 'Wrong user or password'
 	],
@@ -26,6 +27,7 @@ return [
 		'plural_protocolo' => 'protocols'
 	],
 	'registro' => [
+		'registro' => 'Register',
 		'registro_galop'=>'Sing up for a GALOP membership',
 		'span_nombre' => 'Name',
 		'span_apellido' => 'Last name',
@@ -83,7 +85,8 @@ return [
 
 	],
 	'institucional' => [
-		'institucional' => 'institutional',
+		'institucional' => 'Institutional',
+		'quienesSomos' => 'Who we are',
 		'autoridades' => 'Authorities',
 		'mision' => 'Mission',
 		'vision' => 'Vision',
@@ -92,6 +95,7 @@ return [
 		'descarga_pdf' => 'download the strategy PDF'
 	],
 	'contacto' => [
+		'contacto' => 'Contact',
 		'titulo' => 'Send us a message',
 		'redes' => 'Follow us',
 		'form_nombre' => 'name',
@@ -108,6 +112,18 @@ return [
 		'contenido'=>'body',
 		'crear'=>'create',
 		'titulo_todas' => 'news'
+	],
+	'perfil' => [
+		'genero' => 'Gender',
+		'nacimiento' => 'Year of birth',
+		'residencia' => 'Residence',
+		'especialidad' => 'Specialty',
+		'intereses' => 'Interests',
+		'organizaciones' => 'Organizations',
+		'hospital' => 'Hospital where he works',
+		'cargo' => '',
+		'direcLaboral' => 'Work adress',
+		'membresia' => 'Membership'
 	],
 	'menu-admin' => [
 		'titulo_crear'=> 'create new entry',

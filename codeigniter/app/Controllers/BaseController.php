@@ -105,7 +105,7 @@ class BaseController extends Controller
 		if (count($pags) > 1) {
 			$paginacion .= "<div class='pagination'>";
 			if (!$pag_data['primera']) {
-				$paginacion .= "<div class='anterior'><a href='".$pags[$page]['url']."'>< Anterior</a></div>";
+				$paginacion .= "<div class='anterior'><a href=".$pags[$page]['url']."> < ".ucfirst(lang("Admin.tabla.anterior"))."</a></div>";
 			}
 			$paginacion .= "<div class='paginas'>";
 			foreach ($pags as $num => $pag) {
@@ -117,7 +117,7 @@ class BaseController extends Controller
 			}
 			$paginacion .= "</div>";
 			if (!$pag_data['ultima']) {
-				$paginacion .= "<div class='siguiente'><a href='".$pags[$page+2]['url']."'>Siguiente ></a></div>";
+				$paginacion .= "<div class='siguiente'><a href=".$pags[$page+2]['url'].">".ucfirst(lang("Admin.tabla.siguiente"))." ></a></div>";
 			}
 			$paginacion .= "</div>";
 		}

@@ -15,14 +15,14 @@
 		<img class="div_img_tb" src="/img/banner_1_tb.jpg" alt="GALOP">
 		<img class="div_img_mb" src="/img/banner_1_mb.jpg" alt="GALOP">
 		<div class="overlay">
-		<h1>Grupo América Latina de Oncología Pediátrica</h1>
+		<h1><?=ucfirst(lang("App.galopHome"))?></h1>
 		</div>
 	</div>
 </section>
 <section class="home_contenido">
 	<div class="block eventos">
 		<div class="container">
-			<h2 class="titulo-principal">Eventos</h2>
+			<h2 class="titulo-principal"><?= ucfirst(lang("App.eventos")) ?></h2>
 			<div class="ultimas">
 
 				<?php foreach($eventos as $evento): ?>

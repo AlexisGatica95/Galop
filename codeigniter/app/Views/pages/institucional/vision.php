@@ -1,6 +1,6 @@
 <div class="container">
 	<h1 class="titulo-principal">
-	<?=lang("App.menu_institucional")?></h1>
+	<?=lang("App.institucional")?></h1>
 	<div class="content">
 		<div class="about-left">
 			<h3 class="subtitulo-principal"><?=ucfirst(lang("App.institucional.vision"))?></h3>
@@ -9,7 +9,7 @@
 		</div>
 		<ul class="buttons-right">
 		<li >
-			<a class="" href="/<?=$locale?>/institucional/quienes-somos"><?=lang("App.menu_institucional")?></a>
+			<a class="" href="/<?=$locale?>/institucional/quienes-somos"><?=lang("App.institucional.institucional")?></a>
 		</li>
 		<li>
 			<a class="" href="/<?=$locale?>/institucional/autoridades"><?=ucfirst(lang("App.institucional.autoridades"))?></a>

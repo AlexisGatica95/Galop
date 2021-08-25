@@ -4,6 +4,7 @@ return [
 	'protocolos'=>'Protocolos',
 	'noticias'=>'Noticias',
 	'usuarios'=>'Usuarios',
+	'configuraciones' => 'Configuraciones',
     'noticia' => [
         'titulo_crear'=> 'Crear una nueva noticia',
         'titulo_editar'=> 'Editar noticia',
@@ -15,7 +16,9 @@ return [
     	'titulo_crear'=> 'Crear un nuevo protocolo'
     ],
     'evento' => [
-    	'titulo_crear'=> 'Crear un nuevo evento'
+    	'titulo_crear'=> 'Crear un nuevo evento',
+		'fecha' => 'Fecha',
+		'archivos' => 'Archivos'
     ],
     'menu' => [
 		'protocolos'=>'Protocolos',

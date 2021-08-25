@@ -1,4 +1,4 @@
-<h1><?= ucfirst(lang("Admin.protocolos"))?></h1>sadsad
+<h1><?= ucfirst(lang("Admin.protocolos"))?></h1>
     <div class="">
         <?php if ($filtered): ?>
             <a class="quitar_filtros" href="/<?=$locale?>/admin/ver/<?=$type?>s"><?php #ucfirst(lang('Admin.ver_todos')) ?>Ver todos</a>

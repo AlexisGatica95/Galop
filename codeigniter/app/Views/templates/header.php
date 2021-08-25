@@ -53,16 +53,16 @@ let lang = "<?= $locale ?>";
 			<div class="collapse navbar-collapse" id="navbarSupportedContent">
 				<ul class="navbar-nav mr-auto">
 					<li class="nav-item">
-						<a class="nav-link hover_underline" href="/<?=$locale?>/institucional/"><?= lang('App.menu_institucional') ?></span></a>
+						<a class="nav-link hover_underline" href="/<?=$locale?>/institucional/"><?= lang('App.institucional.institucional') ?></span></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link hover_underline" href="/<?=$locale?>/noticias/"><?= lang('App.menu_noticias') ?></a>
+						<a class="nav-link hover_underline" href="/<?=$locale?>/noticias/"><?= lang('App.noticias') ?></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link hover_underline" href="#"><?= lang('App.menu_eventos') ?></a>
+						<a class="nav-link hover_underline" href="#"><?= lang('App.eventos') ?></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link hover_underline" href="<?php if (isset($locale)){echo "/".$locale;} ?>/contacto/"><?= lang('App.menu_contacto') ?></a>
+						<a class="nav-link hover_underline" href="<?php if (isset($locale)){echo "/".$locale;} ?>/contacto/"><?= lang('App.contacto.contacto') ?></a>
 					</li>
 				</ul>
 				<ul class="navbar-nav">
@@ -77,9 +77,9 @@ let lang = "<?= $locale ?>";
 					
 					<li class="nav-item">
 							<?php if (session()->get('isLoggedIn')): ?>
-								<a href="#" class="nav-link btn btn-1"><?= lang('App.menu_protocolos') ?></a>	
+								<a href="#" class="nav-link btn btn-1"><?= lang('App.protocolos') ?></a>	
 							<?php else: ?>
-								<a href="#" class="nav-link btn btn-1"><?= lang('App.menu_hazte_miembro')?></a>
+								<a href="#" class="nav-link btn btn-1"><?= lang('App.hazte_miembro')?></a>
 							<?php endif ?>
 
 						
@@ -92,13 +92,13 @@ let lang = "<?= $locale ?>";
 
 						<div class="dropdown-menu" aria-labelledby="dd-user">
 							<?php if (session()->get('isLoggedIn')): ?>
-								<a class="dropdown-item" href="/<?= $locale ?>/perfil">Mi cuenta</a>
+								<a class="dropdown-item" href="/<?= $locale ?>/perfil"><?= lang('App.miCuenta')?></a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="/<?= $locale ?>/logout">Cerrar sesi&oacute;n</a>
+								<a class="dropdown-item" href="/<?= $locale ?>/logout"><?= lang('App.cerrarSesion')?></a>
 							<?php else: ?>
-								<a class="dropdown-item" href="/<?= $locale ?>/registro"><?= ucfirst(lang("App.menu_registro")) ?></a>
+								<a class="dropdown-item" href="/<?= $locale ?>/registro"><?= ucfirst(lang("App.registro.registro")) ?></a>
 								<div class="dropdown-divider"></div>
-								<a class="dropdown-item" href="/<?= $locale ?>/login"><?= ucfirst(lang("App.menu_login")) ?></a>
+								<a class="dropdown-item" href="/<?= $locale ?>/login"><?= ucfirst(lang("App.login.enter")) ?></a>
 							<?php endif ?>
 							
 						</div>

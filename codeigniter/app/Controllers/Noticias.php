@@ -234,6 +234,7 @@ class Noticias extends BaseController
 		$data['ruta_es'] = '/es/admin/noticias/';
 		$data['ruta_en'] = '/en/admin/noticias/';
 		$data['scripts'][] = 'tabla_noticias';
+		$data['tipopost'] = 'noticias';
 		$model = new NoticiasModel();
 		//me fijo si tengo una query
 		if (array_key_exists('st', $_GET) || array_key_exists('s', $_GET) || array_key_exists('cat', $_GET) || array_key_exists('lg', $_GET)) {

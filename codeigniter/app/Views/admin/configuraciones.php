@@ -1,0 +1,1 @@
+<h1><?= ucfirst(lang("Admin.configuraciones"))?></h1>

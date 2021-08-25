@@ -236,6 +236,7 @@ class Eventos extends BaseController
 		$data['ruta_es'] = '/es/admin/eventos/';
 		$data['ruta_en'] = '/en/admin/eventos/';
 		$data['scripts'][] = 'tabla_eventos';
+		$data['tipopost'] = 'eventos';
 		$model = new EventosModel();
 		//me fijo si tengo una query
 		if (array_key_exists('st', $_GET) || array_key_exists('s', $_GET) || array_key_exists('cat', $_GET) || array_key_exists('lg', $_GET)) {

@@ -77,25 +77,25 @@
                         </div>
                         <div class="mod-body">
                             <ul>
-                                <li><b>Genero: </b><?=ucfirst($usuario['genero'])?></li>
+                                <li><b><?= ucfirst(lang("App.perfil.genero"))?>: </b><?=ucfirst($usuario['genero'])?></li>
                                 <li><b>Mail: </b><?=ucfirst($usuario['mail'])?></li>
-                                <li><b>Año de nacimiento: </b><?=ucfirst($usuario['ano_nacimiento'])?></li>
-                                <li><b>Ciudad de residencia: </b><?=ucfirst($usuario['residencia_ciudad'])?>, <?=ucfirst($usuario['residencia_pais'])?></li>
-                                <li><b>Fecha de registro: </b><?=ucfirst($usuario['fecha_registro'])?></li>
+                                <li><b><?= ucfirst(lang("App.perfil.nacimiento"))?>: </b><?=ucfirst($usuario['ano_nacimiento'])?></li>
+                                <li><b><?= ucfirst(lang("App.perfil.residencia"))?>: </b><?=ucfirst($usuario['residencia_ciudad'])?>, <?=ucfirst($usuario['residencia_pais'])?></li>
+                                <li><b><?= ucfirst(lang("App.perfil.registro"))?>: </b><?=ucfirst($usuario['fecha_registro'])?></li>
                             </ul>
                             <ul>
-                                <li><b>Especialidad: </b><?=ucfirst($usuario['especialidad'])?></li>
-                                <li><b>Intereses: </b><?php foreach ($usuario['intereses'] as $interes): ?><span><?=ucfirst($interes)?></span><?php endforeach ?></li>
-                                <li><b>Organizaciones: </b><?php foreach ($usuario['organizaciones'] as $orga): ?><span><?=ucfirst($orga)?></span><?php endforeach ?></li>
+                                <li><b><?= ucfirst(lang("App.perfil.especialidad"))?>: </b><?=ucfirst($usuario['especialidad'])?></li>
+                                <li><b><?= ucfirst(lang("App.perfil.intereses"))?>: </b><?php foreach ($usuario['intereses'] as $interes): ?><span><?=ucfirst($interes)?></span><?php endforeach ?></li>
+                                <li><b><?= ucfirst(lang("App.perfil.organizaciones"))?>: </b><?php foreach ($usuario['organizaciones'] as $orga): ?><span><?=ucfirst($orga)?></span><?php endforeach ?></li>
                             </ul>
                             <ul>
-                                <li><b>Hospital donde trabaja: </b><?=ucfirst($usuario['trabajo_hospital'])?></li>
-                                <li><b>Cargo: </b><?=ucfirst($usuario['trabajo_cargo'])?></li>
-                                <li><b>Direccion laboral: </b><?=ucfirst($usuario['trabajo_calle'])?> <?=ucfirst($usuario['trabajo_numero'])?>, <?=ucfirst($usuario['trabajo_ciudad'])?>, <?=ucfirst($usuario['trabajo_pais'])?>. CP <?=ucfirst($usuario['trabajo_CP'])?></li>
+                                <li><b><?= ucfirst(lang("App.perfil.hospital"))?>: </b><?=ucfirst($usuario['trabajo_hospital'])?></li>
+                                <li><b><?= ucfirst(lang("App.perfil.cargo"))?>: </b><?=ucfirst($usuario['trabajo_cargo'])?></li>
+                                <li><b><?= ucfirst(lang("App.perfil.direcLaboral"))?>: </b><?=ucfirst($usuario['trabajo_calle'])?> <?=ucfirst($usuario['trabajo_numero'])?>, <?=ucfirst($usuario['trabajo_ciudad'])?>, <?=ucfirst($usuario['trabajo_pais'])?>. CP <?=ucfirst($usuario['trabajo_CP'])?></li>
                             </ul>
                             <div class="status">
                                 <ul>
-                                    <li><b>Membresia: </b><?= $permisos ?></li>
+                                    <li><b><?= ucfirst(lang("App.perfil.membrecia"))?>: </b><?= $permisos ?></li>
                                 </ul>
                             </div>
                         </div>

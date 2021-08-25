@@ -1,4 +1,4 @@
-    <h1><?= ucfirst(lang("Admin.noticias"))?></h1>jsadasjdn
+    <h1><?= ucfirst(lang("Admin.noticias"))?></h1>
         <div class="">
             <form action="<?=$_SERVER['PATH_INFO']?>" method="GET" id="query_form">
                 <div class="header_admin">

@@ -8,8 +8,8 @@ class Pages extends BaseController
 public function index()
 	{	
 		$data['locale'] = $this->locale;
-		$data['ruta_es'] = '/es/pages/home/'; 
-		$data['ruta_en'] = '/en/pages/home/';
+		$data['ruta_es'] = 'es/'; 
+		$data['ruta_en'] = 'en/';
 		$model = new EventosModel();
 		$eventos = $model->getPostsPaginados($this->locale);		
 

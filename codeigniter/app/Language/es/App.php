@@ -1,17 +1,17 @@
 <?php 
 return [
-	'menu' => 'Menú',
-	'menu_institucional' => 'Institucional',
-	'menu_noticias' => 'Noticias',
-	'menu_eventos' => 'Eventos',
-	'menu_contacto' => 'Contacto',
-	'menu_protocolos' => 'Protocolos',
-	'menu_login' => 'Ingresar',
-	'menu_registro' => 'Registro',
-	'menu_hazte_miembro' => 'Hazte Miembro de GALOP',
-	'cuenta_creada' => 'Cuenta creada exitosamente',
-	'saludo_perfil' => 'Hola, {0}!',
+	'galopHome' => 'Grupo América Latina de Oncología Pediátrica',
 	'select_placeholder' => 'Seleccionar...',
+	'menu' => 'Menú',
+	'noticias' => 'Noticias',
+	'eventos' => 'Eventos',
+	'protocolos' => 'Protocolos',
+	'miCuenta' => 'Mi cuenta',
+	'cerrarSesion' => 'Cerrar sesi&oacute;n',
+	'hazte_miembro' => 'Hazte Miembro de GALOP',
+	'cuenta_creada' => 'Cuenta creada exitosamente',
+	'miPerfil' => 'Mi perfil',
+	'saludo_perfil' => 'Hola, {0}!',
 	'error' => [
 		'validacion_login' => 'Usuario o contraseña incorrectos'
 	],
@@ -26,6 +26,7 @@ return [
 		'plural_protocolo' => 'protocolos'
 	],
 	'registro' => [
+		'registro' => 'Registro',
 		'registro_galop'=>'Solicitud de membresía GALOP',
 		'span_nombre' => 'Nombre',
 		'span_apellido' => 'Apellido',
@@ -84,6 +85,7 @@ return [
 	],
 	'institucional' => [
 		'institucional' =>'Institucional',
+		'quienesSomos' => 'Quienes somos',
 		'autoridades' => 'Autoridades',
 		'mision' => 'Misión',
 		'vision' => 'Visión',
@@ -92,6 +94,7 @@ return [
 		'descarga_pdf' => 'descarga PDF de la Estrategia'
 	],
 	'contacto' => [
+		'contacto' => 'Contacto',
 		'titulo' => 'Envianos un mensaje',
 		'redes' => 'Seguinos',
 		'form_nombre' => 'Nombre',
@@ -108,6 +111,18 @@ return [
 		'contenido'=>'Contenido',
 		'crear'=>'Crear',
 		'titulo_todas' => 'noticias'
+	],
+	'perfil' => [
+		'genero' => 'Genero',
+		'nacimiento' => 'Año de nacimiento',
+		'residencia' => 'Ciudad de residencia',
+		'especialidad' => 'Especilidad',
+		'intereses' => 'Intereses',
+		'organizaciones' => 'Organizaciones',
+		'hospital' => 'Hospital donde trabaja',
+		'cargo' => 'Cargo',
+		'direcLaboral' => 'Direccion laboral',
+		'membresia' => 'Membresia'
 	],
 	'menu-admin' => [
 		'titulo_crear'=> 'Crear noticia',

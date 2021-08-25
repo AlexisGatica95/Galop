@@ -72,7 +72,7 @@
 				</div>
 
 				<div class="bloque_panel archivos">
-					<h4><?=lang('Admin.sidebar.archivos')?></h4>
+					<h4><?=lang('Admin.evento.archivos')?></h4>
 					<div class="inputs">
 
 					</div>

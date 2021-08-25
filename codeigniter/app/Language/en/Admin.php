@@ -4,6 +4,7 @@ return [
 	'protocolos'=>'Protocols',
 	'noticias'=>'News',
 	'usuarios'=>'Users',
+	'configuraciones' => 'Settings',
     'noticia' => [
 		'titulo_crear'=> 'Create new entry',
 		'titulo_editar'=> 'Edit news entry',
@@ -15,7 +16,9 @@ return [
     	'titulo_crear'=> 'Create new protocol'
     ],
     'evento' => [
-    	'titulo_crear'=> 'Create new event'
+		'fecha' => 'Date',
+    	'titulo_crear' => 'Create new event',
+		'archivos' => 'Files'
     ],
 	'menu' => [
 		'protocolos'=>'protocols',

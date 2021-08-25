@@ -87,6 +87,10 @@ $routes->match(['get','post'], '{locale}/admin/usuarios','Users::adminUsuarios')
 $routes->match(['get','post'], 'admin/usuario','Users::adminUsersRegistro');
 $routes->match(['get','post'], '{locale}/admin/usuario','Users::adminUsersRegistro');
 
+//configuraciones
+$routes->match(['get','post'], 'admin/configuraciones','Configuraciones::index');
+$routes->match(['get','post'], '{locale}/admin/configuraciones','Configuraciones::index');
+
 //-----------------
 
 //Institucional
