@@ -45,7 +45,7 @@
 				<?php endif ?>
 				</li>
 				<li>
-				<a href="#" class="nav-link btn btn-1"><?= lang('App.contacto') ?></a>
+				<a href="#" class="nav-link btn btn-1"><?= lang('App.contacto.contacto') ?></a>
 				</li>
 			</ul>
 		</div> -->
