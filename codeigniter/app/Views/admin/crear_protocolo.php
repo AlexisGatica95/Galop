@@ -9,11 +9,11 @@
 		// console.log(post_body);
 	</script>
 	<?php endif; ?>
-	<!-- <pre>
-			<?php #var_dump($_POST) ?>
-		</pre> -->
+	<pre>
+			<?php var_dump($debug) ?>
+		</pre>
 	<div class="crear-noti-content d-flex">
-		<form action="" method="post" id="nueva_noticia">
+		<form action="" method="post" id="nueva_noticia" enctype='multipart/form-data'>
 			<input type="hidden" name="tipo_post" value="protocolo">
 			<div class="main">
 				<div class="title form-group">
@@ -73,12 +73,21 @@
 
 				<div class="bloque_panel archivos">
 					<h4><?=lang('Admin.evento.archivos')?></h4>
+					<div class="archivos_subidos">
+						<?php if (isset($files)): ?>
+							<?php foreach ($files as $file): ?>
+								<div class="linked_file">
+									<div class="name">
+										<a href="<?=$file['url']?>" target="_blank"><?=$file['name']?></a>
+									</div>
+									<div class="delete" data-id="<?=$file['id']?>">&times;</div>
+								</div>
+							<?php endforeach; ?>
+						<?php endif; ?>
+					</div>
 					<div class="inputs">
 
-					</div>
-					<div class="archivos_subidos">
-
-					</div>
+					</div>					
 					<div class="sumar_input">+</div>
 				</div>
 

@@ -843,7 +843,30 @@ img.lang {
     font-size: .8rem;
     border: none!important;
 }
+.archivos .inputs .file_input, .archivos .archivos_subidos .linked_file {
+    display: flex;
+    align-items: center;
+    width: 100%;
+}
 
+.linked_file .name {
+    flex-grow: 1;    
+    overflow: hidden;
+}
+
+.archivos .inputs .file_input .delete, .linked_file .delete {
+    font-size: 1.5rem;
+    font-weight: bold;
+    cursor: pointer;
+    padding: 0 5px;
+    color: red;
+}
+
+.linked_file .name a {
+    font-family: 'Open Sans', sans-serif;
+    text-decoration: underline;
+    color: blue;
+}
 /* ----CATEGORIA NOTICIA---- */
 
 

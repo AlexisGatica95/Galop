@@ -77,6 +77,7 @@ class Protocolos extends BaseController
 		$data['scripts'][] = 'edicion_protocolo';
 		$data['titulo_vista'] = 'titulo_crear';
 		$data['terms'] = [];
+		$data['debug'] = null;
 
 		helper('form');
 		$model = new ProtocolosModel();
@@ -110,18 +111,32 @@ class Protocolos extends BaseController
 
 			$postID = $model->db->insertID();
 
+			$db = \Config\Database::connect();
+			$builder = $db->table('files');
+
 			// chequeo si hay archivos y los proceso
-			log_message('error', print_r($this->request->getFiles(), true));
 			if($post_files = $this->request->getFiles()){
-				foreach($post_files['adjuntos'] as $file){
-					if ($file->isValid() && !$file->hasMoved()){
-						$newName = $file->getRandomName();
-						$file->move(WRITEPATH.'uploads', $newName);
+				if (array_key_exists('adjuntos',$post_files)) {
+					foreach($post_files['adjuntos'] as $file){
+						if ($file->isValid() && !$file->hasMoved()){
+							
+							$clientName = $file->getClientName();
+							$mime = $file->getMimeType();
+							$newName = $file->getRandomName();
+							$file = $file->move(WRITEPATH.'uploads', $newName);				
+							$f = [
+								'post_id' => $postID,
+								'type' => $mime,
+								'name' => $clientName,
+								'url' => WRITEPATH.'uploads/'.$newName
+							];
+							$query = $builder->insert($f);
+						}
 					}
-				}
+				}				
 			}
 
-			$db = \Config\Database::connect();
+			
 			$builder = $db->table('posts_terms');
 			
 			if (array_key_exists('terms', $_POST)) {
@@ -135,6 +150,9 @@ class Protocolos extends BaseController
 			}
 			$session = \Config\Services::session();
 			$session->setFlashdata('success','New post has been created!');
+
+			$taxonomias = $model->getTaxTerms($this->locale);
+
 			return redirect()->to("/".$this->request->getVar('idioma_select').'/protocolos/'.url_title($this->request->getVar('title')));
 		}
 	}
@@ -168,6 +186,17 @@ class Protocolos extends BaseController
 
 		$data['terms'] = $terms;
 
+		//obtenemos los archivos que tiene vinculados el post
+		$files = [];
+		$builder = $db->table('files');
+		$query = $builder->getWhere(['post_id' => $id]);
+
+		foreach ($query->getResultArray() as $f) {
+			$files[] = $f;
+		}
+
+		$data['files'] = $files;
+
 		if (!$this->validate([
 			'title' => 'required|max_length[255]',
 			'body' => 'required',
@@ -175,6 +204,7 @@ class Protocolos extends BaseController
 		])) {
 			$post = $model->getPost($id);
 			$data['post'] = $post;
+			$data['debug'] = null;
 
 			echo view('admin/templates/header',$data);
 			echo view('admin/crear_protocolo');
@@ -195,6 +225,41 @@ class Protocolos extends BaseController
 				$o['translation_of'] = null;
 			}
 			$model->save($o);
+
+			
+			if ($files_borrar = $this->request->getVar('files_borrar')) {
+				$data['debug']['entro al if'] = true;
+				$db = \Config\Database::connect();
+				$builder = $db->table('files');
+				$data['debug']['array'] = $files_borrar;
+				foreach ($files_borrar as $id_file) {
+					$builder->delete(['id' => $id_file]);
+				}
+			} else {
+				$data['debug']['entro al if'] = false;
+			}
+
+			// chequeo si hay archivos y los proceso
+			if($post_files = $this->request->getFiles()){
+				if (array_key_exists('adjuntos',$post_files)) {
+					foreach($post_files['adjuntos'] as $file){
+						if ($file->isValid() && !$file->hasMoved()){
+							
+							$clientName = $file->getClientName();
+							$mime = $file->getMimeType();
+							$newName = $file->getRandomName();
+							$file = $file->move(WRITEPATH.'uploads', $newName);				
+							$f = [
+								'post_id' => $id,
+								'type' => $mime,
+								'name' => $clientName,
+								'url' => WRITEPATH.'uploads/'.$newName
+							];
+							$query = $builder->insert($f);
+						}
+					}
+				}		
+			}
 
 			// guardamos los terms
 			$db = \Config\Database::connect();
@@ -229,11 +294,13 @@ class Protocolos extends BaseController
 			// return redirect()->to('/protocolos/');
 			$post = $model->getPost($id);
 			$data['post'] = $post;
-			
-			echo view('admin/templates/header',$data);
+
+			/* echo view('admin/templates/header',$data);
 			echo view('admin/crear_protocolo');
-			echo view('admin/templates/footer');
-			// return redirect()->to("/".$this->request->getVar('idioma_select').'/protocolos/'.url_title($this->request->getVar('title')));
+			echo view('admin/templates/footer'); */
+			
+			return redirect()->to("/".$this->request->getVar('idioma_select')."/admin/protocolo/editar/".$id);
+			//return redirect()->to("/".$this->request->getVar('idioma_select').'/protocolos/'.url_title($this->request->getVar('title')));
 		}
 	}
 
