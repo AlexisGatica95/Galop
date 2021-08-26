@@ -35,40 +35,40 @@ $uri = service('uri');
 				<span><?= ucfirst(lang("Admin.menu.protocolos"))?><img src="/img/arrow_down.png" alt=""></span>
 
 				<ul class="dropdown_content">
-					<li><a href="/admin/protocolo"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
-					<li><a href="/admin/protocolos"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
-					<li><a href="/admin/categorias/protocolos"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
+					<li><a href="/<?=$locale?>/admin/protocolo"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
+					<li><a href="/<?=$locale?>/admin/protocolos"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
+					<li><a href="/<?=$locale?>/admin/categorias/protocolos"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
 				</ul>
 			</li>
 			<li class="dropdown">
 				<span><?= ucfirst(lang("Admin.menu.noticias"))?><img src="/img/arrow_down.png" alt=""></span>
 				
 				<ul class="dropdown_content">
-					<li><a href="/admin/noticia"><?= ucfirst(lang("Admin.menu.nueva"))?></a></li>
-					<li><a href="/admin/noticias"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
-					<li><a href="/admin/categorias/noticias"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
+					<li><a href="/<?=$locale?>/admin/noticia"><?= ucfirst(lang("Admin.menu.nueva"))?></a></li>
+					<li><a href="/<?=$locale?>/admin/noticias"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
+					<li><a href="/<?=$locale?>/admin/categorias/noticias"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
 				</ul>
 			</li>
 			<li class="dropdown">
 				<span><?= ucfirst(lang("Admin.menu.eventos"))?><img src="/img/arrow_down.png" alt=""></span>
 				
 				<ul class="dropdown_content">
-					<li><a href="/admin/evento"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
-					<li><a href="/admin/eventos"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
-					<li><a href="/admin/categorias/eventos"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
+					<li><a href="/<?=$locale?>/admin/evento"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
+					<li><a href="/<?=$locale?>/admin/eventos"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
+					<li><a href="/<?=$locale?>/admin/categorias/eventos"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
 				</ul>
 			</li>
 			<li class="dropdown">
 				<span><?= ucfirst(lang("Admin.menu.usuarios"))?><img src="/img/arrow_down.png" alt=""></span>
 				
 				<ul class="dropdown_content">
-					<li><a href="/admin/usuario"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
-					<li><a href="/admin/usuarios"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
+					<li> <a href="/<?=$locale?>/admin/usuario"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
+					<li> <a href="/<?=$locale?>/admin/usuarios"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
 				</ul>
 			</li>
 
 			<li> 
-				<a href="/admin/configuraciones"><?= ucfirst(lang("Admin.menu.config"))?><a>
+				<a href="/<?=$locale?>/admin/configuraciones"><?= ucfirst(lang("Admin.menu.config"))?><a>
 			<li>
 			
 			<li class="nav-item lang_switcher">
