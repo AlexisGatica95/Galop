@@ -118,11 +118,11 @@ $routes->get('noticias/(:any)','Posts::post/$1/noticia');
 $routes->get('{locale}/noticias/(:any)','Posts::post/$1/noticia');
 
 //Protocolos
-$routes->get('protocolos','Posts::index/protocolo',['filter' => 'memberAuth']);
-$routes->get('{locale}/protocolos','Posts::index/protocolo',['filter' => 'memberAuth']);
+$routes->get('protocolos','Protocolos::index/index',['filter' => 'memberAuth']);
+$routes->get('{locale}/protocolos','Protocolos::index/index',['filter' => 'memberAuth']);
 
-$routes->get('protocolos/(:any)','Posts::post/$1/protocolo',['filter' => 'memberAuth']);
-$routes->get('{locale}/protocolos/(:any)','Posts::post/$1/protocolo',['filter' => 'memberAuth']);
+$routes->get('protocolos/(:any)','Protocolos::protocolo/$1',['filter' => 'memberAuth']);
+$routes->get('{locale}/protocolos/(:any)','Protocolos::protocolo/$1',['filter' => 'memberAuth']);
 
 //Contacto
 $routes->get('contacto','Contacto::index');

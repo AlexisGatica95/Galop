@@ -143,6 +143,27 @@ li{
 	width: calc(100% - 1rem);
     left: .5rem;
 }*/
+
+.acc {
+    margin-bottom: 5px;
+    width: 100%;
+}
+.acc_cont {
+    padding: 1rem;
+    background-color: #fff;
+    display: none;
+}
+.acc_head {
+    display: flex;
+    justify-content: space-between;
+    background-color: #fff;
+}
+.acc_head > * {
+    padding: .5rem 1rem;
+}
+.acc_btn {
+    cursor: pointer;
+}
 .hover_underline:after {    
     background: none repeat scroll 0 0 transparent;
     bottom: 0;
@@ -419,6 +440,49 @@ section.slide_inicio .jumbotron::before {
     transition: all .3s;
 }
 
+/* protocolos */
+.noticia .archivos {
+    margin-top: 30px;
+}
+
+.noticia .archivos h3 {
+    color: var(--n);
+    margin-bottom: 15px;
+}
+
+.noticia .archivos .archivo .acc .acc_head {
+    align-items: center;
+    background-color: var(--a-3);
+    border-radius: 5px;
+}
+
+.noticia .archivos .archivo .acc .acc_head img {
+    width: 20px;
+}
+
+.noticia .archivos .archivo .acc .acc_head h4 {
+    font-size: 1.2rem;
+    flex-grow: 1;
+    font-family: 'Open Sans', sans-serif;
+}
+
+.noticia .archivos .archivo .acc .acc_cont img {
+    justify-self: center;
+}
+
+.noticia .archivos .archivo .acc .acc_cont iframe {
+    width: 100%;
+    height: 70vh;
+    min-height: 500px;
+}
+.noticia .archivos .archivo .acc .acc_cont {
+    text-align: center;
+}
+
+.noticia .archivos .archivo .acc .acc_head img.filetype {
+    padding: 0;
+    margin-left: 15px;
+}
 /*-----INSTITUCIONAL-----*/
 
 /* CONTACTO */

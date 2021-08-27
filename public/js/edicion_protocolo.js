@@ -65,7 +65,7 @@ $(document).ready(function(){
   });
 
 $(".sumar_input").on("click tap", function(){
-  $(".bloque_panel.archivos .inputs").append("<div class='file_input'><input type='file' name='adjuntos[]'/><div class='delete'>&times;</div></div>");
+  $(".bloque_panel.archivos .inputs").append("<div class='file_input'><input type='file' name='adjuntos[]' accept='.png,.jpg,.gif,.jpeg,.pdf,.doc,.otd,.ods,.xls,.docx,.xlsx'/><div class='delete'>&times;</div></div>");
 });
 $(document).on("click tap", ".file_input .delete", function(event){
   $(event.target).closest(".file_input").remove();

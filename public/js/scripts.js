@@ -28,7 +28,7 @@ const cal_strings = {
       "5": "Mayo",
       "6": "Junio",
       "7": "Julio",
-      "8": lang('Admin.evento.archivos'),
+      "8": "Agosto",
       "9": "Septiembre",
       "10": "Octubre",
       "11": "Noviembre",
@@ -211,3 +211,8 @@ const cal_strings = {
       }
     }
   }
+
+$(document).on("click",".acc_btn, .acc_head[data-toggle]",function(){
+    var cont = $(this).data('toggle');
+    $("#"+cont).slideToggle();
+});

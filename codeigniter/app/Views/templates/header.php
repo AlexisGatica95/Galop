@@ -1,5 +1,9 @@
 <?php 
 $uri = service('uri');
+$hoy = getdate();
+$hoy_ano = $hoy['year'];
+$hoy_mes = $hoy['mon'];
+
  ?>
 <!DOCTYPE html>
 <html lang="<?= $locale ?>">
@@ -38,6 +42,8 @@ $uri = service('uri');
 <body>
 <script>
 let lang = "<?= $locale ?>";
+const currentMonth = <?=$hoy_mes?>;
+const currentYear = <?=$hoy_ano?>;
 </script>
 	<nav class="navbar navbar-expand-lg navbar-light bg-light">
 		<div class="container">

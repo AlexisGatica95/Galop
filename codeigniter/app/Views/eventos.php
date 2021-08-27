@@ -1,4 +1,5 @@
 <?php 
+
 $hoy = getdate();
 $hoy_ano = $hoy['year'];
 $hoy_mes = $hoy['mon'];
@@ -93,7 +94,3 @@ $ano_fin = $hoy_ano + 4;
         <?php #var_dump($test) ?>
     </pre> -->
 </div>
-<script>
-    const currentMonth = <?=$hoy_mes?>;
-    const currentYear = <?=$hoy_ano?>;
-</script>

@@ -60,6 +60,15 @@ class Protocolos extends BaseController
 		if ($data['protocolo']['status'] !== "1") {
 			return redirect()->to("/".$locale.'/protocolos/');
 		}
+
+		$data['files'] = [];
+		$db = \Config\Database::connect();
+		$builder = $db->table('files');
+		$query_files = $builder->where('post_id', $data['protocolo']['id'])->get();
+
+		foreach ($query_files->getResult() as $row){
+			$data['files'][] = $row;
+		}
 		
 		echo view('templates/header',$data);
 		echo view('protocolo');
@@ -122,13 +131,37 @@ class Protocolos extends BaseController
 							
 							$clientName = $file->getClientName();
 							$mime = $file->getMimeType();
+							switch ($mime) {
+								case 'image/png':
+								case 'image/jpeg':
+								case 'image/gif':
+									$file_type = 'image';
+									break;
+								case 'application/msword':
+								case 'application/vnd.oasis.opendocument.text':
+								case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+									$file_type = 'word';
+									break;	
+								case 'application/vnd.oasis.opendocument.text':
+								case 'application/vnd.oasis.opendocument.spreadsheet':
+								case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
+									$file_type = 'excel';
+									break;
+								case 'application/pdf':
+									$file_type = 'pdf';
+									break;							
+								default:
+									$file_type = 'invalid';
+									break;
+							}
 							$newName = $file->getRandomName();
-							$file = $file->move(WRITEPATH.'uploads', $newName);				
+							$file = $file->move(WRITEPATH.'/../../public/uploads/files', $newName);					
 							$f = [
 								'post_id' => $postID,
-								'type' => $mime,
+								'type' => $file_type,
 								'name' => $clientName,
-								'url' => WRITEPATH.'uploads/'.$newName
+								'url' => '/uploads/files/'.$newName,
+								'mime' => $mime
 							];
 							$query = $builder->insert($f);
 						}
@@ -247,13 +280,37 @@ class Protocolos extends BaseController
 							
 							$clientName = $file->getClientName();
 							$mime = $file->getMimeType();
+							switch ($mime) {
+								case 'image/png':
+								case 'image/jpeg':
+								case 'image/gif':
+									$file_type = 'image';
+									break;
+								case 'application/msword':
+								case 'application/vnd.oasis.opendocument.text':
+								case 'application/vnd.openxmlformats-officedocument.wordprocessingml.document':
+									$file_type = 'word';
+									break;	
+								case 'application/vnd.oasis.opendocument.text':
+								case 'application/vnd.oasis.opendocument.spreadsheet':
+								case 'application/vnd.openxmlformats-officedocument.spreadsheetml.sheet':
+									$file_type = 'excel';
+									break;
+								case 'application/pdf':
+									$file_type = 'pdf';
+									break;							
+								default:
+									$file_type = 'invalid';
+									break;
+							}
 							$newName = $file->getRandomName();
-							$file = $file->move(WRITEPATH.'uploads', $newName);				
+							$file = $file->move(WRITEPATH.'/../../public/uploads/files', $newName);				
 							$f = [
 								'post_id' => $id,
-								'type' => $mime,
+								'type' => $file_type,
 								'name' => $clientName,
-								'url' => WRITEPATH.'uploads/'.$newName
+								'url' => '/uploads/files/'.$newName,
+								'mime' => $mime
 							];
 							$query = $builder->insert($f);
 						}
