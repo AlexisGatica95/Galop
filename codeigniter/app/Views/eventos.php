@@ -1,5 +1,4 @@
 <?php 
-
 $hoy = getdate();
 $hoy_ano = $hoy['year'];
 $hoy_mes = $hoy['mon'];
@@ -7,8 +6,9 @@ $ano_inicio = $hoy_ano - 2;
 $ano_fin = $hoy_ano + 4;
 // cal_days_in_month(CAL_GREGORIAN, 6, 2021)
 ?>
+
 <div class="container">
-    <div class="event_calendar_w">
+    <div class="event_calendar_w" style="display:none;">
     <div class="event_calendar">
         <div class="top">
             <div class="prev_month"><</div>
