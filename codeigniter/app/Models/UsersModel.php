@@ -57,7 +57,7 @@ class UsersModel extends Model {
 		$res = $this->asArray()
 					->orderBy('fecha_registro','DESC')
 					->findAll();
-		return array_chunk($this->listArrays($res),2,true);
+		return array_chunk($this->listArrays($res),10,true);
 	}
 
 	public function getAllUsersPaginadosFiltros($condiciones){
@@ -78,7 +78,7 @@ class UsersModel extends Model {
 					->where($where)			
 					->orderBy('fecha_registro','DESC')
 					->findAll();
-		return array_chunk($this->listArrays($res),2,true);
+		return array_chunk($this->listArrays($res),10,true);
 	}
 
 	

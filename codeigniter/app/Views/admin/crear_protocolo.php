@@ -1,17 +1,12 @@
 <div class="crear_noticia">
 	<h1><?= ucfirst(lang("Admin.protocolo.".$titulo_vista))?></h1>
+	
 	<?php if (isset($post)): ?>
-		<!-- <pre>
-			<?php #var_dump($post) ?>
-		</pre> -->
 	<script>	
 		const post_body = '<?php echo($post['body']) ?>';
-		// console.log(post_body);
 	</script>
 	<?php endif; ?>
-	<pre>
-			<?php var_dump($debug) ?>
-		</pre>
+	
 	<div class="crear-noti-content d-flex">
 		<form action="" method="post" id="nueva_noticia" enctype='multipart/form-data'>
 			<input type="hidden" name="tipo_post" value="protocolo">

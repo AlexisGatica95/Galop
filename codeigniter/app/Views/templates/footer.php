@@ -13,14 +13,14 @@
 					<a class="hover_underline" href="/<?=$locale?>/noticias/"><?= lang('App.noticias') ?></a>
 				</li>
 				<li>
-					<a class="hover_underline" href="#"><?= lang('App.eventos') ?></a>
+					<a class="hover_underline" href="/<?= $locale ?>/eventos"><?= lang('App.eventos') ?></a>
 				</li>
 				<li style="margin-bottom: 15px;">
-					<a href="#" class="hover_underline"><?= lang('App.contacto.contacto') ?></a>
+					<a href="/<?= $locale ?>/contacto" class="hover_underline"><?= lang('App.contacto.contacto') ?></a>
 				</li>
 				<li style="margin-bottom: 10px;">
 				<?php if (session()->get('isLoggedIn')): ?>
-					<a href="#" class="nav-link btn btn-1"><?= lang('App.protocolos') ?></a>	
+					<a href="/<?= $locale ?>/protocolos" class="nav-link btn btn-1"><?= lang('App.protocolos') ?></a>	
 				<?php else: ?>
 					<a href="/<?= $locale ?>/registro" class="nav-link btn btn-1"><?= lang('App.hazte_miembro')?></a>
 				<?php endif ?>

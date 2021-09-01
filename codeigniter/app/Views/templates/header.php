@@ -65,7 +65,7 @@ const currentYear = <?=$hoy_ano?>;
 						<a class="nav-link hover_underline" href="/<?=$locale?>/noticias/"><?= lang('App.noticias') ?></a>
 					</li>
 					<li class="nav-item">
-						<a class="nav-link hover_underline" href="#"><?= lang('App.eventos') ?></a>
+						<a class="nav-link hover_underline"  href="/<?=$locale?>/eventos/"><?= lang('App.eventos') ?></a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link hover_underline" href="<?php if (isset($locale)){echo "/".$locale;} ?>/contacto/"><?= lang('App.contacto.contacto') ?></a>
@@ -83,9 +83,9 @@ const currentYear = <?=$hoy_ano?>;
 					
 					<li class="nav-item">
 							<?php if (session()->get('isLoggedIn')): ?>
-								<a href="#" class="nav-link btn btn-1"><?= lang('App.protocolos') ?></a>	
+								<a href="/<?=$locale?>/protocolos" class="nav-link btn btn-1"><?= lang('App.protocolos') ?></a>	
 							<?php else: ?>
-								<a href="#" class="nav-link btn btn-1"><?= lang('App.hazte_miembro')?></a>
+								<a href="/<?=$locale?>/registro" class="nav-link btn btn-1"><?= lang('App.hazte_miembro')?></a>
 							<?php endif ?>
 
 						

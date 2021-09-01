@@ -15,7 +15,7 @@ class EventosModel extends Model {
 						])
 					->orderBy('timestamp','DESC')
 					->findAll();
-		return array_chunk($res,4,true);
+		return array_chunk($res,10,true);
 	}
 
 	public function getAllPostsPaginadosFiltros($condiciones){
@@ -33,7 +33,7 @@ class EventosModel extends Model {
 					->like('title',$condiciones['string'])
 					->orderBy('timestamp','DESC')
 					->findAll();
-		return array_chunk($res,4,true);
+		return array_chunk($res,10,true);
 	}
 
 	public function getAllPostsPaginados() {
@@ -43,7 +43,7 @@ class EventosModel extends Model {
 						])
 					->orderBy('timestamp','DESC')
 					->findAll();
-		return array_chunk($res,4,true);
+		return array_chunk($res,10,true);
 	}
 
 	public function getPost($id = null){
@@ -75,7 +75,7 @@ class EventosModel extends Model {
 					])
 					->orderBy('timestamp','DESC')
 					->findAll();	
-		return array_chunk($res,4,true);
+		return array_chunk($res,10,true);
 	}
 
 	public function getPostsParents($id = NULL) {

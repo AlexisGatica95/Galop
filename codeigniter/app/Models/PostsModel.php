@@ -15,7 +15,7 @@ class PostsModel extends Model {
 						])
 					->orderBy('timestamp','DESC')
 					->findAll();
-		return array_chunk($res,4,true);
+		return array_chunk($res,10,true);
 	}
 
 	public function getAllPostsPaginadosFiltros($type,$condiciones){
@@ -50,7 +50,7 @@ class PostsModel extends Model {
 			}
 			$res = $finalres;
 		}
-		return array_chunk($res,4,true);
+		return array_chunk($res,10,true);
 	}
 
 	public function getAllPostsPaginados($type) {
@@ -60,7 +60,7 @@ class PostsModel extends Model {
 						])
 					->orderBy('timestamp','DESC')
 					->findAll();
-		return array_chunk($res,4,true);
+		return array_chunk($res,10,true);
 	}
 
 	public function getPost($id = null){
@@ -92,7 +92,7 @@ class PostsModel extends Model {
 					])
 					->orderBy('timestamp','DESC')
 					->findAll();	
-		return array_chunk($res,4,true);
+		return array_chunk($res,10,true);
 	}
 
 	public function getPostsParents($type, $id = NULL) {

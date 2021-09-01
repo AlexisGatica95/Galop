@@ -1,6 +1,6 @@
 <div class="container">
 	<h1 class="titulo-principal">
-	<?=lang("App.institucional")?></h1>
+	<?=lang("App.institucional.institucional")?></h1>
 	<div class="content">
 		<div class="about-left">
 			<h3 class="subtitulo-principal"><?=ucfirst(lang("App.institucional.vision"))?></h3>

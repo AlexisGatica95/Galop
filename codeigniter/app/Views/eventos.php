@@ -78,7 +78,7 @@ $ano_fin = $hoy_ano + 4;
         <?php endfor; ?>
     </div>
     </div>
-    <h1 class="titulo-principal"><?=ucfirst(lang('App.noticia.titulo_todas'))?></h1>
+    <h1 class="titulo-principal"><?=ucfirst(lang('App.eventos'))?></h1>
     <div class="noticias-content">
     <?php foreach($eventos as $evento): ?>
         <div class="item">
