@@ -13,7 +13,8 @@ return [
 		'crear'=>'Publish'
 	],
 	'protocolo' => [
-    	'titulo_crear'=> 'Create new protocol'
+    	'titulo_crear'=> 'Create new protocol',
+		'titulo_editar'=> 'Edit protocol'
     ],
     'evento' => [
 		'fecha' => 'Date',
