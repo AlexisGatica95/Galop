@@ -54,7 +54,8 @@ $uri = service('uri');
 				
 				<ul class="dropdown_content">
 					<li><a href="/<?=$locale?>/admin/evento"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
-					<li><a href="/<?=$locale?>/admin/eventos"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
+					<li><a href="/<?=$locale?>/admin/eventos"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
+					<li><a href="/<?=$locale?>/admin/categorias/eventos"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
 				</ul>
 			</li>
 			<li class="dropdown">
