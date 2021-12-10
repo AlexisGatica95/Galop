@@ -90,4 +90,5 @@ $(document).ready(function(){
 
   if (typeof post_date !== 'undefined') {
     picker.setDate(post_date);
+    picker.gotoDate(post_date);
   }

@@ -282,7 +282,7 @@ class Noticias extends BaseController
 		$data['locale'] = $this->locale;
 		$data['ruta_es'] = '/es/admin/categorias/noticia/';
 		$data['ruta_en'] = '/en/admin/categorias/noticia/';
-		//$data['scripts'][] = 'taxonomias_noticias';
+		$data['scripts'][] = 'taxonomias_admin';
 		$data['titulo_vista'] = 'titulo_categorias';
 
 		helper('form');

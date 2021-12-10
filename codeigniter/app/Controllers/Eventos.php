@@ -284,7 +284,7 @@ class Eventos extends BaseController
 		$data['locale'] = $this->locale;
 		$data['ruta_es'] = '/es/admin/categorias/evento/';
 		$data['ruta_en'] = '/en/admin/categorias/evento/';
-		//$data['scripts'][] = 'taxonomias_eventos';
+		$data['scripts'][] = 'taxonomias_admin';
 		$data['titulo_vista'] = 'titulo_categorias';
 
 		helper('form');

@@ -37,8 +37,8 @@ class Contacto extends BaseController
 			    $email = \Config\Services::email();
 
 				$email->setFrom('contacto@grupogalop.org', 'Grupo Galop Web');
-				$email->setTo('contacto@nodorojo.com');
-				$email->setBCC('contacto@nodorojo.com');
+				$email->setTo('ariel@nodorojo.com');
+				$email->setBCC('ariel@nodorojo.com');
 				$email->setReplyTo($this->request->getVar('email'), $this->request->getVar('nombre'));
 
 				$email->setSubject($this->request->getVar('subject')." - Galop web contact form");

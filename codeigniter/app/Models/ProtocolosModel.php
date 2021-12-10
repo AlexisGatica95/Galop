@@ -57,13 +57,27 @@ class ProtocolosModel extends Model {
 		}
 	}
 
+	private function getPostTerms($id = null) {
+		if ($id) {
+			$builder = $db->table('posts_terms');
+			$query = $builder->getWhere(['id_post' => $id]);
+			foreach ($query->getResultArray() as $row) {
+				
+			}
+			return $terms;
+		} else {
+			return false;
+		}
+	}
+
 	public function getPostSlug($slug = null){
 		if ($slug) {
-			return $this->asArray()
+			$protocolo = $this->asArray()
 						->where(['slug' => $slug])
 						->orderBy('timestamp','DESC')
 						->first();
-		}else{
+			return $protocolo;
+		} else {
 			return false;
 		}
 	}
@@ -134,7 +148,7 @@ class ProtocolosModel extends Model {
 					$row2['nombre'] = $nombre;
 					$slug = json_decode($row2['slug']);
 					$row2['slug'] = $slug;
-				}				
+				}
 
 				$terms[] = $row2;
 			}

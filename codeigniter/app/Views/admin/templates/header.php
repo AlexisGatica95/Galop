@@ -37,7 +37,7 @@ $uri = service('uri');
 				<ul class="dropdown_content">
 					<li><a href="/<?=$locale?>/admin/protocolo"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
 					<li><a href="/<?=$locale?>/admin/protocolos"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
-					<li><a href="/<?=$locale?>/admin/categorias/protocolos"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
+					<li><a href="/<?=$locale?>/admin/categorias/protocolo"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
 				</ul>
 			</li>
 			<li class="dropdown">
@@ -46,7 +46,7 @@ $uri = service('uri');
 				<ul class="dropdown_content">
 					<li><a href="/<?=$locale?>/admin/noticia"><?= ucfirst(lang("Admin.menu.nueva"))?></a></li>
 					<li><a href="/<?=$locale?>/admin/noticias"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
-					<li><a href="/<?=$locale?>/admin/categorias/noticias"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
+					<li><a href="/<?=$locale?>/admin/categorias/noticia"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
 				</ul>
 			</li>
 			<li class="dropdown">
@@ -54,7 +54,8 @@ $uri = service('uri');
 				
 				<ul class="dropdown_content">
 					<li><a href="/<?=$locale?>/admin/evento"><?= ucfirst(lang("Admin.menu.nuevo"))?></a></li>
-					<li><a href="/<?=$locale?>/admin/eventos"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
+					<li><a href="/<?=$locale?>/admin/eventos"><?= ucfirst(lang("Admin.menu.ver"))?></a></li>
+					<li><a href="/<?=$locale?>/admin/categorias/evento"><?= ucfirst(lang("Admin.menu.categorias"))?></a></li>
 				</ul>
 			</li>
 			<li class="dropdown">

@@ -40,16 +40,13 @@
 <img src="<?=$file->url?>" alt="">
 <?php break; ?>
 <?php case 'pdf': ?>
-<iframe src="https://grupogalop.org<?=$file->url?>" frameborder="0"></iframe>
-<!--<iframe src="<?=base_url()?><?=$file->url?>" frameborder="0"></iframe>-->
+<iframe src="<?=base_url()?><?=$file->url?>" frameborder="0"></iframe>
 <?php break; ?>
 <?php case 'word': ?>
-<iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://grupogalop.org/<?=$file->url?>" frameborder="0"></iframe>
-<!--<iframe src="https://view.officeapps.live.com/op/embed.aspx?src=<?=base_url()?>files/file.odt" frameborder="0"></iframe>-->
+<iframe src="https://view.officeapps.live.com/op/embed.aspx?src=<?=base_url()?>files/file.odt" frameborder="0"></iframe>
 <?php break; ?>
 <?php case 'excel': ?>
-<iframe src="https://view.officeapps.live.com/op/embed.aspx?src=https://grupogalop.org/<?=$file->url?>" frameborder="0"></iframe>
-<!--<iframe src="https://view.officeapps.live.com/op/embed.aspx?src=<?=base_url()?>files/file.odt" frameborder="0"></iframe>-->
+<iframe src="https://view.officeapps.live.com/op/embed.aspx?src=<?=base_url()?>files/file.odt" frameborder="0"></iframe>
 <?php break; ?>
 <?php endswitch; ?>
                             </div>

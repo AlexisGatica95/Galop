@@ -416,7 +416,7 @@ class Protocolos extends BaseController
 		$data['locale'] = $this->locale;
 		$data['ruta_es'] = '/es/admin/categorias/protocolo/';
 		$data['ruta_en'] = '/en/admin/categorias/protocolo/';
-		//$data['scripts'][] = 'taxonomias_protocolos';
+		$data['scripts'][] = 'taxonomias_admin';
 		$data['titulo_vista'] = 'titulo_categorias';
 
 		helper('form');
