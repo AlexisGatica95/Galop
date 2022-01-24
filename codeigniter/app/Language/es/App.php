@@ -5,7 +5,6 @@ return [
 	'menu' => 'Menú',
 	'noticias' => 'Noticias',
 	'eventos' => 'Eventos',
-	'protocolos' => 'Protocolos',
 	'miCuenta' => 'Mi cuenta',
 	'cerrarSesion' => 'Cerrar sesi&oacute;n',
 	'hazte_miembro' => 'Hazte Miembro de GALOP',
@@ -105,12 +104,20 @@ return [
 	],
 	'noticia' => [
 		'ver_mas' => 'Ver mas',
+		'volver' => 'volver a noticias',
 		'publicado' => 'Publicado en',
 		'titulo_crear'=> 'Crear una nueva noticia',
 		'titulo'=> 'Titulo',
 		'contenido'=>'Contenido',
 		'crear'=>'Crear',
 		'titulo_todas' => 'noticias'
+	],
+	'evento' => [
+		'volver' => 'volver a eventos'
+	],
+	'protocolos' => [
+		'volver' => 'volver a protocolos',
+		'protocolos' => 'Protocolos'
 	],
 	'perfil' => [
 		'genero' => 'Genero',

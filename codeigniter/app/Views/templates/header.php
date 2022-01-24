@@ -83,7 +83,7 @@ const currentYear = <?=$hoy_ano?>;
 					
 					<li class="nav-item">
 							<?php if (session()->get('isLoggedIn')): ?>
-								<a href="/<?=$locale?>/protocolos" class="nav-link btn btn-1"><?= lang('App.protocolos') ?></a>	
+								<a href="/<?=$locale?>/protocolos" class="nav-link btn btn-1"><?= lang('App.protocolos.protocolos') ?></a>	
 							<?php else: ?>
 								<a href="/<?=$locale?>/registro" class="nav-link btn btn-1"><?= lang('App.hazte_miembro')?></a>
 							<?php endif ?>

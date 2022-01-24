@@ -1,6 +1,6 @@
 <div class="container">
 	<div class="goback">
-        <a href="<?=base_url()?>/protocolos">Volver a protocolos</a>
+        <a href="<?=base_url()?>/protocolos"><?=ucfirst(lang("App.protocolos.volver"))?></a>
     </div>
     <div class="noticias-content">
         <div class="noticia">

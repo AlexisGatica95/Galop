@@ -20,7 +20,7 @@
 				</li>
 				<li style="margin-bottom: 10px;">
 				<?php if (session()->get('isLoggedIn')): ?>
-					<a href="/<?= $locale ?>/protocolos" class="nav-link btn btn-1"><?= lang('App.protocolos') ?></a>	
+					<a href="/<?= $locale ?>/protocolos" class="nav-link btn btn-1"><?= lang('App.protocolos.protocolos') ?></a>	
 				<?php else: ?>
 					<a href="/<?= $locale ?>/registro" class="nav-link btn btn-1"><?= lang('App.hazte_miembro')?></a>
 				<?php endif ?>
@@ -39,7 +39,7 @@
 			<ul class="actions">
 				<li>
 				<?php if (session()->get('isLoggedIn')): ?>
-					<a href="#" class="nav-link btn btn-1"><?= lang('App.protocolos') ?></a>	
+					<a href="#" class="nav-link btn btn-1"><?= lang('App.protocolos.protocolos') ?></a>	
 				<?php else: ?>
 					<a href="#" class="nav-link btn btn-1"><?= lang('App.hazte_miembro')?></a>
 				<?php endif ?>

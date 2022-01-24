@@ -6,7 +6,6 @@ return [
 	'institucional' => 'Our institution',
 	'noticias' => 'News',
 	'eventos' => 'Events',
-	'protocolos' => 'Protocols',
 	'miCuenta' => 'My account',
 	'cerrarSesion' => 'Log out',
 	'hazte_miembro' => 'Become a GALOP member',
@@ -105,6 +104,7 @@ return [
 		'form_enviar' => 'send',
 	],
 	'noticia' => [
+		'volver' => 'back to news',
 		'ver_mas' => 'see more',
 		'publicado' => 'posted on',
 		'titulo_crear'=> 'create new entry',
@@ -112,6 +112,13 @@ return [
 		'contenido'=>'body',
 		'crear'=>'create',
 		'titulo_todas' => 'news'
+	],
+	'evento' => [
+		'volver' => 'back to events'
+	],
+	'protocolos' => [
+		'volver' => 'back to protocols',
+		'protocolos' => 'Protocols'
 	],
 	'perfil' => [
 		'genero' => 'Gender',

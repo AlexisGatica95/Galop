@@ -1,6 +1,6 @@
 <div class="container">
     <div class="goback">
-        <a href="<?=base_url()?>/eventos">Volver a eventos</a>
+        <a href="<?=base_url()?>/eventos"><?=ucfirst(lang("App.evento.volver"))?></a>
     </div>
     <div class="noticias-content">
         <div class="noticia">
