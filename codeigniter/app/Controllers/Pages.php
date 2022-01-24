@@ -11,17 +11,7 @@ public function index()
 		$data['ruta_es'] = 'es/'; 
 		$data['ruta_en'] = 'en/';
 		$model = new EventosModel();
-		$eventos = $model->getPostsPaginados($this->locale);		
-
-		$data['paginacion'] = $this->createPagination($eventos);
-
-		// $data['paginacion'] = $paginacion;
-		
-		// agarro y paso la pagina que corresponde como array de eventos
-		$page = $this->getPage($eventos);
-		if (count($eventos) > 0) {
-			$eventos = $eventos[$page];
-		}
+		$eventos = $model->getPostsLimit($this->locale,3);		
 		
 		$longitud_extracto = 250;
 

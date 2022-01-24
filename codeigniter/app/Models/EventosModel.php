@@ -145,4 +145,17 @@ class EventosModel extends Model {
 		return $res;
 	}
 
+	public function getPostsLimit($lang = "es",$limit) {
+		$res = $this->asArray()
+					->where([
+						'type' => 'evento',
+						'status'=> 1,
+						'lang' => $lang
+					])
+
+					->orderBy('timestamp','DESC')
+					->findAll($limit);	
+		return $res;
+	}
+
 }
