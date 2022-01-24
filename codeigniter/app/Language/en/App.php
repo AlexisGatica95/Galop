@@ -86,7 +86,7 @@ return [
 	],
 	'institucional' => [
 		'institucional' => 'Institutional',
-		'quienesSomos' => 'Who we are',
+		'quienesSomos' => 'Who are we?',
 		'autoridades' => 'Authorities',
 		'mision' => 'Mission',
 		'vision' => 'Vision',
