@@ -107,15 +107,15 @@ $routes->get('{locale}/institucional/(:any)','Institucional::subpaginas/$1');
 $routes->get('eventos','Eventos::index');
 $routes->get('{locale}/eventos','Eventos::index');
 
-$routes->get('eventos/(:any)','Posts::post/$1/evento');
-$routes->get('{locale}/eventos/(:any)','Posts::post/$1/evento');
+$routes->get('eventos/(:any)','Eventos::evento/$1');
+$routes->get('{locale}/eventos/(:any)','Eventos::evento/$1');
 
 //Noticias
-$routes->get('noticias','Posts::index/noticia');
-$routes->get('{locale}/noticias','Posts::index/noticia');
+$routes->get('noticias','Noticias::index');
+$routes->get('{locale}/noticias','Noticias::index');
 
-$routes->get('noticias/(:any)','Posts::post/$1/noticia');
-$routes->get('{locale}/noticias/(:any)','Posts::post/$1/noticia');
+$routes->get('noticias/(:any)','Noticias::noticia/$1');
+$routes->get('{locale}/noticias/(:any)','Noticias::noticia/$1');
 
 //Protocolos
 $routes->get('protocolos','Protocolos::index/index',['filter' => 'memberAuth']);

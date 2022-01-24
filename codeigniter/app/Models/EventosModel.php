@@ -145,7 +145,7 @@ class EventosModel extends Model {
 		return $res;
 	}
 
-	public function getPostsLimit($lang = "es",$limit) {
+	public function getPostsLimit($limit, $lang = "es") {
 		$res = $this->asArray()
 					->where([
 						'type' => 'evento',

@@ -11,7 +11,7 @@ public function index()
 		$data['ruta_es'] = 'es/'; 
 		$data['ruta_en'] = 'en/';
 		$model = new EventosModel();
-		$eventos = $model->getPostsLimit($this->locale,3);		
+		$eventos = $model->getPostsLimit(3,$this->locale);		
 		
 		$longitud_extracto = 250;
 

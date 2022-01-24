@@ -802,6 +802,9 @@ body > .container {
     margin-bottom: 35px;
 }
 /* /ari */
+.goback {
+    margin-bottom: 20px;
+}
 @media (min-width: 992px) {
     .container, .container-lg, .container-md, .container-sm {
         max-width: 1200px;
@@ -1213,9 +1216,6 @@ iframe.visualizar_doc {
         cursor: pointer;
     }
 
-    .noticia {
-        padding: 2rem 0;
-    }
 
     /*-----NOTICIAS-----*/
 
