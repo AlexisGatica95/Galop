@@ -10,11 +10,23 @@ class Eventos extends BaseController
 		$data['locale'] = $this->locale;
 		$data['ruta_es'] = '/es/eventos/';
 		$data['ruta_en'] = '/en/eventos/';
+		$data['scripts'][] = 'event_calendar';
 		$model = new EventosModel();
 		$eventos = $model->getPostsPaginados($this->locale);		
 
 		$data['paginacion'] = $this->createPagination($eventos);
 		
+		$event_days = [];
+
+		foreach ($eventos as $key => $pag) {
+			foreach ($pag as $k_event => $evento) {
+				$day_string = date('j/n/Y',strtotime($evento['fecha']));
+				$event_days[$day_string][] = [$evento['title'],$evento['slug']];
+			} 
+		}
+		
+		$data['event_days'] = $event_days;
+
 		// agarro y paso la pagina que corresponde como array de eventos
 		$page = $this->getPage($eventos);
 		if (count($eventos) > 0) {

@@ -8,6 +8,7 @@ $ano_fin = $hoy_ano + 4;
 ?>
 
 <div class="container">
+
     <div class="event_calendar_w">
         <div class="event_calendar">
             <div class="top">
@@ -24,6 +25,9 @@ $ano_fin = $hoy_ano + 4;
                 <div class="dia">Vie</div>
                 <div class="dia">Sab</div>
             </div>
+            <?php 
+            $event_blocks = '';
+            ?>
             <?php for ($y=$ano_inicio; $y <= $ano_fin ; $y++): ?>
                 <?php for ($m=1; $m < 13 ; $m++): ?>
                 <?php $wd = 0; ?>
@@ -58,7 +62,21 @@ $ano_fin = $hoy_ano + 4;
                             $isDay = false;
                         }        
                         ?>
-                        <div class="dia<?php if ($isClear) {echo(" clear");} ?>" <?php if ($isDay) {echo(' data-day='.$rd);} ?>><?php if ($started) {echo($rd);}?></div>
+
+                        <?php 
+                        $hasEvents = array_key_exists($rd.'/'.$m.'/'.$y,$event_days);
+                        ?>
+
+                        <div class="dia<?php if ($isClear) {echo(" clear");} ?><?php if ($hasEvents) {echo(" has_events");} ?>" <?php if ($isDay) {echo(' data-day='.$rd);} ?>><?php if ($started) {echo($rd);}?></div>
+
+                        <?php if ($hasEvents) {
+                            $event_blocks .= "<div class='eventos_dia' data-date='".$rd."_".$m."_".$y."'><div class='header_fecha'>".$rd."/".$m."/".$y."</div>";
+                            foreach($event_days[$rd.'/'.$m.'/'.$y] as $ev){
+                                $event_blocks .= "<div class='row_eventos'><a target='_blank' href='".base_url()."/eventos/".$ev[1]."'>".$ev[0]."</a></div>";
+                            }
+                            $event_blocks .= "</div>";
+                        }?> 
+
                         <?php
                         $wd++;
                         if ($wd > 6) {
@@ -67,15 +85,12 @@ $ano_fin = $hoy_ano + 4;
                         if ($started) {
                             $rd++;
                         }
-                        if ($rd > $dias) {
-                            //break;
-                        }
                         ?>
                     <?php endfor; ?>
                 </div>
-                
                 <?php endfor; ?>
             <?php endfor; ?>
+            <?= $event_blocks ?>
         </div>
     </div>
 

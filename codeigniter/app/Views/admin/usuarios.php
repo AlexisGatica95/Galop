@@ -97,6 +97,7 @@
                                 <ul>
                                     <li><b><?= ucfirst(lang("App.perfil.membrecia"))?>: </b><?= $permisos ?></li>
                                 </ul>
+                                <?="<div class='responder_solicitud'><div class='aceptar' data-user='".$usuario['ID']."' data-valor='1'>✔️</div><div class='rechazar' data-user='".$usuario['ID']."' data-valor='-1'>❌</div><div class='reset' data-user='".$usuario['ID']."' data-valor='0'>🔄</div></div>"?>
                             </div>
                         </div>
                     </div>

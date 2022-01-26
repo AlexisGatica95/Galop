@@ -1026,6 +1026,46 @@ iframe.visualizar_doc {
     height: 40px;
 }
 
+.event_calendar .grid.month  .dia.has_events {
+    cursor: pointer;
+    background-color: var(--a-2)!important;
+}
+
+.eventos_dia{
+    display: none;
+}
+
+.eventos_dia.open {
+    margin: .5rem 0rem 0rem;
+    display: flex;
+    background-color: #ededed;
+    padding: 0.2rem 0.5rem 0.5rem;
+    border-radius: 8px;
+    flex-direction: column;
+}
+
+.eventos_dia.open a {
+    color: var(--n-3);
+    font-size: .9rem;
+    width: 100%;
+}
+
+.eventos_dia.open a:hover{
+    transition: .2s;
+    color: var(--n-4);
+}
+
+.eventos_dia .header_fecha {
+    font-weight: bolder;
+    color: var(--g-3);
+    justify-content: end;
+    display: flex;
+}
+.event_calendar .grid.month .dia.has_events.open {
+    border: 2px solid var(--n);
+    box-sizing: border-box;
+}
+
 /* --- SUBSECCIONES --- */
 
 

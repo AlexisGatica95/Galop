@@ -1,5 +1,6 @@
 $(".edit_term").on("click tap",function(){
 	let id_term = $(this).data("term");
+	$(this).closest("form.termino").addClass("editing");
 	$("input.input_"+id_term).each(function(){
 		$(this).attr("disabled",false);
 	});

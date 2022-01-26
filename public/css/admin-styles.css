@@ -820,6 +820,18 @@ img.lang {
     cursor: pointer;
 }
 
+.save_term {
+    display: none;
+}
+
+form.editing .save_term {
+    display: block;
+}
+
+form.editing .edit_term {
+    display: none;
+}
+
 .sumar_input {
     display: inline-flex;
     justify-content: center;
