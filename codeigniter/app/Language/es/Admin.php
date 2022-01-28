@@ -12,6 +12,7 @@ return [
         'contenido'=>'Contenido',
         'crear'=>'Publicar'
     ],
+	
     'protocolo' => [
     	'titulo_crear'=> 'Crear un nuevo protocolo',
 		'titulo_editar'=> 'Editar protocolo'

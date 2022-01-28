@@ -188,9 +188,10 @@ input[type=checkbox], input[type=radio] {
 .modal_card .status .responder_solicitud {
     display: flex;
     flex-wrap: wrap;
-    margin: 0 5px;
+    justify-content: end;
+    /* margin: 0 5px; */
 }
-.modal_card ul {
+.modal_card ul, .responder_solicitud {
     display: flex;
     flex-wrap: wrap;
     background-color: #fff;
@@ -216,6 +217,19 @@ input[type=checkbox], input[type=radio] {
     text-align: nowrap;
     border: 2px solid #fff;
 }
+
+.responder_solicitud .reset, .responder_solicitud .rechazar {
+    padding-left: 0.5rem;
+}
+
+.responder_solicitud .reset, .responder_solicitud .rechazar, .responder_solicitud .aceptar:hover {
+    cursor:pointer;
+}
+
+span.modbtn:hover {
+    cursor: pointer;
+}
+
 /* / users admin */
 
 .btn.btn-1 {
@@ -559,7 +573,7 @@ label[for=nombre], label[for=apellido], label[for=mail] {
 input[type="search"]{    
     border: 1px solid #dcdee2;
     border-radius: 5px;
-    height: 30px;
+    height: 34px;
     max-width: 200px;
     padding: 6px;
     margin-right: .5rem;
@@ -737,7 +751,7 @@ img.lang {
 .sidebar .ss-main .ss-single-selected {
     height: 38px;
     padding: 6px 12px;
-    border: 1px solid #ced4da;
+    border: 1px solid #ced4da!important;
     border-radius: 0px; 
 }
 

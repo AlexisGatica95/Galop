@@ -69,7 +69,7 @@ $uri = service('uri');
 			</li>
 
 			<li> 
-				<a href="/<?=$locale?>/admin/configuraciones"><?= ucfirst(lang("Admin.menu.config"))?><a>
+				<a href="/<?=$locale?>/admin/configuraciones"><?= ucfirst(lang("Admin.menu.config"))?></a>
 			<li>
 			
 			<li class="nav-item lang_switcher">
