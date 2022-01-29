@@ -17,6 +17,7 @@ return [
 		'titulo_editar'=> 'Edit protocol'
     ],
     'evento' => [
+		'titulo_editar'=> 'Edit event',
 		'fecha' => 'Date',
     	'titulo_crear' => 'Create new event',
 		'archivos' => 'Files'

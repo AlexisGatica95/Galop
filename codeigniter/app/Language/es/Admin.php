@@ -18,6 +18,7 @@ return [
 		'titulo_editar'=> 'Editar protocolo'
     ],
     'evento' => [
+		'titulo_editar'=> 'Editar evento',
     	'titulo_crear'=> 'Crear un nuevo evento',
 		'fecha' => 'Fecha',
 		'archivos' => 'Archivos'
